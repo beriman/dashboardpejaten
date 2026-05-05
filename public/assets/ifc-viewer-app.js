@@ -6645,7 +6645,21 @@ function convertArray(array, type, forceClone) {
 function isTypedArray(object) {
   return ArrayBuffer.isView(object) && !(object instanceof DataView);
 }
-var REVISION, MOUSE, TOUCH, CullFaceNone, CullFaceBack, CullFaceFront, PCFShadowMap, PCFSoftShadowMap, VSMShadowMap, FrontSide, BackSide, DoubleSide, NoBlending, NormalBlending, AdditiveBlending, SubtractiveBlending, MultiplyBlending, CustomBlending, AddEquation, SubtractEquation, ReverseSubtractEquation, MinEquation, MaxEquation, ZeroFactor, OneFactor, SrcColorFactor, OneMinusSrcColorFactor, SrcAlphaFactor, OneMinusSrcAlphaFactor, DstAlphaFactor, OneMinusDstAlphaFactor, DstColorFactor, OneMinusDstColorFactor, SrcAlphaSaturateFactor, NeverDepth, AlwaysDepth, LessDepth, LessEqualDepth, EqualDepth, GreaterEqualDepth, GreaterDepth, NotEqualDepth, MultiplyOperation, MixOperation, AddOperation, NoToneMapping, LinearToneMapping, ReinhardToneMapping, CineonToneMapping, ACESFilmicToneMapping, CustomToneMapping, UVMapping, CubeReflectionMapping, CubeRefractionMapping, EquirectangularReflectionMapping, EquirectangularRefractionMapping, CubeUVReflectionMapping, RepeatWrapping, ClampToEdgeWrapping, MirroredRepeatWrapping, NearestFilter, NearestMipmapNearestFilter, NearestMipmapLinearFilter, LinearFilter, LinearMipmapNearestFilter, LinearMipmapLinearFilter, UnsignedByteType, ByteType, ShortType, UnsignedShortType, IntType, UnsignedIntType, FloatType, HalfFloatType, UnsignedShort4444Type, UnsignedShort5551Type, UnsignedInt248Type, AlphaFormat, RGBAFormat, LuminanceFormat, LuminanceAlphaFormat, DepthFormat, DepthStencilFormat, RedFormat, RedIntegerFormat, RGFormat, RGIntegerFormat, RGBAIntegerFormat, RGB_S3TC_DXT1_Format, RGBA_S3TC_DXT1_Format, RGBA_S3TC_DXT3_Format, RGBA_S3TC_DXT5_Format, RGB_PVRTC_4BPPV1_Format, RGB_PVRTC_2BPPV1_Format, RGBA_PVRTC_4BPPV1_Format, RGBA_PVRTC_2BPPV1_Format, RGB_ETC1_Format, RGB_ETC2_Format, RGBA_ETC2_EAC_Format, RGBA_ASTC_4x4_Format, RGBA_ASTC_5x4_Format, RGBA_ASTC_5x5_Format, RGBA_ASTC_6x5_Format, RGBA_ASTC_6x6_Format, RGBA_ASTC_8x5_Format, RGBA_ASTC_8x6_Format, RGBA_ASTC_8x8_Format, RGBA_ASTC_10x5_Format, RGBA_ASTC_10x6_Format, RGBA_ASTC_10x8_Format, RGBA_ASTC_10x10_Format, RGBA_ASTC_12x10_Format, RGBA_ASTC_12x12_Format, RGBA_BPTC_Format, RED_RGTC1_Format, SIGNED_RED_RGTC1_Format, RED_GREEN_RGTC2_Format, SIGNED_RED_GREEN_RGTC2_Format, InterpolateDiscrete, InterpolateLinear, InterpolateSmooth, ZeroCurvatureEnding, ZeroSlopeEnding, WrapAroundEnding, LinearEncoding, sRGBEncoding, BasicDepthPacking, RGBADepthPacking, TangentSpaceNormalMap, ObjectSpaceNormalMap, NoColorSpace, SRGBColorSpace, LinearSRGBColorSpace, DisplayP3ColorSpace, KeepStencilOp, AlwaysStencilFunc, StaticDrawUsage, GLSL3, _SRGBAFormat, EventDispatcher, _lut, DEG2RAD, RAD2DEG, Vector2, Matrix3, _m3, _cache, LINEAR_SRGB_TO_LINEAR_DISPLAY_P3, LINEAR_DISPLAY_P3_TO_LINEAR_SRGB, TO_LINEAR, FROM_LINEAR, ColorManagement, _canvas, ImageUtils, Source, textureId, Texture, Vector4, WebGLRenderTarget, DataArrayTexture, Data3DTexture, Quaternion, Vector3, _vector$b, _quaternion$4, Box3, _points, _vector$a, _box$3, _v0$2, _v1$7, _v2$4, _f0, _f1, _f2, _center, _extents, _triangleNormal, _testAxis, _box$2, _v1$6, _v2$3, Sphere, _vector$9, _segCenter, _segDir, _diff, _edge1, _edge2, _normal$1, Ray, Matrix4, _v1$5, _m1$2, _zero, _one, _x, _y, _z, _matrix, _quaternion$3, Euler, Layers, _object3DId, _v1$4, _q1, _m1$1, _target, _position$3, _scale$2, _quaternion$2, _xAxis, _yAxis, _zAxis, _addedEvent, _removedEvent, Object3D, _v0$1, _v1$3, _v2$2, _v3$1, _vab, _vac, _vbc, _vap, _vbp, _vcp, warnedGetUV, Triangle, materialId, Material, _colorKeywords, _hslA, _hslB, Color, _color, MeshBasicMaterial, _vector$8, _vector2$1, BufferAttribute, Uint16BufferAttribute, Uint32BufferAttribute, Float32BufferAttribute, _id$1, _m1, _obj, _offset, _box$1, _boxMorphTargets, _vector$7, BufferGeometry, _inverseMatrix$2, _ray$2, _sphere$4, _sphereHitAt, _vA$1, _vB$1, _vC$1, _tempA, _morphA, _uvA$1, _uvB$1, _uvC$1, _normalA, _normalB, _normalC, _intersectionPoint, _intersectionPointWorld, Mesh, BoxGeometry, UniformsUtils, default_vertex, default_fragment, ShaderMaterial, Camera, PerspectiveCamera, fov, aspect, CubeCamera, CubeTexture, WebGLCubeRenderTarget, _vector1, _vector2, _normalMatrix, Plane, _sphere$3, _vector$6, Frustum, PlaneGeometry, alphamap_fragment, alphamap_pars_fragment, alphatest_fragment, alphatest_pars_fragment, aomap_fragment, aomap_pars_fragment, begin_vertex, beginnormal_vertex, bsdfs, iridescence_fragment, bumpmap_pars_fragment, clipping_planes_fragment, clipping_planes_pars_fragment, clipping_planes_pars_vertex, clipping_planes_vertex, color_fragment, color_pars_fragment, color_pars_vertex, color_vertex, common, cube_uv_reflection_fragment, defaultnormal_vertex, displacementmap_pars_vertex, displacementmap_vertex, emissivemap_fragment, emissivemap_pars_fragment, encodings_fragment, encodings_pars_fragment, envmap_fragment, envmap_common_pars_fragment, envmap_pars_fragment, envmap_pars_vertex, envmap_vertex, fog_vertex, fog_pars_vertex, fog_fragment, fog_pars_fragment, gradientmap_pars_fragment, lightmap_fragment, lightmap_pars_fragment, lights_lambert_fragment, lights_lambert_pars_fragment, lights_pars_begin, envmap_physical_pars_fragment, lights_toon_fragment, lights_toon_pars_fragment, lights_phong_fragment, lights_phong_pars_fragment, lights_physical_fragment, lights_physical_pars_fragment, lights_fragment_begin, lights_fragment_maps, lights_fragment_end, logdepthbuf_fragment, logdepthbuf_pars_fragment, logdepthbuf_pars_vertex, logdepthbuf_vertex, map_fragment, map_pars_fragment, map_particle_fragment, map_particle_pars_fragment, metalnessmap_fragment, metalnessmap_pars_fragment, morphcolor_vertex, morphnormal_vertex, morphtarget_pars_vertex, morphtarget_vertex, normal_fragment_begin, normal_fragment_maps, normal_pars_fragment, normal_pars_vertex, normal_vertex, normalmap_pars_fragment, clearcoat_normal_fragment_begin, clearcoat_normal_fragment_maps, clearcoat_pars_fragment, iridescence_pars_fragment, output_fragment, packing, premultiplied_alpha_fragment, project_vertex, dithering_fragment, dithering_pars_fragment, roughnessmap_fragment, roughnessmap_pars_fragment, shadowmap_pars_fragment, shadowmap_pars_vertex, shadowmap_vertex, shadowmask_pars_fragment, skinbase_vertex, skinning_pars_vertex, skinning_vertex, skinnormal_vertex, specularmap_fragment, specularmap_pars_fragment, tonemapping_fragment, tonemapping_pars_fragment, transmission_fragment, transmission_pars_fragment, uv_pars_fragment, uv_pars_vertex, uv_vertex, worldpos_vertex, vertex$h, fragment$h, vertex$g, fragment$g, vertex$f, fragment$f, vertex$e, fragment$e, vertex$d, fragment$d, vertex$c, fragment$c, vertex$b, fragment$b, vertex$a, fragment$a, vertex$9, fragment$9, vertex$8, fragment$8, vertex$7, fragment$7, vertex$6, fragment$6, vertex$5, fragment$5, vertex$4, fragment$4, vertex$3, fragment$3, vertex$2, fragment$2, vertex$1, fragment$1, ShaderChunk, UniformsLib, ShaderLib, _rgb, OrthographicCamera, LOD_MIN, EXTRA_LOD_SIGMA, MAX_SAMPLES, _flatCamera, _clearColor, _oldTarget, PHI, INV_PHI, _axisDirections, PMREMGenerator, emptyTexture, emptyArrayTexture, empty3dTexture, emptyCubeTexture, arrayCacheF32, arrayCacheI32, mat4array, mat3array, mat2array, SingleUniform, PureArrayUniform, StructuredUniform, RePathPart, WebGLUniforms, programIdCount, includePattern, unrollLoopPattern, _id, WebGLShaderCache, WebGLShaderStage, nextVersion, MeshDepthMaterial, MeshDistanceMaterial, vertex, fragment, ArrayCamera, Group, _moveEvent, WebXRController, DepthTexture, WebXRManager, WebGLRenderer, WebGL1Renderer, Scene, LineBasicMaterial, _start$1, _end$1, _inverseMatrix$1, _ray$1, _sphere$1, Line, _start, _end, LineSegments, MeshLambertMaterial, Interpolant, CubicInterpolant, LinearInterpolant, DiscreteInterpolant, KeyframeTrack, BooleanKeyframeTrack, ColorKeyframeTrack, NumberKeyframeTrack, QuaternionLinearInterpolant, QuaternionKeyframeTrack, StringKeyframeTrack, VectorKeyframeTrack, Cache, LoadingManager, DefaultLoadingManager, Loader, loading, HttpError, FileLoader, Light, _projScreenMatrix$1, _lightPositionWorld$1, _lookTarget$1, LightShadow, DirectionalLightShadow, DirectionalLight, AmbientLight, _RESERVED_CHARS_RE, _reservedRe, _wordChar, _wordCharOrDot, _directoryRe, _nodeRe, _objectRe, _propertyRe, _trackRe, _supportedObjectNames, Composite, PropertyBinding, _controlInterpolantsResultBuffer, Spherical, GridHelper, AxesHelper;
+function ascSort(a, b) {
+  return a.distance - b.distance;
+}
+function intersectObject(object, raycaster, intersects, recursive) {
+  if (object.layers.test(raycaster.layers)) {
+    object.raycast(raycaster, intersects);
+  }
+  if (recursive === true) {
+    const children = object.children;
+    for (let i = 0, l = children.length; i < l; i++) {
+      intersectObject(children[i], raycaster, intersects, true);
+    }
+  }
+}
+var REVISION, MOUSE, TOUCH, CullFaceNone, CullFaceBack, CullFaceFront, PCFShadowMap, PCFSoftShadowMap, VSMShadowMap, FrontSide, BackSide, DoubleSide, NoBlending, NormalBlending, AdditiveBlending, SubtractiveBlending, MultiplyBlending, CustomBlending, AddEquation, SubtractEquation, ReverseSubtractEquation, MinEquation, MaxEquation, ZeroFactor, OneFactor, SrcColorFactor, OneMinusSrcColorFactor, SrcAlphaFactor, OneMinusSrcAlphaFactor, DstAlphaFactor, OneMinusDstAlphaFactor, DstColorFactor, OneMinusDstColorFactor, SrcAlphaSaturateFactor, NeverDepth, AlwaysDepth, LessDepth, LessEqualDepth, EqualDepth, GreaterEqualDepth, GreaterDepth, NotEqualDepth, MultiplyOperation, MixOperation, AddOperation, NoToneMapping, LinearToneMapping, ReinhardToneMapping, CineonToneMapping, ACESFilmicToneMapping, CustomToneMapping, UVMapping, CubeReflectionMapping, CubeRefractionMapping, EquirectangularReflectionMapping, EquirectangularRefractionMapping, CubeUVReflectionMapping, RepeatWrapping, ClampToEdgeWrapping, MirroredRepeatWrapping, NearestFilter, NearestMipmapNearestFilter, NearestMipmapLinearFilter, LinearFilter, LinearMipmapNearestFilter, LinearMipmapLinearFilter, UnsignedByteType, ByteType, ShortType, UnsignedShortType, IntType, UnsignedIntType, FloatType, HalfFloatType, UnsignedShort4444Type, UnsignedShort5551Type, UnsignedInt248Type, AlphaFormat, RGBAFormat, LuminanceFormat, LuminanceAlphaFormat, DepthFormat, DepthStencilFormat, RedFormat, RedIntegerFormat, RGFormat, RGIntegerFormat, RGBAIntegerFormat, RGB_S3TC_DXT1_Format, RGBA_S3TC_DXT1_Format, RGBA_S3TC_DXT3_Format, RGBA_S3TC_DXT5_Format, RGB_PVRTC_4BPPV1_Format, RGB_PVRTC_2BPPV1_Format, RGBA_PVRTC_4BPPV1_Format, RGBA_PVRTC_2BPPV1_Format, RGB_ETC1_Format, RGB_ETC2_Format, RGBA_ETC2_EAC_Format, RGBA_ASTC_4x4_Format, RGBA_ASTC_5x4_Format, RGBA_ASTC_5x5_Format, RGBA_ASTC_6x5_Format, RGBA_ASTC_6x6_Format, RGBA_ASTC_8x5_Format, RGBA_ASTC_8x6_Format, RGBA_ASTC_8x8_Format, RGBA_ASTC_10x5_Format, RGBA_ASTC_10x6_Format, RGBA_ASTC_10x8_Format, RGBA_ASTC_10x10_Format, RGBA_ASTC_12x10_Format, RGBA_ASTC_12x12_Format, RGBA_BPTC_Format, RED_RGTC1_Format, SIGNED_RED_RGTC1_Format, RED_GREEN_RGTC2_Format, SIGNED_RED_GREEN_RGTC2_Format, InterpolateDiscrete, InterpolateLinear, InterpolateSmooth, ZeroCurvatureEnding, ZeroSlopeEnding, WrapAroundEnding, LinearEncoding, sRGBEncoding, BasicDepthPacking, RGBADepthPacking, TangentSpaceNormalMap, ObjectSpaceNormalMap, NoColorSpace, SRGBColorSpace, LinearSRGBColorSpace, DisplayP3ColorSpace, KeepStencilOp, AlwaysStencilFunc, StaticDrawUsage, GLSL3, _SRGBAFormat, EventDispatcher, _lut, DEG2RAD, RAD2DEG, Vector2, Matrix3, _m3, _cache, LINEAR_SRGB_TO_LINEAR_DISPLAY_P3, LINEAR_DISPLAY_P3_TO_LINEAR_SRGB, TO_LINEAR, FROM_LINEAR, ColorManagement, _canvas, ImageUtils, Source, textureId, Texture, Vector4, WebGLRenderTarget, DataArrayTexture, Data3DTexture, Quaternion, Vector3, _vector$b, _quaternion$4, Box3, _points, _vector$a, _box$3, _v0$2, _v1$7, _v2$4, _f0, _f1, _f2, _center, _extents, _triangleNormal, _testAxis, _box$2, _v1$6, _v2$3, Sphere, _vector$9, _segCenter, _segDir, _diff, _edge1, _edge2, _normal$1, Ray, Matrix4, _v1$5, _m1$2, _zero, _one, _x, _y, _z, _matrix, _quaternion$3, Euler, Layers, _object3DId, _v1$4, _q1, _m1$1, _target, _position$3, _scale$2, _quaternion$2, _xAxis, _yAxis, _zAxis, _addedEvent, _removedEvent, Object3D, _v0$1, _v1$3, _v2$2, _v3$1, _vab, _vac, _vbc, _vap, _vbp, _vcp, warnedGetUV, Triangle, materialId, Material, _colorKeywords, _hslA, _hslB, Color, _color, MeshBasicMaterial, _vector$8, _vector2$1, BufferAttribute, Uint16BufferAttribute, Uint32BufferAttribute, Float32BufferAttribute, _id$1, _m1, _obj, _offset, _box$1, _boxMorphTargets, _vector$7, BufferGeometry, _inverseMatrix$2, _ray$2, _sphere$4, _sphereHitAt, _vA$1, _vB$1, _vC$1, _tempA, _morphA, _uvA$1, _uvB$1, _uvC$1, _normalA, _normalB, _normalC, _intersectionPoint, _intersectionPointWorld, Mesh, BoxGeometry, UniformsUtils, default_vertex, default_fragment, ShaderMaterial, Camera, PerspectiveCamera, fov, aspect, CubeCamera, CubeTexture, WebGLCubeRenderTarget, _vector1, _vector2, _normalMatrix, Plane, _sphere$3, _vector$6, Frustum, PlaneGeometry, alphamap_fragment, alphamap_pars_fragment, alphatest_fragment, alphatest_pars_fragment, aomap_fragment, aomap_pars_fragment, begin_vertex, beginnormal_vertex, bsdfs, iridescence_fragment, bumpmap_pars_fragment, clipping_planes_fragment, clipping_planes_pars_fragment, clipping_planes_pars_vertex, clipping_planes_vertex, color_fragment, color_pars_fragment, color_pars_vertex, color_vertex, common, cube_uv_reflection_fragment, defaultnormal_vertex, displacementmap_pars_vertex, displacementmap_vertex, emissivemap_fragment, emissivemap_pars_fragment, encodings_fragment, encodings_pars_fragment, envmap_fragment, envmap_common_pars_fragment, envmap_pars_fragment, envmap_pars_vertex, envmap_vertex, fog_vertex, fog_pars_vertex, fog_fragment, fog_pars_fragment, gradientmap_pars_fragment, lightmap_fragment, lightmap_pars_fragment, lights_lambert_fragment, lights_lambert_pars_fragment, lights_pars_begin, envmap_physical_pars_fragment, lights_toon_fragment, lights_toon_pars_fragment, lights_phong_fragment, lights_phong_pars_fragment, lights_physical_fragment, lights_physical_pars_fragment, lights_fragment_begin, lights_fragment_maps, lights_fragment_end, logdepthbuf_fragment, logdepthbuf_pars_fragment, logdepthbuf_pars_vertex, logdepthbuf_vertex, map_fragment, map_pars_fragment, map_particle_fragment, map_particle_pars_fragment, metalnessmap_fragment, metalnessmap_pars_fragment, morphcolor_vertex, morphnormal_vertex, morphtarget_pars_vertex, morphtarget_vertex, normal_fragment_begin, normal_fragment_maps, normal_pars_fragment, normal_pars_vertex, normal_vertex, normalmap_pars_fragment, clearcoat_normal_fragment_begin, clearcoat_normal_fragment_maps, clearcoat_pars_fragment, iridescence_pars_fragment, output_fragment, packing, premultiplied_alpha_fragment, project_vertex, dithering_fragment, dithering_pars_fragment, roughnessmap_fragment, roughnessmap_pars_fragment, shadowmap_pars_fragment, shadowmap_pars_vertex, shadowmap_vertex, shadowmask_pars_fragment, skinbase_vertex, skinning_pars_vertex, skinning_vertex, skinnormal_vertex, specularmap_fragment, specularmap_pars_fragment, tonemapping_fragment, tonemapping_pars_fragment, transmission_fragment, transmission_pars_fragment, uv_pars_fragment, uv_pars_vertex, uv_vertex, worldpos_vertex, vertex$h, fragment$h, vertex$g, fragment$g, vertex$f, fragment$f, vertex$e, fragment$e, vertex$d, fragment$d, vertex$c, fragment$c, vertex$b, fragment$b, vertex$a, fragment$a, vertex$9, fragment$9, vertex$8, fragment$8, vertex$7, fragment$7, vertex$6, fragment$6, vertex$5, fragment$5, vertex$4, fragment$4, vertex$3, fragment$3, vertex$2, fragment$2, vertex$1, fragment$1, ShaderChunk, UniformsLib, ShaderLib, _rgb, OrthographicCamera, LOD_MIN, EXTRA_LOD_SIGMA, MAX_SAMPLES, _flatCamera, _clearColor, _oldTarget, PHI, INV_PHI, _axisDirections, PMREMGenerator, emptyTexture, emptyArrayTexture, empty3dTexture, emptyCubeTexture, arrayCacheF32, arrayCacheI32, mat4array, mat3array, mat2array, SingleUniform, PureArrayUniform, StructuredUniform, RePathPart, WebGLUniforms, programIdCount, includePattern, unrollLoopPattern, _id, WebGLShaderCache, WebGLShaderStage, nextVersion, MeshDepthMaterial, MeshDistanceMaterial, vertex, fragment, ArrayCamera, Group, _moveEvent, WebXRController, DepthTexture, WebXRManager, WebGLRenderer, WebGL1Renderer, Scene, LineBasicMaterial, _start$1, _end$1, _inverseMatrix$1, _ray$1, _sphere$1, Line, _start, _end, LineSegments, MeshLambertMaterial, Interpolant, CubicInterpolant, LinearInterpolant, DiscreteInterpolant, KeyframeTrack, BooleanKeyframeTrack, ColorKeyframeTrack, NumberKeyframeTrack, QuaternionLinearInterpolant, QuaternionKeyframeTrack, StringKeyframeTrack, VectorKeyframeTrack, Cache, LoadingManager, DefaultLoadingManager, Loader, loading, HttpError, FileLoader, Light, _projScreenMatrix$1, _lightPositionWorld$1, _lookTarget$1, LightShadow, DirectionalLightShadow, DirectionalLight, AmbientLight, _RESERVED_CHARS_RE, _reservedRe, _wordChar, _wordCharOrDot, _directoryRe, _nodeRe, _objectRe, _propertyRe, _trackRe, _supportedObjectNames, Composite, PropertyBinding, _controlInterpolantsResultBuffer, Raycaster, Spherical, GridHelper, AxesHelper;
 var init_three_module = __esm({
   "node_modules/three/build/three.module.js"() {
     REVISION = "152";
@@ -18624,6 +18638,50 @@ var init_three_module = __esm({
       ]
     ];
     _controlInterpolantsResultBuffer = new Float32Array(1);
+    Raycaster = class {
+      constructor(origin, direction, near = 0, far = Infinity) {
+        this.ray = new Ray(origin, direction);
+        this.near = near;
+        this.far = far;
+        this.camera = null;
+        this.layers = new Layers();
+        this.params = {
+          Mesh: {},
+          Line: { threshold: 1 },
+          LOD: {},
+          Points: { threshold: 1 },
+          Sprite: {}
+        };
+      }
+      set(origin, direction) {
+        this.ray.set(origin, direction);
+      }
+      setFromCamera(coords, camera) {
+        if (camera.isPerspectiveCamera) {
+          this.ray.origin.setFromMatrixPosition(camera.matrixWorld);
+          this.ray.direction.set(coords.x, coords.y, 0.5).unproject(camera).sub(this.ray.origin).normalize();
+          this.camera = camera;
+        } else if (camera.isOrthographicCamera) {
+          this.ray.origin.set(coords.x, coords.y, (camera.near + camera.far) / (camera.near - camera.far)).unproject(camera);
+          this.ray.direction.set(0, 0, -1).transformDirection(camera.matrixWorld);
+          this.camera = camera;
+        } else {
+          console.error("THREE.Raycaster: Unsupported camera type: " + camera.type);
+        }
+      }
+      intersectObject(object, recursive = true, intersects = []) {
+        intersectObject(object, this, intersects, recursive);
+        intersects.sort(ascSort);
+        return intersects;
+      }
+      intersectObjects(objects, recursive = true, intersects = []) {
+        for (let i = 0, l = objects.length; i < l; i++) {
+          intersectObject(objects[i], this, intersects, recursive);
+        }
+        intersects.sort(ascSort);
+        return intersects;
+      }
+    };
     Spherical = class {
       constructor(radius = 1, phi = 0, theta = 0) {
         this.radius = radius;
@@ -84035,11 +84093,10 @@ var require_ifc_viewer_app = __commonJS({
     var disciplineParam = (params.get("discipline") || "STR").toUpperCase();
     var labels = { B: "Gedung B", D: "Gedung D", K: "Gedung K" };
     document.getElementById("buildingLabel").textContent = labels[building] || `Gedung ${building}`;
-    var modelMap = {
-      D: { STR: "/models/Gedung D/IFC/STR/STR D.ifc" }
-    };
+    var modelMap = { D: { STR: "/models/Gedung D/IFC/STR/STR D.ifc" } };
     var status = document.getElementById("status");
     var container = document.getElementById("viewer");
+    var contextMenu = document.getElementById("contextMenu");
     function setStatus(html) {
       status.innerHTML = `<strong>Status:</strong> ${html}`;
     }
@@ -84065,8 +84122,62 @@ var require_ifc_viewer_app = __commonJS({
     var clippingPlane = new Plane(new Vector3(-1, 0, 0), 0);
     var sectionOn = false;
     var loaded = {};
+    var activeDiscipline = disciplineParam;
+    var selected = null;
+    var raycaster = new Raycaster();
+    var mouse = new Vector2();
+    var highlightMaterial = new MeshLambertMaterial({ color: 16761095, transparent: true, opacity: 0.75, depthTest: false });
     var loader = new IFCLoader();
     loader.ifcManager.setWasmPath("/vendor/web-ifc/", true);
+    var visibleSubsetId = (discipline) => `VISIBLE_${discipline}`;
+    var selectSubsetId = (discipline) => `SELECT_${discipline}`;
+    function uniqueExpressIds(model) {
+      const attr = model.geometry?.attributes?.expressID;
+      if (!attr) return [];
+      return [...new Set(Array.from(attr.array).filter((v) => Number.isFinite(v) && v >= 0))];
+    }
+    function visibleMesh(entry) {
+      return loader.ifcManager.getSubset(entry.model.modelID, void 0, visibleSubsetId(entry.discipline));
+    }
+    function applyClipping(object) {
+      object.traverse((child) => {
+        if (child.material) {
+          child.material.clippingPlanes = sectionOn ? [clippingPlane] : [];
+          child.material.clipShadows = true;
+          child.material.side = DoubleSide;
+        }
+      });
+    }
+    function rebuildVisibleSubset(entry, ids = [...entry.visibleIds]) {
+      loader.ifcManager.removeSubset(entry.model.modelID, void 0, visibleSubsetId(entry.discipline));
+      entry.visibleIds = new Set(ids);
+      const subset = loader.ifcManager.createSubset({
+        modelID: entry.model.modelID,
+        ids,
+        scene,
+        removePrevious: true,
+        customID: visibleSubsetId(entry.discipline)
+      });
+      subset.name = `${entry.discipline}-visible-subset`;
+      subset.visible = entry.model.visible;
+      applyClipping(subset);
+      return subset;
+    }
+    function clearSelection() {
+      if (!selected?.entry) return;
+      loader.ifcManager.removeSubset(selected.entry.model.modelID, highlightMaterial, selectSubsetId(selected.entry.discipline));
+      selected = null;
+    }
+    async function elementLabel(entry, expressID) {
+      try {
+        const props = await loader.ifcManager.getItemProperties(entry.model.modelID, expressID, false);
+        const name = props?.Name?.value || props?.Name || props?.GlobalId?.value || "";
+        const type = props?.type || props?.ObjectType?.value || "";
+        return `${entry.discipline} #${expressID}${name ? ` - ${name}` : ""}${type ? ` (${type})` : ""}`;
+      } catch {
+        return `${entry.discipline} #${expressID}`;
+      }
+    }
     function frameObject(object) {
       const box = new Box3().setFromObject(object);
       if (box.isEmpty()) {
@@ -84085,52 +84196,149 @@ var require_ifc_viewer_app = __commonJS({
       controls.update();
     }
     async function loadDiscipline(discipline) {
+      activeDiscipline = discipline;
       const url = modelMap[building]?.[discipline];
       if (!url) {
         setStatus(`${labels[building] || building} - ${discipline} belum ada file IFC di paket dashboard. Upload/export IFC dulu lalu publish ulang.`);
         return;
       }
       if (loaded[discipline]) {
-        Object.values(loaded).forEach((m) => m.visible = false);
-        loaded[discipline].visible = true;
-        frameObject(loaded[discipline]);
-        setStatus(`Menampilkan ${labels[building]} - ${discipline}.`);
+        clearSelection();
+        Object.values(loaded).forEach((e) => {
+          e.model.visible = false;
+          const s = visibleMesh(e);
+          if (s) s.visible = false;
+        });
+        loaded[discipline].model.visible = true;
+        const subset = visibleMesh(loaded[discipline]);
+        if (subset) subset.visible = true;
+        frameObject(subset || loaded[discipline].model);
+        setStatus(`Menampilkan ${labels[building]} - ${discipline}. Klik elemen untuk select, klik kanan untuk Hide/Isolate.`);
         return;
       }
       setStatus(`Memuat ${discipline}: ${url}`);
       try {
         const model = await loader.loadAsync(url);
         model.name = `${building}-${discipline}`;
-        model.traverse((child) => {
-          if (child.material) {
-            child.material.clippingPlanes = sectionOn ? [clippingPlane] : [];
-            child.material.clipShadows = true;
-            child.material.side = DoubleSide;
-          }
-        });
-        loaded[discipline] = model;
-        Object.values(loaded).forEach((m) => m.visible = false);
-        model.visible = true;
+        applyClipping(model);
         scene.add(model);
-        frameObject(model);
-        setStatus(`Berhasil memuat ${labels[building]} - ${discipline}. Gunakan mouse untuk orbit/pan/zoom.`);
+        const ids = uniqueExpressIds(model);
+        const entry = { discipline, model, allIds: ids, visibleIds: new Set(ids) };
+        loaded[discipline] = entry;
+        Object.values(loaded).forEach((e) => {
+          e.model.visible = false;
+          const s = visibleMesh(e);
+          if (s) s.visible = false;
+        });
+        model.visible = true;
+        const subset = rebuildVisibleSubset(entry, ids);
+        model.visible = false;
+        subset.visible = true;
+        frameObject(subset);
+        setStatus(`Berhasil memuat ${labels[building]} - ${discipline}. Klik elemen untuk select, klik kanan untuk Hide/Isolate.`);
       } catch (err) {
         console.error(err);
         setStatus(`Gagal memuat IFC ${discipline}. Detail: ${err?.message || err}`);
       }
     }
     async function showAll() {
+      clearSelection();
       const entries = Object.keys(modelMap[building] || {});
       if (!entries.length) {
         setStatus(`Belum ada IFC untuk ${labels[building] || building}.`);
         return;
       }
-      for (const d of entries) await loadDiscipline(d);
-      Object.values(loaded).forEach((m) => m.visible = true);
-      const visible = Object.values(loaded)[0];
+      for (const d of entries) if (!loaded[d]) await loadDiscipline(d);
+      Object.values(loaded).forEach((e) => {
+        e.model.visible = true;
+        rebuildVisibleSubset(e, e.allIds).visible = true;
+        e.model.visible = false;
+      });
+      const visible = visibleMesh(loaded[activeDiscipline]) || Object.values(loaded)[0]?.model;
       if (visible) frameObject(visible);
-      setStatus(`Menampilkan semua IFC tersedia untuk ${labels[building] || building}: ${entries.join(", ")}.`);
+      setStatus(`Semua elemen yang pernah di-hide sudah ditampilkan lagi.`);
     }
+    function setMouseFromEvent(event) {
+      const rect = renderer.domElement.getBoundingClientRect();
+      mouse.x = (event.clientX - rect.left) / rect.width * 2 - 1;
+      mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+    }
+    function pick(event) {
+      setMouseFromEvent(event);
+      raycaster.setFromCamera(mouse, camera);
+      const candidates = Object.values(loaded).map((e) => visibleMesh(e)).filter(Boolean).filter((m) => m.visible);
+      const hit = raycaster.intersectObjects(candidates, false)[0];
+      if (!hit) return null;
+      const entry = Object.values(loaded).find((e) => hit.object === visibleMesh(e));
+      if (!entry) return null;
+      const expressID = loader.ifcManager.getExpressId(hit.object.geometry, hit.faceIndex);
+      return { entry, expressID, hit };
+    }
+    async function selectElement(event) {
+      const result = pick(event);
+      if (!result) {
+        clearSelection();
+        setStatus("Tidak ada elemen terpilih.");
+        return null;
+      }
+      clearSelection();
+      selected = result;
+      loader.ifcManager.createSubset({
+        modelID: result.entry.model.modelID,
+        ids: [result.expressID],
+        material: highlightMaterial,
+        scene,
+        removePrevious: true,
+        customID: selectSubsetId(result.entry.discipline)
+      }).renderOrder = 10;
+      const label = await elementLabel(result.entry, result.expressID);
+      setStatus(`Selected: ${label}. Klik kanan untuk Hide/Isolate.`);
+      return result;
+    }
+    function showContextMenu(event) {
+      contextMenu.style.left = `${event.clientX}px`;
+      contextMenu.style.top = `${event.clientY}px`;
+      contextMenu.style.display = "block";
+    }
+    function hideContextMenu() {
+      contextMenu.style.display = "none";
+    }
+    function hideSelected() {
+      if (!selected) return;
+      const { entry, expressID } = selected;
+      entry.visibleIds.delete(expressID);
+      clearSelection();
+      const subset = rebuildVisibleSubset(entry);
+      subset.visible = true;
+      setStatus(`Elemen #${expressID} disembunyikan. Pakai Show All Hidden untuk mengembalikan.`);
+    }
+    function isolateSelected() {
+      if (!selected) return;
+      const { entry, expressID } = selected;
+      clearSelection();
+      const subset = rebuildVisibleSubset(entry, [expressID]);
+      subset.visible = true;
+      setStatus(`Isolate elemen #${expressID}. Pakai Show All Hidden untuk kembali.`);
+    }
+    renderer.domElement.addEventListener("click", (event) => {
+      hideContextMenu();
+      selectElement(event);
+    });
+    renderer.domElement.addEventListener("contextmenu", async (event) => {
+      event.preventDefault();
+      await selectElement(event);
+      showContextMenu(event);
+    });
+    document.addEventListener("click", (event) => {
+      if (!contextMenu.contains(event.target) && event.target !== renderer.domElement) hideContextMenu();
+    });
+    contextMenu.addEventListener("click", (event) => {
+      const action = event.target?.dataset?.menuAction;
+      if (action === "hide") hideSelected();
+      if (action === "isolate") isolateSelected();
+      if (action === "show-all") showAll();
+      hideContextMenu();
+    });
     document.querySelectorAll("[data-discipline]").forEach((btn) => {
       btn.addEventListener("click", () => {
         document.querySelectorAll("[data-discipline]").forEach((b) => b.classList.remove("active"));
@@ -84139,16 +84347,20 @@ var require_ifc_viewer_app = __commonJS({
       });
     });
     document.getElementById("showAll").addEventListener("click", showAll);
+    document.getElementById("showHidden").addEventListener("click", showAll);
     document.getElementById("sectionToggle").addEventListener("click", (e) => {
       sectionOn = !sectionOn;
       e.currentTarget.classList.toggle("active", sectionOn);
-      Object.values(loaded).forEach((model) => model.traverse((child) => {
-        if (child.material) child.material.clippingPlanes = sectionOn ? [clippingPlane] : [];
-      }));
+      Object.values(loaded).forEach((entry) => {
+        applyClipping(entry.model);
+        const subset = visibleMesh(entry);
+        if (subset) applyClipping(subset);
+      });
       setStatus(sectionOn ? "Section cut aktif. Prototype ini memakai potongan vertikal sederhana." : "Section cut nonaktif.");
     });
     document.getElementById("resetView").addEventListener("click", () => {
-      const visible = Object.values(loaded).find((m) => m.visible) || Object.values(loaded)[0];
+      const entry = loaded[activeDiscipline] || Object.values(loaded)[0];
+      const visible = entry ? visibleMesh(entry) || entry.model : null;
       if (visible) frameObject(visible);
     });
     addEventListener("resize", () => {
