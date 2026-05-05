@@ -45,10 +45,29 @@
     <div id="status"><strong>Status:</strong> loading viewer...</div>
   </main>
 </div>
+<script>
+  window.addEventListener('error', event => {
+    const el = document.getElementById('status');
+    if (el) el.innerHTML = `<strong>Status:</strong> Error script: ${event.message || 'unknown'} di ${event.filename || ''}:${event.lineno || ''}`;
+  });
+  window.addEventListener('unhandledrejection', event => {
+    const el = document.getElementById('status');
+    if (el) el.innerHTML = `<strong>Status:</strong> Error promise: ${event.reason?.message || event.reason || 'unknown'}`;
+  });
+</script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://esm.sh/three@0.149.0",
+    "three/": "https://esm.sh/three@0.149.0/",
+    "web-ifc": "https://esm.sh/web-ifc@0.0.44"
+  }
+}
+</script>
 <script type="module">
-  import * as THREE from 'https://esm.sh/three@0.152.2';
-  import { OrbitControls } from 'https://esm.sh/three@0.152.2/examples/jsm/controls/OrbitControls.js';
-  import { IFCLoader } from 'https://esm.sh/web-ifc-three@0.0.126/IFCLoader.js';
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+  import { IFCLoader } from 'https://esm.sh/web-ifc-three@0.0.126/IFCLoader.js?deps=three@0.149.0,web-ifc@0.0.44';
 
   const params = new URLSearchParams(location.search);
   const building = (params.get('building') || 'D').toUpperCase();
@@ -94,7 +113,7 @@
   const loaded = {};
 
   const loader = new IFCLoader();
-  loader.ifcManager.setWasmPath('https://cdn.jsdelivr.net/npm/web-ifc@0.0.44/');
+  loader.ifcManager.setWasmPath('https://cdn.jsdelivr.net/npm/web-ifc@0.0.44/', true);
 
   function setStatus(html) { status.innerHTML = `<strong>Status:</strong> ${html}`; }
 
