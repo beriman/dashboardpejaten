@@ -55,19 +55,20 @@
     if (el) el.innerHTML = `<strong>Status:</strong> Error promise: ${event.reason?.message || event.reason || 'unknown'}`;
   });
 </script>
-<script type="importmap">
-{
-  "imports": {
-    "three": "https://esm.sh/three@0.149.0",
-    "three/": "https://esm.sh/three@0.149.0/",
-    "web-ifc": "https://esm.sh/web-ifc@0.0.44"
-  }
-}
-</script>
 <script type="module">
-  import * as THREE from 'three';
-  import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-  import { IFCLoader } from 'https://esm.sh/web-ifc-three@0.0.126/IFCLoader.js?deps=three@0.149.0,web-ifc@0.0.44';
+  const bootStatus = document.getElementById('status');
+  if (bootStatus) bootStatus.innerHTML = '<strong>Status:</strong> memuat library 3D viewer...';
+
+  let THREE, OrbitControls, IFCLoader;
+  try {
+    THREE = await import('https://esm.sh/three@0.149.0?bundle');
+    ({ OrbitControls } = await import('https://esm.sh/three@0.149.0/examples/jsm/controls/OrbitControls.js?bundle'));
+    ({ IFCLoader } = await import('https://esm.sh/web-ifc-three@0.0.126/IFCLoader.js?bundle&deps=three@0.149.0,web-ifc@0.0.44'));
+  } catch (err) {
+    const el = document.getElementById('status');
+    if (el) el.innerHTML = `<strong>Status:</strong> gagal memuat library viewer dari CDN. ${err?.message || err}`;
+    throw err;
+  }
 
   const params = new URLSearchParams(location.search);
   const building = (params.get('building') || 'D').toUpperCase();
