@@ -13,14 +13,13 @@
     h1 { margin:0; font-size:16px; letter-spacing:.02em; }
     .sub { color:var(--muted); font-size:12px; margin-top:2px; }
     .toolbar { display:flex; gap:8px; flex-wrap:wrap; align-items:center; justify-content:flex-end; }
-    button, select { border:1px solid var(--line); background:#14243a; color:var(--text); border-radius:10px; padding:8px 10px; cursor:pointer; }
+    button { border:1px solid var(--line); background:#14243a; color:var(--text); border-radius:10px; padding:8px 10px; cursor:pointer; }
     button:hover { border-color:var(--blue); color:white; }
     button.active { background:#0284c7; border-color:#38bdf8; color:white; }
     main { position:relative; min-height:0; }
     #viewer { position:absolute; inset:0; }
-    #status { position:absolute; left:16px; bottom:16px; max-width:min(680px, calc(100vw - 32px)); background:rgba(8,17,31,.88); border:1px solid var(--line); border-radius:14px; padding:10px 12px; color:var(--muted); font-size:12px; line-height:1.45; }
+    #status { position:absolute; left:16px; bottom:16px; max-width:min(760px, calc(100vw - 32px)); background:rgba(8,17,31,.88); border:1px solid var(--line); border-radius:14px; padding:10px 12px; color:var(--muted); font-size:12px; line-height:1.45; }
     #status strong { color:var(--text); }
-    .hidden { display:none; }
   </style>
 </head>
 <body>
@@ -42,7 +41,7 @@
   </header>
   <main>
     <div id="viewer"></div>
-    <div id="status"><strong>Status:</strong> loading viewer...</div>
+    <div id="status"><strong>Status:</strong> loading viewer bundle...</div>
   </main>
 </div>
 <script>
@@ -55,164 +54,6 @@
     if (el) el.innerHTML = `<strong>Status:</strong> Error promise: ${event.reason?.message || event.reason || 'unknown'}`;
   });
 </script>
-<script type="module">
-  const bootStatus = document.getElementById('status');
-  if (bootStatus) bootStatus.innerHTML = '<strong>Status:</strong> memuat library 3D viewer...';
-
-  let THREE, OrbitControls, IFCLoader;
-  try {
-    THREE = await import('https://esm.sh/three@0.152.2?bundle');
-    ({ OrbitControls } = await import('https://esm.sh/three@0.152.2/examples/jsm/controls/OrbitControls.js?bundle'));
-    ({ IFCLoader } = await import('https://esm.sh/web-ifc-three@0.0.126/IFCLoader.js?bundle&deps=three@0.152.2,web-ifc@0.0.44'));
-  } catch (err) {
-    const el = document.getElementById('status');
-    if (el) el.innerHTML = `<strong>Status:</strong> gagal memuat library viewer dari CDN. ${err?.message || err}`;
-    throw err;
-  }
-
-  const params = new URLSearchParams(location.search);
-  const building = (params.get('building') || 'D').toUpperCase();
-  const disciplineParam = (params.get('discipline') || 'STR').toUpperCase();
-  const labels = { B: 'Gedung B', D: 'Gedung D', K: 'Gedung K' };
-  document.getElementById('buildingLabel').textContent = labels[building] || `Gedung ${building}`;
-
-  const modelMap = {
-    D: {
-      STR: '/models/Gedung D/IFC/STR/STR D.ifc'
-    }
-  };
-
-  const status = document.getElementById('status');
-  const container = document.getElementById('viewer');
-  const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x08111f);
-
-  const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000000);
-  camera.position.set(35, 28, 35);
-
-  const renderer = new THREE.WebGLRenderer({ antialias: true, logarithmicDepthBuffer: true });
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-  renderer.setSize(container.clientWidth, container.clientHeight);
-  renderer.localClippingEnabled = true;
-  container.appendChild(renderer.domElement);
-
-  const controls = new OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-  controls.dampingFactor = 0.08;
-
-  scene.add(new THREE.AmbientLight(0xffffff, 0.85));
-  const dir = new THREE.DirectionalLight(0xffffff, 1.4);
-  dir.position.set(50, 80, 30);
-  scene.add(dir);
-  const grid = new THREE.GridHelper(120, 60, 0x2b6cb0, 0x1e293b);
-  scene.add(grid);
-  const axes = new THREE.AxesHelper(12);
-  scene.add(axes);
-
-  const clippingPlane = new THREE.Plane(new THREE.Vector3(-1, 0, 0), 0);
-  let sectionOn = false;
-  const loaded = {};
-
-  const loader = new IFCLoader();
-  loader.ifcManager.setWasmPath('https://cdn.jsdelivr.net/npm/web-ifc@0.0.44/', true);
-
-  function setStatus(html) { status.innerHTML = `<strong>Status:</strong> ${html}`; }
-
-  function frameObject(object) {
-    const box = new THREE.Box3().setFromObject(object);
-    if (box.isEmpty()) return;
-    const size = box.getSize(new THREE.Vector3());
-    const center = box.getCenter(new THREE.Vector3());
-    controls.target.copy(center);
-    const maxDim = Math.max(size.x, size.y, size.z) || 20;
-    const dist = maxDim * 1.4;
-    camera.position.set(center.x + dist, center.y + dist * 0.7, center.z + dist);
-    camera.near = Math.max(maxDim / 1000, 0.1);
-    camera.far = maxDim * 1000;
-    camera.updateProjectionMatrix();
-    controls.update();
-  }
-
-  async function loadDiscipline(discipline) {
-    const url = modelMap[building]?.[discipline];
-    if (!url) {
-      setStatus(`${labels[building] || building} - ${discipline} belum ada file IFC di paket dashboard. Upload/export IFC dulu lalu publish ulang.`);
-      return;
-    }
-    if (loaded[discipline]) {
-      Object.values(loaded).forEach(m => m.visible = false);
-      loaded[discipline].visible = true;
-      frameObject(loaded[discipline]);
-      setStatus(`Menampilkan ${labels[building]} - ${discipline}.`);
-      return;
-    }
-    setStatus(`Memuat ${discipline}: ${url}`);
-    try {
-      const model = await loader.loadAsync(url);
-      model.name = `${building}-${discipline}`;
-      model.traverse(child => {
-        if (child.material) {
-          child.material.clippingPlanes = sectionOn ? [clippingPlane] : [];
-          child.material.clipShadows = true;
-        }
-      });
-      loaded[discipline] = model;
-      Object.values(loaded).forEach(m => m.visible = false);
-      model.visible = true;
-      scene.add(model);
-      frameObject(model);
-      setStatus(`Berhasil memuat ${labels[building]} - ${discipline}. Gunakan mouse untuk orbit/pan/zoom.`);
-    } catch (err) {
-      console.error(err);
-      setStatus(`Gagal memuat IFC ${discipline}. Detail: ${err?.message || err}`);
-    }
-  }
-
-  async function showAll() {
-    const entries = Object.keys(modelMap[building] || {});
-    if (!entries.length) { setStatus(`Belum ada IFC untuk ${labels[building] || building}.`); return; }
-    for (const d of entries) await loadDiscipline(d);
-    Object.values(loaded).forEach(m => m.visible = true);
-    const group = new THREE.Group();
-    Object.values(loaded).forEach(m => group.add(m.clone()));
-    frameObject(group);
-    setStatus(`Menampilkan semua IFC tersedia untuk ${labels[building] || building}: ${entries.join(', ')}.`);
-  }
-
-  document.querySelectorAll('[data-discipline]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('[data-discipline]').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      loadDiscipline(btn.dataset.discipline);
-    });
-  });
-  document.getElementById('showAll').addEventListener('click', showAll);
-  document.getElementById('sectionToggle').addEventListener('click', e => {
-    sectionOn = !sectionOn;
-    e.currentTarget.classList.toggle('active', sectionOn);
-    Object.values(loaded).forEach(model => model.traverse(child => {
-      if (child.material) child.material.clippingPlanes = sectionOn ? [clippingPlane] : [];
-    }));
-    setStatus(sectionOn ? 'Section cut aktif. Prototype ini memakai potongan vertikal sederhana.' : 'Section cut nonaktif.');
-  });
-  document.getElementById('resetView').addEventListener('click', () => {
-    const visible = Object.values(loaded).find(m => m.visible) || Object.values(loaded)[0];
-    if (visible) frameObject(visible);
-  });
-
-  addEventListener('resize', () => {
-    camera.aspect = container.clientWidth / container.clientHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(container.clientWidth, container.clientHeight);
-  });
-
-  function animate() {
-    requestAnimationFrame(animate);
-    controls.update();
-    renderer.render(scene, camera);
-  }
-  animate();
-  loadDiscipline(disciplineParam);
-</script>
+<script type="module" src="/assets/ifc-viewer-app.js"></script>
 </body>
 </html>

@@ -1,0 +1,29 @@
+{
+  "name": "pejaten-dashboard-web",
+  "version": "1.0.0",
+  "description": "Static site package untuk Vercel/GitHub.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beriman/dashboardpejaten.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/beriman/dashboardpejaten/issues"
+  },
+  "homepage": "https://github.com/beriman/dashboardpejaten#readme",
+  "devDependencies": {
+    "esbuild": "^0.28.0"
+  },
+  "dependencies": {
+    "three": "^0.152.2",
+    "web-ifc": "^0.0.44",
+    "web-ifc-three": "^0.0.126"
+  }
+}
