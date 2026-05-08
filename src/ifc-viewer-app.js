@@ -70,19 +70,27 @@ function applyClipping(object) {
 }
 
 function rebuildVisibleSubset(entry, ids = [...entry.visibleIds]) {
-  loader.ifcManager.removeSubset(entry.model.modelID, undefined, visibleSubsetId(entry.discipline));
+  try { loader.ifcManager.removeSubset(entry.model.modelID, undefined, visibleSubsetId(entry.discipline)); } catch { /* already removed */ }
   entry.visibleIds = new Set(ids);
-  const subset = loader.ifcManager.createSubset({
-    modelID: entry.model.modelID,
-    ids,
-    scene,
-    removePrevious: true,
-    customID: visibleSubsetId(entry.discipline)
-  });
-  subset.name = `${entry.discipline}-visible-subset`;
-  subset.visible = entry.model.visible;
-  applyClipping(subset);
-  return subset;
+  try {
+    const subset = loader.ifcManager.createSubset({
+      modelID: entry.model.modelID,
+      ids,
+      scene,
+      removePrevious: true,
+      customID: visibleSubsetId(entry.discipline)
+    });
+    if (!subset) throw new Error('createSubset returned null/undefined');
+    subset.name = `${entry.discipline}-visible-subset`;
+    subset.visible = entry.model.visible;
+    applyClipping(subset);
+    return subset;
+  } catch (e) {
+    console.warn('rebuildVisibleSubset failed, showing raw model as fallback:', e.message);
+    entry.model.visible = entry.model.visible !== false;
+    applyClipping(entry.model);
+    return entry.model;
+  }
 }
 
 function clearSelection() {
@@ -137,14 +145,22 @@ async function loadDiscipline(discipline) {
     model.name = `${building}-${discipline}`;
     applyClipping(model);
     scene.add(model);
-    const ids = uniqueExpressIds(model);
+    let ids = [];
+    try { ids = uniqueExpressIds(model); } catch (e) { console.warn('uniqueExpressIds failed:', e.message); }
     const entry = { discipline, model, allIds: ids, visibleIds: new Set(ids) };
     loaded[discipline] = entry;
     Object.values(loaded).forEach(e => { e.model.visible = false; const s = visibleMesh(e); if (s) s.visible = false; });
     model.visible = true;
-    const subset = rebuildVisibleSubset(entry, ids);
+    let subset;
+    try {
+      subset = rebuildVisibleSubset(entry, ids);
+    } catch (e) {
+      console.warn('rebuildVisibleSubset threw, using model as fallback:', e.message);
+      model.visible = true;
+      subset = model;
+    }
     model.visible = false;
-    subset.visible = true;
+    if (subset) subset.visible = true;
     frameObject(subset);
     setStatus(`Berhasil memuat ${labels[building]} - ${discipline}. Klik elemen untuk select, klik kanan untuk Hide/Isolate.`);
   } catch (err) {
