@@ -1,5 +1,6 @@
 {
-  "builtAt": "2026-05-08T18:28:39",
+  "builtAt": "2026-05-09T19:43:04",
+  "buildId": "20260509194304",
   "sourceDashboard": "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\Dashboard_Perkembangan_Proyek_Renovasi_Pejaten.html",
   "sourceDataFiles": [
     "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\shopdrawing_monitoring_data.js",
@@ -12,9 +13,9 @@
       "discipline": "STR",
       "source": "H:\\My Drive\\Work in Progress\\04 Model 3D\\Gedung D\\02 IFC\\STR\\STR D.ifc",
       "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\models\\Gedung D\\IFC\\STR\\STR D.ifc",
-      "bytes": 2617839
+      "bytes": 2213788
     }
   ],
   "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\index.html",
-  "bytes": 54357217
+  "bytes": 54360654
 }
