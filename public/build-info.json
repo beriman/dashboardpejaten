@@ -1,6 +1,6 @@
 {
-  "builtAt": "2026-05-11T10:16:02",
-  "buildId": "20260511101602",
+  "builtAt": "2026-05-11T11:04:46",
+  "buildId": "20260511110446",
   "sourceDashboard": "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\Dashboard_Perkembangan_Proyek_Renovasi_Pejaten.html",
   "sourceDataFiles": [
     "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\shopdrawing_monitoring_data.js",
@@ -25,5 +25,5 @@
     }
   ],
   "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\index.html",
-  "bytes": 68226855
+  "bytes": 68227204
 }
