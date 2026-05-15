@@ -1,6 +1,6 @@
-// Auto-generated from pile monitoring Excel files — 13 May 2026 06:01
+// Auto-generated from pile monitoring Excel files — 15 May 2026 13:28
 const pileMonitoringData = {
-  "lastUpdated": "13 May 2026 06:01",
+  "lastUpdated": "15 May 2026 13:28",
   "buildings": {
     "K": {
       "totalInstalled": 20,
