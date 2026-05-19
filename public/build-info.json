@@ -1,6 +1,6 @@
 {
-  "builtAt": "2026-05-19T10:30:24",
-  "buildId": "20260519103024",
+  "builtAt": "2026-05-19T10:32:10",
+  "buildId": "20260519103210",
   "sourceDashboard": "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\Dashboard_Perkembangan_Proyek_Renovasi_Pejaten.html",
   "sourceDataFiles": [
     "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\shopdrawing_monitoring_data.js",
@@ -46,7 +46,7 @@
     {
       "source": "C:\\Users\\bim\\.openclaw\\workspace\\ifc-viewer.html",
       "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\ifc-viewer.html",
-      "bytes": 4957
+      "bytes": 4997
     },
     {
       "source": "C:\\Users\\bim\\.openclaw\\workspace\\assets\\ifc-viewer-app.js",
