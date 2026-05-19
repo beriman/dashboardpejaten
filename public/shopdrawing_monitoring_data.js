@@ -1,11 +1,9 @@
-// shopdrawing_monitoring_data.js
-// Auto-generated from Monitoring_Shop_Drawing.xlsx (Admin Teknik).
-// Generated: 2026-05-18T17:33:46.454851+07:00
+// Auto-generated from monitoring scan + Gemma 4B — 19 May 2026 15:20
 window.SHOPDRAWING_MONITORING_DATA = {
   "schemaVersion": "3.0.0",
   "projectName": "Renovasi Pejaten",
   "moduleName": "Monitoring Shopdrawing",
-  "lastUpdated": "2026-05-18T17:33:46.454851+07:00",
+  "lastUpdated": "19 May 2026 15:20",
   "sourceWorkbook": "H:\\My Drive\\Work in Progress\\03 Shop Drawing\\Monitoring_Shop_Drawing.xlsx",
   "sourceNote": "Terhubung ke workbook Monitoring_Shop_Drawing.xlsx dari Admin Teknik. Sheet per gedung: Gedung B/D/K.",
   "statusLegend": {
@@ -33,7 +31,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
       "buildingCode": "B",
       "buildingName": "Gedung B",
       "summary": {
-        "total": 20,
+        "total": 6,
         "approved": 6,
         "approvedAsNoted": 0,
         "submitted": 0,
@@ -521,6 +519,74 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "sourceDedPath": "",
           "dedStatus": "",
           "remarks": ""
+        }
+      ],
+      "items": [
+        {
+          "drawing_number": null,
+          "title": null,
+          "discipline": null,
+          "revision": null,
+          "status": null,
+          "date_submitted": null,
+          "date_approved": null,
+          "_source": "TC.pdf",
+          "_scanned_at": "2026-05-19T13:14:16.044546"
+        },
+        {
+          "drawing_number": "8 9NNG39",
+          "title": "INVYI HIMOL IV13 a NASNGIGI 6",
+          "discipline": null,
+          "revision": "135",
+          "status": null,
+          "date_submitted": null,
+          "date_approved": null,
+          "_source": "002 - Shop Drawing - Detail Tower Crane - Ged B - 13052026.pdf",
+          "_scanned_at": "2026-05-19T13:31:24.147450"
+        },
+        {
+          "drawing_number": "SDSTRGOK000101",
+          "title": "DENAH TITIK PANCANG",
+          "discipline": "SIPIL",
+          "revision": null,
+          "status": null,
+          "date_submitted": null,
+          "date_approved": null,
+          "_source": "001 - Shop Drawing - Titik Pancang & Pile Cap - GED K - 06052026.pdf",
+          "_scanned_at": "2026-05-19T13:31:24.147450"
+        },
+        {
+          "drawing_number": "SD.STR.GDD-0003.01",
+          "title": "DENAH KOLOM LT.1",
+          "discipline": "STR",
+          "revision": "0003.01",
+          "status": "Approved",
+          "date_submitted": null,
+          "date_approved": null,
+          "_source": "002 - Shop Drawing - Denah Kolom - Ged D - 150526.pdf",
+          "_scanned_at": "2026-05-19T13:31:24.147450"
+        },
+        {
+          "drawing_number": "SD.STR.GDB-0002.01",
+          "title": "DENAH PILE CAP GEDUNG B",
+          "discipline": "STR",
+          "revision": null,
+          "status": null,
+          "date_submitted": null,
+          "date_approved": null,
+          "_source": "001 - Shop Drawing Pile Cap & Titik Pancang - 280426.pdf",
+          "_scanned_at": "2026-05-19T13:31:24.147450"
+        },
+        {
+          "drawing_number": "GDO-0001 9!",
+          "title": "RENOVASI DAN PERLUASAN GEDUNG D (DEPUTI-IX) KANTOR PUSAT",
+          "discipline": "INFRA",
+          "revision": null,
+          "status": null,
+          "date_submitted": "215120 W",
+          "date_approved": null,
+          "_source": "001 - Shop Drawing - Titik Pancang, Bore Pile, Pile Cap - 09052026.pdf",
+          "_scanned_at": "2026-05-19T13:35:27.486257"
         }
       ]
     },
