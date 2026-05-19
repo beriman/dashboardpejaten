@@ -16,6 +16,8 @@
     button { border:1px solid var(--line); background:#14243a; color:var(--text); border-radius:10px; padding:8px 10px; cursor:pointer; }
     button:hover { border-color:var(--blue); color:white; }
     button.active { background:#0284c7; border-color:#38bdf8; color:white; }
+    button:disabled { opacity:0.35; cursor:not-allowed; }
+    button:disabled:hover { border-color:var(--line); color:var(--text); }
     main { position:relative; min-height:0; }
     #viewer { position:absolute; inset:0; }
     #status { position:absolute; left:16px; bottom:16px; max-width:min(760px, calc(100vw - 32px)); background:rgba(8,17,31,.88); border:1px solid var(--line); border-radius:14px; padding:10px 12px; color:var(--muted); font-size:12px; line-height:1.45; }
@@ -30,14 +32,14 @@
   <header>
     <div>
       <h1>3D IFC Viewer - <span id="buildingLabel">Gedung</span></h1>
-      <div class="sub">Prototype viewer untuk rapat koordinasi. Source: IFC export dari Revit.</div>
+      <div class="sub">IFC export dari Revit. Pilih disiplin untuk melihat model per divisi.</div>
     </div>
-    <div class="toolbar">
+    <div class="toolbar" id="disciplineBar">
       <button data-discipline="ARS">ARS</button>
       <button data-discipline="STR" class="active">STR</button>
       <button data-discipline="INT">INT</button>
       <button data-discipline="MEP">MEP</button>
-      <button id="showAll">All</button>
+      <button data-discipline="Federated">Federated</button>
       <button id="sectionToggle">Section Cut</button>
       <button id="showHidden">Show All Hidden</button>
       <button id="resetView">Reset View</button>
@@ -53,6 +55,31 @@
   <button type="button" data-menu-action="isolate">Isolate Selected</button>
   <button type="button" data-menu-action="show-all">Show All Hidden</button>
 </div>
+<script>
+  // Load model manifest — maps building codes to available IFC files per discipline.
+  window.__IFC_MODEL_MAP__ = null;
+  window.__IFC_LOADING__ = true;
+  fetch('/models/ifc-model-manifest.json')
+    .then(r => r.json())
+    .then(manifest => {
+      window.__IFC_MODEL_MAP__ = manifest;
+      window.__IFC_LOADING__ = false;
+      // Enable/disable discipline buttons based on available files
+      const params = new URLSearchParams(location.search);
+      const building = (params.get('building') || 'D').toUpperCase();
+      const discButtons = document.querySelectorAll('#disciplineBar button[data-discipline]');
+      const modelMap = manifest[building] || {};
+      discButtons.forEach(btn => {
+        const disc = btn.dataset.discipline;
+        btn.disabled = !modelMap[disc];
+        if (!modelMap[disc]) btn.title = `Belum ada file IFC ${disc} untuk Gedung ${building}`;
+      });
+    })
+    .catch(err => {
+      console.warn('IFC model manifest not found, using defaults', err);
+      window.__IFC_LOADING__ = false;
+    });
+</script>
 <script>
   window.addEventListener('error', event => {
     const el = document.getElementById('status');

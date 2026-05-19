@@ -1,6 +1,6 @@
 {
-  "builtAt": "2026-05-19T07:30:50",
-  "buildId": "20260519073050",
+  "builtAt": "2026-05-19T09:34:17",
+  "buildId": "20260519093417",
   "sourceDashboard": "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\Dashboard_Perkembangan_Proyek_Renovasi_Pejaten.html",
   "sourceDataFiles": [
     "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\shopdrawing_monitoring_data.js",
@@ -37,6 +37,33 @@
       "bytes": 692
     }
   ],
+  "copiedViewerAssets": [
+    {
+      "source": "C:\\Users\\bim\\.openclaw\\workspace\\ifc-viewer.html",
+      "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\ifc-viewer.html",
+      "bytes": 4957
+    },
+    {
+      "source": "C:\\Users\\bim\\.openclaw\\workspace\\assets\\ifc-viewer-app.js",
+      "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\assets\\ifc-viewer-app.js",
+      "bytes": 6054166
+    }
+  ],
+  "ifcManifest": {
+    "path": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\models\\ifc-model-manifest.json",
+    "buildings": [
+      "D",
+      "K"
+    ],
+    "contents": {
+      "D": {
+        "STR": "/models/Gedung D/IFC/STR/STR D.ifc"
+      },
+      "K": {
+        "STR": "/models/Gedung K/IFC/STR/STR-K.ifc"
+      }
+    }
+  },
   "copiedIfcAssets": [
     {
       "building": "Gedung D",
@@ -44,8 +71,15 @@
       "source": "H:\\My Drive\\Work in Progress\\04 Model 3D\\Gedung D\\02 IFC\\STR\\STR D.ifc",
       "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\models\\Gedung D\\IFC\\STR\\STR D.ifc",
       "bytes": 2213788
+    },
+    {
+      "building": "Gedung K",
+      "discipline": "STR",
+      "source": "H:\\My Drive\\Work in Progress\\04 Model 3D\\Gedung K\\02 IFC\\STR\\STR-K.ifc",
+      "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\models\\Gedung K\\IFC\\STR\\STR-K.ifc",
+      "bytes": 4208728
     }
   ],
   "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\index.html",
-  "bytes": 67196943
+  "bytes": 644559
 }
