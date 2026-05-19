@@ -1,6 +1,6 @@
 {
-  "builtAt": "2026-05-19T10:16:20",
-  "buildId": "20260519101620",
+  "builtAt": "2026-05-19T10:30:24",
+  "buildId": "20260519103024",
   "sourceDashboard": "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\Dashboard_Perkembangan_Proyek_Renovasi_Pejaten.html",
   "sourceDataFiles": [
     "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\shopdrawing_monitoring_data.js",
@@ -57,10 +57,14 @@
   "ifcManifest": {
     "path": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\models\\ifc-model-manifest.json",
     "buildings": [
+      "B",
       "D",
       "K"
     ],
     "contents": {
+      "B": {
+        "STR": "/models/Gedung B/IFC/STR/STR-B.ifc"
+      },
       "D": {
         "STR": "/models/Gedung D/IFC/STR/STR D.ifc"
       },
@@ -70,6 +74,13 @@
     }
   },
   "copiedIfcAssets": [
+    {
+      "building": "Gedung B",
+      "discipline": "STR",
+      "source": "H:\\My Drive\\Work in Progress\\04 Model 3D\\Gedung B\\02 IFC\\STR\\STR-B.ifc",
+      "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\models\\Gedung B\\IFC\\STR\\STR-B.ifc",
+      "bytes": 6861253
+    },
     {
       "building": "Gedung D",
       "discipline": "STR",
