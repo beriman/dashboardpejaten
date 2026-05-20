@@ -1,9 +1,9 @@
-// Auto-generated from monitoring scan + Gemma 4B — 19 May 2026 15:33
+// Auto-generated from monitoring scan + Gemma 4B — 20 May 2026 10:55
 window.SHOPDRAWING_MONITORING_DATA = {
   "schemaVersion": "3.0.0",
   "projectName": "Renovasi Pejaten",
   "moduleName": "Monitoring Shopdrawing",
-  "lastUpdated": "19 May 2026 15:33",
+  "lastUpdated": "20 May 2026 10:55",
   "sourceWorkbook": "H:\\My Drive\\Work in Progress\\03 Shop Drawing\\Monitoring_Shop_Drawing.xlsx",
   "sourceNote": "Terhubung ke workbook Monitoring_Shop_Drawing.xlsx dari Admin Teknik. Sheet per gedung: Gedung B/D/K.",
   "statusLegend": {
@@ -31,7 +31,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
       "buildingCode": "B",
       "buildingName": "Gedung B",
       "summary": {
-        "total": 7,
+        "total": 18,
         "approved": 6,
         "approvedAsNoted": 0,
         "submitted": 0,
@@ -598,6 +598,157 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "date_approved": "215/2010",
           "_source": "001 - Shop Drawing - Titik Pancang, Bore Pile, Pile Cap - 09052026.pdf",
           "_scanned_at": "2026-05-19T15:10:26.339383"
+        },
+        {
+          "drawing_number": "J sDSTR.GDK0003.01",
+          "title": "DENAH KOLOM GEDUNG K",
+          "discipline": "STR",
+          "revision": "STRO4",
+          "status": null,
+          "date_submitted": null,
+          "date_approved": null,
+          "_source": "002 - Shop Drawing - Denah Kolom - Ged K - Disetujui.pdf",
+          "_scanned_at": "2026-05-20T10:46:26.956644"
+        },
+        {
+          "drawing_number": "SD.STR.GDK-0-001-01",
+          "title": "DENAH DINDING GEDUNG SERVER GEDUNG K",
+          "discipline": "STR",
+          "revision": null,
+          "status": null,
+          "date_submitted": null,
+          "date_approved": null,
+          "_source": "007 - Shop Drawing - Denah Dinding Gedung Server - Ged K - 190526 - Disetujui.pdf",
+          "_scanned_at": "2026-05-20T10:46:26.956644"
+        },
+        {
+          "drawing_number": "1",
+          "title": "SHOP DRAWING / DETAIL TOWER CRANE GEDUNG K",
+          "discipline": "SIPIL",
+          "revision": null,
+          "status": null,
+          "date_submitted": null,
+          "date_approved": null,
+          "_source": "008 - Detail & Layout Tower Crane - Ged K - 190526 - Disetujui.pdf",
+          "_scanned_at": "2026-05-20T10:46:26.956644"
+        },
+        {
+          "drawing_number": "SD.STR.GDK-0003.01",
+          "title": "DENAH TIE BEAM",
+          "discipline": "STR",
+          "revision": null,
+          "status": null,
+          "date_submitted": null,
+          "date_approved": null,
+          "_source": "005 - Shop Drawing - Denah Tie Beam - Ged K - 190526 - Disetujui.pdf",
+          "_scanned_at": "2026-05-20T10:46:26.956644"
+        },
+        {
+          "drawing_number": [
+            "D19 - 150",
+            "D10-150",
+            "12D 19"
+          ],
+          "title": "RENOVASI DAN PERLUASAN GEDUNG D (DEPUTI-IX) KANTOR PUSAT",
+          "discipline": [
+            "SIPIL"
+          ],
+          "revision": null,
+          "status": null,
+          "date_submitted": null,
+          "date_approved": null,
+          "_source": "004 - Shop Drawing - Detail Tower Crane - Ged D - 190526 - Disetujui.pdf",
+          "_scanned_at": "2026-05-20T10:46:26.956644"
+        },
+        {
+          "drawing_number": [
+            ":/704704.121",
+            ":/9306783.732",
+            "BM 1 |E: 704737.794",
+            "9306767.882"
+          ],
+          "title": [
+            "TOILET STAFF",
+            "TOILET PEKERJA",
+            "GUDANG J",
+            "PABRIKASI BEKISTING ? STOCK",
+            "PABRIKASI BESI # STOCK",
+            "PAGAR PROYEK",
+            "POS JAGA",
+            "BANGUNAN EKSISTING 1",
+            "WASHING BAY"
+          ],
+          "discipline": [
+            "SIPIL",
+            "INFRA"
+          ],
+          "revision": null,
+          "status": null,
+          "date_submitted": null,
+          "date_approved": null,
+          "_source": "003 - Shop Drawing - Site Management - Ged D - 190526 - Disetujui.pdf",
+          "_scanned_at": "2026-05-20T10:46:26.956644"
+        },
+        {
+          "drawing_number": "SD.STR.GDB-0003.01",
+          "title": "DENAH BALOK LANTAI 1 SFL -0.05 GEDUNG B",
+          "discipline": "STR",
+          "revision": null,
+          "status": null,
+          "date_submitted": null,
+          "date_approved": null,
+          "_source": "006 - Shop Drawing - Denah Balok Lt 1 SFL -0.05 & Denah Skedul Balok Lt 1 - Ged B - 190526 - Disetujui.pdf",
+          "_scanned_at": "2026-05-20T10:46:26.956644"
+        },
+        {
+          "drawing_number": "SD.STR.GDB-0004.01",
+          "title": "RENOVASI DAN PERLUASAN GEDUNG B (DEPUTI- |) KANTOR PUSAT",
+          "discipline": "STR",
+          "revision": null,
+          "status": "Reviewed with Comment",
+          "date_submitted": null,
+          "date_approved": null,
+          "_source": "004 - Shop Drawing - Denah Kolom Lt 1, Lt 2, Dak Atap, Skedul Kolom Type K1' K2' - Ged B - 190526 - Disetujui.pdf",
+          "_scanned_at": "2026-05-20T10:46:26.956644"
+        },
+        {
+          "drawing_number": "0006",
+          "title": "RENOVASI DAN PERLUASAN GEDUNG B (DEPUTI- I) KANTOR PUSAT",
+          "discipline": null,
+          "revision": null,
+          "status": null,
+          "date_submitted": null,
+          "date_approved": null,
+          "_source": "003 - Shop Drawing - Site Management - Ged B - 190526 - Disetujui.pdf",
+          "_scanned_at": "2026-05-20T10:46:26.956644"
+        },
+        {
+          "drawing_number": "SD.STR.GDB-0004.05",
+          "title": "DENAH KOLOM LT.ATAP KE LT.DAK TANGGA",
+          "discipline": "STR",
+          "revision": "0004.05",
+          "status": null,
+          "date_submitted": null,
+          "date_approved": null,
+          "_source": "005 - Shop Drawing - Denah Kolom Lt Atap ke Lt Dak Tangga - Ged B - 190526 - Disetujui.pdf",
+          "_scanned_at": "2026-05-20T10:46:26.956644"
+        },
+        {
+          "drawing_number": [
+            "D19 - 150",
+            "D10-150",
+            "12D 19",
+            "G POTONGAN A",
+            "G POTONGAN B"
+          ],
+          "title": "DENAH PONDASI TOWER CRANE GEDUNG D",
+          "discipline": "SIPIL",
+          "revision": null,
+          "status": null,
+          "date_submitted": null,
+          "date_approved": null,
+          "_source": "004 - Shop Drawing - Detail Tower Crane - Ged D - 190526 - Disetujui.pdf",
+          "_scanned_at": "2026-05-20T10:48:58.895669"
         }
       ]
     },
