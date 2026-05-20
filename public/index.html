@@ -10592,13 +10592,7 @@ const pileMonitoringData = {
       applyTheme(next);
 
     document.getElementById('header-chat-btn')?.addEventListener('click', () => {
-      if (localStorage.getItem('dashboard_chat_pin_ok') === '1') {
-        const WEBCHAT_URL = window.DASHBOARD_WEBCHAT_URL || '';
-        if (WEBCHAT_URL) window.open(WEBCHAT_URL, 'jakon-assistant', 'width=480,height=720');
-      } else {
-        document.getElementById('chatPinModal')?.classList.add('open');
-        setTimeout(() => document.getElementById('chatPinInput')?.focus(), 150);
-      }
+      window.open('https://t.me/Pejaten_bot', '_blank');
     });
 
     });
