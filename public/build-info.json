@@ -1,6 +1,6 @@
 {
-  "builtAt": "2026-05-20T13:25:30",
-  "buildId": "20260520132530",
+  "builtAt": "2026-05-20T19:25:57",
+  "buildId": "20260520192557",
   "sourceDashboard": "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\Dashboard_Perkembangan_Proyek_Renovasi_Pejaten.html",
   "sourceDataFiles": [
     "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\shopdrawing_monitoring_data.js",
@@ -39,7 +39,7 @@
     {
       "source": "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\pile_monitoring_data.js",
       "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\pile_monitoring_data.js",
-      "bytes": 692
+      "bytes": 878
     }
   ],
   "copiedViewerAssets": [
@@ -69,6 +69,7 @@
         "STR": "/models/Gedung D/IFC/STR/STR D.ifc"
       },
       "K": {
+        "ARS": "/models/Gedung K/IFC/ARS/ARS-K.ifc",
         "STR": "/models/Gedung K/IFC/STR/STR-K.ifc"
       }
     }
@@ -90,12 +91,19 @@
     },
     {
       "building": "Gedung K",
+      "discipline": "ARS",
+      "source": "H:\\My Drive\\Work in Progress\\04 Model 3D\\Gedung K\\02 IFC\\ARS\\ARS-K.ifc",
+      "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\models\\Gedung K\\IFC\\ARS\\ARS-K.ifc",
+      "bytes": 3842268
+    },
+    {
+      "building": "Gedung K",
       "discipline": "STR",
       "source": "H:\\My Drive\\Work in Progress\\04 Model 3D\\Gedung K\\02 IFC\\STR\\STR-K.ifc",
       "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\models\\Gedung K\\IFC\\STR\\STR-K.ifc",
-      "bytes": 4208728
+      "bytes": 4595342
     }
   ],
   "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\index.html",
-  "bytes": 661793
+  "bytes": 661979
 }

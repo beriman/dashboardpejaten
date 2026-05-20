@@ -6,6 +6,7 @@
     "STR": "/models/Gedung D/IFC/STR/STR D.ifc"
   },
   "K": {
+    "ARS": "/models/Gedung K/IFC/ARS/ARS-K.ifc",
     "STR": "/models/Gedung K/IFC/STR/STR-K.ifc"
   }
 }
