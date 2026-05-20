@@ -1,9 +1,9 @@
-// Auto-generated from monitoring scan + Gemma 4B — 19 May 2026 15:20
+// Auto-generated from monitoring scan + Gemma 4B — 19 May 2026 15:33
 window.SHOPDRAWING_MONITORING_DATA = {
   "schemaVersion": "3.0.0",
   "projectName": "Renovasi Pejaten",
   "moduleName": "Monitoring Shopdrawing",
-  "lastUpdated": "19 May 2026 15:20",
+  "lastUpdated": "19 May 2026 15:33",
   "sourceWorkbook": "H:\\My Drive\\Work in Progress\\03 Shop Drawing\\Monitoring_Shop_Drawing.xlsx",
   "sourceNote": "Terhubung ke workbook Monitoring_Shop_Drawing.xlsx dari Admin Teknik. Sheet per gedung: Gedung B/D/K.",
   "statusLegend": {
@@ -31,7 +31,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
       "buildingCode": "B",
       "buildingName": "Gedung B",
       "summary": {
-        "total": 6,
+        "total": 7,
         "approved": 6,
         "approvedAsNoted": 0,
         "submitted": 0,
@@ -587,6 +587,17 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "date_approved": null,
           "_source": "001 - Shop Drawing - Titik Pancang, Bore Pile, Pile Cap - 09052026.pdf",
           "_scanned_at": "2026-05-19T13:35:27.486257"
+        },
+        {
+          "drawing_number": "GDO-0001",
+          "title": "RENOVASI DAN PERLUASAN GEDUNG D (DEPUTI-IX) KANTOR PUSAT",
+          "discipline": "INFRA",
+          "revision": "2/5 12019",
+          "status": null,
+          "date_submitted": "215120 W",
+          "date_approved": "215/2010",
+          "_source": "001 - Shop Drawing - Titik Pancang, Bore Pile, Pile Cap - 09052026.pdf",
+          "_scanned_at": "2026-05-19T15:10:26.339383"
         }
       ]
     },
