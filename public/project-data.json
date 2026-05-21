@@ -1,0 +1,65 @@
+{
+  "lastUpdate": "21 Mei 2026, 10:12 WIB",
+  "projectProgress": {
+    "current": "35.2780%",
+    "period": "MC-4",
+    "date": "14 Februari 2026",
+    "deviation": "-1.4420%",
+    "status": "BEHIND SCHEDULE"
+  },
+  "shopDrawing": {
+    "str": {
+      "plan": 140,
+      "submit": 142,
+      "appv": 141,
+      "percent": "100.71%"
+    },
+    "ars": {
+      "plan": 145,
+      "submit": 79,
+      "appv": 79,
+      "percent": "54.48%"
+    },
+    "mep": {
+      "plan": 175,
+      "submit": 111,
+      "appv": 53,
+      "percent": "30.29%"
+    },
+    "total": "61.83%",
+    "rfi": 52,
+    "si": 15
+  },
+  "approvalMaterial": {
+    "str": "Approved 13/15 Items",
+    "ars": "Approved 25/47 Items",
+    "mep": "Approved 114/162 Items"
+  },
+  "localFiles": [
+    "PMK2025-SD-ARS-LT5-02-001.pdf",
+    "PMK2025-SD-MEP-LT3-02-001B.pdf",
+    "Laporan_BIM_PMK.html",
+    "Combine Struktur UNJ ALL.ifc"
+  ],
+  "clashDetection": {
+    "status": "Ongoing",
+    "lastCheck": "5 Maret 2026",
+    "focus": "Ground Floor MEP Coordination"
+  },
+  "outlineSpecs": {
+    "gedungB": {
+      "status": "Draft v3",
+      "lastUpdated": "21 Mei 2026",
+      "sourceFile": "Spesifikasi_Material_Arsitektur_v3.xlsx",
+      "sheets": [
+        "Facade Exterior",
+        "Interior Spesifikasi"
+      ],
+      "totalItems": {
+        "facadeExterior": 5,
+        "interior": 42
+      },
+      "drivePath": "H:\\\\My Drive\\\\Work in Progress\\\\01 Informasi Proyek\\\\Outline Specification\\\\Gedung B"
+    }
+  }
+}

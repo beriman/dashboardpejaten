@@ -1,13 +1,14 @@
 // approval_material_monitoring_data.js
 // Generated from Monitoring Approval Material Gedung B, D, K.xlsx — 2026-05-15T19:36:35+07:00
+// Updated 2026-05-21T10:12+07:00 — Added Spesifikasi Material Arsitektur v3 for Gedung B
 window.APPROVAL_MATERIAL_MONITORING_DATA = {
   "schemaVersion": "1.1.0",
   "projectName": "Renovasi Pejaten",
   "moduleName": "Monitoring Approval Material",
-  "lastUpdated": "2026-05-15T19:36:35+07:00",
+  "lastUpdated": "2026-05-21T10:12:00+07:00",
   "sourceWorkbook": "H:\\My Drive\\Work in Progress\\07 Quality Control\\Approval Material\\Monitoring Approval Material Gedung B|D|K.xlsx",
   "sourceFolder": "H:\\My Drive\\Work in Progress\\02 DED (gambar dari Perencana)\\Gedung B|D|K",
-  "sourceNote": "Data disusun dari Outline Spesifikasi Gedung B, D, K lintas disiplin. Total 330 item. Update: 2026-05-15T19:36:35+07:00",
+  "sourceNote": "Data disusun dari Outline Spesifikasi Gedung B (v3 Arsitektur per 21 Mei 2026), D, K lintas disiplin. Total 330 item. Update: 2026-05-21T10:12:00+07:00",
   "statusLegend": {
     "notStarted": "Belum diajukan",
     "draft": "Draft",
@@ -23,6 +24,13 @@ window.APPROVAL_MATERIAL_MONITORING_DATA = {
     {
       "buildingCode": "B",
       "buildingName": "Gedung B",
+      "outlineSpec": {
+        "version": "v3",
+        "lastUpdated": "21 Mei 2026",
+        "sourceFile": "Spesifikasi_Material_Arsitektur_v3.xlsx",
+        "sheets": ["Facade Exterior", "Interior Spesifikasi"],
+        "drivePath": "H:\\My Drive\\Work in Progress\\01 Informasi Proyek\\Outline Specification\\Gedung B"
+      },
       "summary": {
         "total": 84,
         "notStartedOrDraft": 84,
