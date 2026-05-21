@@ -7,6 +7,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
   "sourceFile": "Monitoring_SD_Pejaten.xlsx",
   "lastUpdated": "2026-05-21T18:53:00+07:00",
   "sourceNote": "Data dari daftar gambar DED + Schedule PLANMON. Target = 5 hari kerja sebelum pelaksanaan. Realisasi dari Admin Monitoring Shop Drawing.",
+  "driveUrl": "https://docs.google.com/spreadsheets/d/1ZDZ8yzScEZrrUKhvrCD8JcJUh8zgLptk/edit?usp=drive_link",
   "buildings": [
     {
       "buildingCode": "B",

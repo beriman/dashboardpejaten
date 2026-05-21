@@ -7,6 +7,11 @@ window.APPROVAL_MATERIAL_MONITORING_DATA = {
   "moduleName": "Monitoring Approval Material",
   "lastUpdated": "2026-05-21T10:12:00+07:00",
   "sourceWorkbook": "H:\\My Drive\\Work in Progress\\07 Quality Control\\Approval Material\\Monitoring Approval Material Gedung B|D|K.xlsx",
+  "driveUrl": {
+    "B": "https://docs.google.com/spreadsheets/d/18SaJBZKkXdYI3OkQvm-qqFv5K6bDNMXm/edit?usp=drive_link",
+    "D": "https://docs.google.com/spreadsheets/d/1VBz0DBLqgyEZmvV_JtJB5eLyXyrL5bI4/edit?usp=drive_link",
+    "K": "https://docs.google.com/spreadsheets/d/1tj52ffKF56z8Z6nzDkoIzTCxJ-VzoE5Z/edit?usp=drive_link"
+  },
   "sourceFolder": "H:\\My Drive\\Work in Progress\\02 DED (gambar dari Perencana)\\Gedung B|D|K",
   "sourceNote": "Data disusun dari Outline Spesifikasi Gedung B (v3 Arsitektur per 21 Mei 2026), D, K lintas disiplin. Total 330 item. Update: 2026-05-21T10:12:00+07:00",
   "statusLegend": {

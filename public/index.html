@@ -957,9 +957,9 @@
                 </a>
               </div>
               <div class="detail-actions">
-                <a class="detail-link" href="${fileUrl(shopData.sourceWorkbook || shopData.sourceFile || '')}" target="_blank" rel="noopener" title="Buka workbook monitoring shopdrawing">Shopdrawing</a><a class="detail-link" href="#approval-material-${code}">Approval Material</a><a class="detail-link" href="#rfi-${code}">Issue/RFI</a>
+                <a class="detail-link" href="${shopData.driveUrl || '#'}" target="_blank" rel="noopener" title="Buka monitoring shopdrawing di Google Sheets">Shopdrawing</a><a class="detail-link" href="${approvalMaterialData.driveUrl?.[code] || '#'}" target="_blank" rel="noopener" title="Buka monitoring approval material di Google Sheets">Approval Material</a><a class="detail-link" href="${rfiData.driveUrl || '#'}" target="_blank" rel="noopener" title="Buka monitoring RFI di Google Sheets">Issue/RFI</a>
                 <button class="detail-link action" type="button" data-open-bim="${code}">3D Revit</button>
-                <span class="detail-link">Video 4D</span>
+                <button class="detail-link action" type="button" onclick="alert('Fitur Video 4D belum tersedia.')">Video 4D</button>
               </div>
             </div>
           </div>

@@ -6,6 +6,7 @@ window.RFI_MONITORING_DATA = {
   "lastUpdated": "19 May 2026 15:23",
   "sourceWorkbook": "H:\\My Drive\\Work in Progress\\10 Surat Menyurat dan Dokumen Resmi\\RFI\\Monitoring RFI Renovasi Pejaten.xlsx",
   "sourceNote": "Template awal Monitoring RFI. Data aktual diisi manual atau dari register RFI resmi proyek.",
+  "driveUrl": "https://docs.google.com/spreadsheets/d/1DKH2fU1K-dyw8-56GzIGj0_TA7SPXoe5/edit?usp=drive_link",
   "statusLegend": {
     "Draft": "Belum disubmit",
     "Submitted": "Sudah disubmit, menunggu penerimaan/review",
