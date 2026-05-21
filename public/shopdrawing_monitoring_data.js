@@ -2899,7 +2899,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "nomor": "SD.STR.GDD-0002.03",
           "discipline": "",
           "target_pengumpulan": "2026-05-18",
-          "realisasi_mk": "2026-05-09",
+          "realisasi_mk": "2026-05-18",
           "approved_mk": null,
           "status": "realisasi_mk",
           "is_child": true
@@ -4857,8 +4857,8 @@ window.SHOPDRAWING_MONITORING_DATA = {
       "buildingCode": "K",
       "buildingName": "Gedung K",
       "summary": {
-        "total": 102,
-        "target_terisi": 102,
+        "total": 100,
+        "target_terisi": 100,
         "realisasi_ke_mk": 13,
         "approved_mk": 5,
         "by_discipline": {}
@@ -5075,6 +5075,17 @@ window.SHOPDRAWING_MONITORING_DATA = {
         },
         {
           "no": "",
+          "judul": "TABEL PENULANGAN BALOK GEDUNG K",
+          "nomor": "SD.STR.GDK-0006.01",
+          "discipline": "",
+          "target_pengumpulan": "2026-05-25",
+          "realisasi_mk": "2026-05-15",
+          "approved_mk": null,
+          "status": "realisasi_mk",
+          "is_child": true
+        },
+        {
+          "no": "",
           "judul": "DENAH TIE BEAM GEDUNG K",
           "nomor": "SD.STR.GDK-0003.01",
           "discipline": "",
@@ -5094,17 +5105,6 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "approved_mk": null,
           "status": "realisasi_mk",
           "is_child": true
-        },
-        {
-          "no": "19",
-          "judul": "DETAIL KOLOM",
-          "nomor": "K-STR-14",
-          "discipline": "",
-          "target_pengumpulan": "2026-05-25",
-          "realisasi_mk": "2026-05-15",
-          "approved_mk": null,
-          "status": "realisasi_mk",
-          "is_child": false
         },
         {
           "no": "21",
@@ -5679,17 +5679,6 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "is_child": false
         },
         {
-          "no": "70",
-          "judul": "DENAH RENCANA KUSEN LT. 3",
-          "nomor": "AR.08-3",
-          "discipline": "",
-          "target_pengumpulan": "2026-08-07",
-          "realisasi_mk": null,
-          "approved_mk": null,
-          "status": "target_terisi",
-          "is_child": false
-        },
-        {
           "no": "72",
           "judul": "DENAH RENCANA KUSEN LT. 5",
           "nomor": "AR.08-5",
@@ -5726,17 +5715,6 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "no": "75",
           "judul": "DETAIL KUSEN #2",
           "nomor": "AR.08-8",
-          "discipline": "",
-          "target_pengumpulan": "2026-08-07",
-          "realisasi_mk": null,
-          "approved_mk": null,
-          "status": "target_terisi",
-          "is_child": false
-        },
-        {
-          "no": "76",
-          "judul": "DETAIL KUSEN #3",
-          "nomor": "AR.08-9",
           "discipline": "",
           "target_pengumpulan": "2026-08-07",
           "realisasi_mk": null,
