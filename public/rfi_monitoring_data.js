@@ -1,9 +1,9 @@
-// Auto-generated from monitoring scan + Gemma 4B — 19 May 2026 15:23
+// Auto-generated from monitoring scan + Gemma 4B — 23 May 2026 10:15
 window.RFI_MONITORING_DATA = {
   "schemaVersion": "1.0.0",
   "projectName": "Renovasi Pejaten",
   "moduleName": "Monitoring RFI",
-  "lastUpdated": "19 May 2026 15:23",
+  "lastUpdated": "23 May 2026 10:15",
   "sourceWorkbook": "H:\\My Drive\\Work in Progress\\10 Surat Menyurat dan Dokumen Resmi\\RFI\\Monitoring RFI Renovasi Pejaten.xlsx",
   "sourceNote": "Template awal Monitoring RFI. Data aktual diisi manual atau dari register RFI resmi proyek.",
   "statusLegend": {
