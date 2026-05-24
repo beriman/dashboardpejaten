@@ -1,9 +1,9 @@
-// Auto-generated from monitoring scan + Gemma 4B — 24 May 2026 12:32
+// Auto-generated from monitoring scan + Gemma 4B — 24 May 2026 13:47
 window.SHOPDRAWING_MONITORING_DATA = {
   "schemaVersion": "2.0.0",
   "projectName": "Renovasi Pejaten",
   "moduleName": "Monitoring Shopdrawing",
-  "lastUpdated": "24 May 2026 12:32",
+  "lastUpdated": "24 May 2026 13:47",
   "sourceWorkbook": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
   "sourceNote": "Terhubung ke workbook MONITOR GAMBAR DED DAN SD PEJATEN.xlsx di folder 03 Shop Drawing. Nama dokumen menjadi identitas utama; tanggal pengajuan/approval menjadi metadata pendukung.",
   "statusLegend": {

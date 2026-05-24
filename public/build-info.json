@@ -1,6 +1,6 @@
 {
-  "builtAt": "2026-05-24T12:32:48",
-  "buildId": "20260524123248",
+  "builtAt": "2026-05-25T00:01:08",
+  "buildId": "20260525000108",
   "sourceDashboard": "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\Dashboard_Perkembangan_Proyek_Renovasi_Pejaten.html",
   "sourceDataFiles": [
     "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\shopdrawing_monitoring_data.js",
@@ -39,7 +39,7 @@
     {
       "source": "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\pile_monitoring_data.js",
       "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\pile_monitoring_data.js",
-      "bytes": 3327
+      "bytes": 1886
     }
   ],
   "copiedViewerAssets": [
@@ -105,5 +105,5 @@
     }
   ],
   "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\index.html",
-  "bytes": 626160
+  "bytes": 624759
 }
