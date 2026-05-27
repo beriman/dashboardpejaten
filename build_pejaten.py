@@ -238,10 +238,10 @@ def build_photo_objects(photo_dir: Path, building_code: str, taken_date: str):
 
 
 def photo_json_array(photos: list) -> str:
-    """Render a JS array of photo objects, indented nicely for inlining."""
+    """Render a JS `photos: [...]` array, indented nicely for inlining."""
     if not photos:
-        return "[]"
-    lines = ["["]
+        return "photos: []"
+    lines = ["photos: ["]
     for i, p in enumerate(photos):
         comma = "," if i < len(photos) - 1 else ""
         lines.append(
