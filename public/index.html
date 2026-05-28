@@ -471,9 +471,9 @@
   body.day-mode .meeting-title { color: #0f172a; }
 </style>
 <meta name="webchat-url" content="http://127.0.0.1:18999/chat">
-  <!-- Built from Google Drive on 28 May 2026 12:09 WIB -->
+  <!-- Built from Google Drive on 28 May 2026 15:46 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
-<meta name="dashboard-build-id" content="20260528120938">
+<meta name="dashboard-build-id" content="20260528154607">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
 </head>
 <body class="is-loading">
@@ -16242,7 +16242,8 @@ const pileMonitoringData = {
         buildings: [
           {
             name: "Gedung B",
-            date: "27 Mei 2026",
+            date:
+            contractValue: 26851505405.41, "27 Mei 2026",
             dailyPlan: 0.0,
             dailyReal: 0.0,
             cumPlan: 2.78,
@@ -16257,7 +16258,8 @@ const pileMonitoringData = {
           },
           {
             name: "Gedung D",
-            date: "27 Mei 2026",
+            date:
+            contractValue: 31590007207.21, "27 Mei 2026",
             dailyPlan: 0.04,
             dailyReal: 0.04,
             cumPlan: 5.47,
@@ -16272,7 +16274,8 @@ const pileMonitoringData = {
           },
           {
             name: "Gedung K",
-            date: "27 Mei 2026",
+            date:
+            contractValue: 51151511711.71, "27 Mei 2026",
             dailyPlan: 0.01,
             dailyReal: 0.01,
             cumPlan: 3.99,
@@ -16310,7 +16313,8 @@ const pileMonitoringData = {
         buildings: [
           {
             name: "Gedung B",
-            date: "M9 (25 MEI 2026)",
+            date:
+            contractValue: 26851505405.41, "M9 (25 MEI 2026)",
             dailyPlan: 0.09,
             dailyReal: 0.09,
             cumPlan: 2.69,
@@ -16342,7 +16346,8 @@ const pileMonitoringData = {
           },
           {
             name: "Gedung D",
-            date: "M9 (25 MEI 2026)",
+            date:
+            contractValue: 31590007207.21, "M9 (25 MEI 2026)",
             dailyPlan: 0.06,
             dailyReal: 0.04,
             cumPlan: 5.35,
@@ -16382,7 +16387,8 @@ const pileMonitoringData = {
           },
           {
             name: "Gedung K",
-            date: "M9 (25 MEI 2026)",
+            date:
+            contractValue: 51151511711.71, "M9 (25 MEI 2026)",
             dailyPlan: 0.04,
             dailyReal: 0.07,
             cumPlan: 3.94,
@@ -16433,7 +16439,8 @@ const pileMonitoringData = {
         buildings: [
           {
             name: "Gedung B",
-            date: "BULAN 2 s.d. M6",
+            date:
+            contractValue: 26851505405.41, "BULAN 2 s.d. M6",
             dailyPlan: 0.3775,
             dailyReal: 0.4338,
             cumPlan: 1.4821868696034453,
@@ -16447,7 +16454,8 @@ const pileMonitoringData = {
           },
           {
             name: "Gedung D",
-            date: "BULAN 2 s.d. M6",
+            date:
+            contractValue: 31590007207.21, "BULAN 2 s.d. M6",
             dailyPlan: 2.2872,
             dailyReal: 2.4915,
             cumPlan: 2.2872304294706245,
@@ -16461,7 +16469,8 @@ const pileMonitoringData = {
           },
           {
             name: "Gedung K",
-            date: "BULAN 2 s.d. M6",
+            date:
+            contractValue: 51151511711.71, "BULAN 2 s.d. M6",
             dailyPlan: 2.7333,
             dailyReal: 2.8735,
             cumPlan: 2.7333221249052086,
@@ -16496,7 +16505,11 @@ const pileMonitoringData = {
 
     const available = data.buildings.filter(b => b.cumReal !== null);
     const avg = arr => arr.reduce((a,b) => a+b,0) / arr.length;
-    const avgProgress = available.length ? avg(available.map(b => b.cumReal)) : 0;
+    // Weighted average: sum(realization) / sum(contract) for accurate combined progress
+    const avgProgress = available.length
+      ? available.reduce((sum, b) => sum + (b.cumReal * (b.contractValue || 1)), 0) /
+        available.reduce((sum, b) => sum + (b.contractValue || 1), 0)
+      : 0;
     const leadProgress = available.length ? available.reduce((a,b)=> b.cumReal > a.cumReal ? b : a) : null;
     const leadDeviation = available.length ? available.reduce((a,b)=> b.deviation > a.deviation ? b : a) : null;
 
@@ -17058,9 +17071,9 @@ const pileMonitoringData = {
           <div class="label">Ringkasan Progres Per Gedung</div>
           <div class="summary-grid" style="margin-bottom:16px;">
             <div class="mini">
-              <div class="label">Rata-rata progres gedung terbaca</div>
+              <div class="label">Rata-rata progres gedung tertimbang</div>
               <div class="n">${avgProgress.toFixed(2)}%</div>
-              <div class="sub">rata-rata kumulatif realisasi Gedung B, D, dan K</div>
+              <div class="sub">rata-rata tertimbang realisasi Gedung B, D, dan K (berdasarkan nilai kontrak)</div>
             </div>
             <div class="mini">
               <div class="label">Progress tertinggi</div>
@@ -17077,8 +17090,8 @@ const pileMonitoringData = {
 
         <section class="card full">
           <div class="label">Kurva S Gabungan</div>
-          ${makeChartSVG(combinedLabels, combinedPlan, combinedReal, 'Kurva S Gabungan Gedung B + D + K', 'Gabungan sementara menggunakan rata-rata progres kumulatif dari gedung yang datanya sudah tersedia')}
-          <div class="note">Status gabungan saat ini: ${scheduleText(combinedDeviation)}${combinedDeviation === null ? '' : ` dengan deviasi ${combinedDeviation > 0 ? '+' : ''}${combinedDeviation.toFixed(2)}% terhadap kurva S rencana`}. Catatan: kurva gabungan ini masih bersifat indikatif karena bobot masing-masing gedung belum dibaca dari dokumen sumber, dan data DPT belum tersedia pada folder laporan harian yang dicek.</div>
+          ${makeChartSVG(combinedLabels, combinedPlan, combinedReal, 'Kurva S Gabungan Gedung B + D + K', 'Gabungan menggunakan rata-rata tertimbang berdasarkan nilai kontrak (B=Rp26,85M, D=Rp31,59M, K=Rp51,15M)')}
+          <div class="note">Status gabungan saat ini: ${scheduleText(combinedDeviation)}${combinedDeviation === null ? '' : ` dengan deviasi ${combinedDeviation > 0 ? '+' : ''}${combinedDeviation.toFixed(2)}% terhadap kurva S rencana`}. Kurva gabungan menggunakan rata-rata tertimbang berdasarkan nilai kontrak (B=Rp26,85M, D=Rp31,59M, K=Rp51,15M). Data DPT belum tersedia.</div>
         </section>
 
         <section class="card full">

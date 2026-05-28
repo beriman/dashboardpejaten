@@ -412,6 +412,81 @@ def populate_photos(html: str) -> str:
     return "\n".join(new_lines)
 
 
+# ─── Weighted Average Patch ───────────────────────────────────────────────────
+
+CONTRACT_VALUES = {
+    "Gedung B": 26851505405.41,
+    "Gedung D": 31590007207.21,
+    "Gedung K": 51151511711.71,
+}
+
+
+def inject_contract_values(html: str) -> str:
+    """Inject contractValue into each building data object for weighted average calculation."""
+    import re
+    # Match: { name: "Gedung X",\n            date: ...
+    # Insert contractValue right after the name field
+    contract_map = {
+        "Gedung B": 26851505405.41,
+        "Gedung D": 31590007207.21,
+        "Gedung K": 51151511711.71,
+    }
+    for name, value in contract_map.items():
+        # Only inject if not already present
+        # Pattern: name: "Gedung X",\n            date: ...
+        pattern = rf'(name:\s*"{re.escape(name)}",\s*\n\s*date:)'
+        replacement = rf'\1\n            contractValue: {value},'
+        if f'contractValue: {value}' not in html:
+            new_html = re.sub(pattern, replacement, html)
+            if new_html != html:
+                print(f"  ✓ Injected contractValue for {name}")
+                html = new_html
+            else:
+                print(f"  ⚠️  Pattern not found for {name}")
+        else:
+            print(f"  → contractValue for {name} already present, skipping")
+    return html
+
+
+def patch_weighted_average(html: str) -> str:
+    """Replace simple average calculation with weighted average."""
+    # Replace the avgProgress calculation
+    old_code = "    const avg = arr => arr.reduce((a,b) => a+b,0) / arr.length;\n    const avgProgress = available.length ? avg(available.map(b => b.cumReal)) : 0;"
+    new_code = """    const avg = arr => arr.reduce((a,b) => a+b,0) / arr.length;
+    // Weighted average: sum(realization) / sum(contract) for accurate combined progress
+    const avgProgress = available.length
+      ? available.reduce((sum, b) => sum + (b.cumReal * (b.contractValue || 1)), 0) /
+        available.reduce((sum, b) => sum + (b.contractValue || 1), 0)
+      : 0;"""
+    if old_code in html:
+        html = html.replace(old_code, new_code)
+        print("  ✓ Patched avgProgress to weighted average")
+    else:
+        print("  ⚠️  Could not find avgProgress code to patch — may already be patched")
+
+    # Update card label
+    old_label = 'Rata-rata progres gedung terbaca</div>\n              <div class="n">${avgProgress.toFixed(2)}%</div>\n              <div class="sub">rata-rata kumulatif realisasi Gedung B, D, dan K</div>'
+    new_label = 'Rata-rata progres gedung tertimbang</div>\n              <div class="n">${avgProgress.toFixed(2)}%</div>\n              <div class="sub">rata-rata tertimbang realisasi Gedung B, D, dan K (berdasarkan nilai kontrak)</div>'
+    if old_label in html:
+        html = html.replace(old_label, new_label)
+        print("  ✓ Updated card label")
+
+    # Update combined chart subtitle
+    old_subtitle = "'Gabungan sementara menggunakan rata-rata progres kumulatif dari gedung yang datanya sudah tersedia'"
+    new_subtitle = "'Gabungan menggunakan rata-rata tertimbang berdasarkan nilai kontrak (B=Rp26,85M, D=Rp31,59M, K=Rp51,15M)'"
+    if old_subtitle in html:
+        html = html.replace(old_subtitle, new_subtitle)
+        print("  ✓ Updated Kurva S subtitle")
+
+    # Update footnote
+    old_note = "Catatan: kurva gabungan ini masih bersifat indikatif karena bobot masing-masing gedung belum dibaca dari dokumen sumber, dan data DPT belum tersedia pada folder laporan harian yang dicek."
+    new_note = "Kurva gabungan menggunakan rata-rata tertimbang berdasarkan nilai kontrak (B=Rp26,85M, D=Rp31,59M, K=Rp51,15M). Data DPT belum tersedia."
+    if old_note in html:
+        html = html.replace(old_note, new_note)
+        print("  ✓ Updated footnote")
+
+    return html
+
 def cleanup_old_photos():
     """Remove old photos from public/fotos/ before copying new ones."""
     foto_dir = PUBLIC_DIR / "fotos"
@@ -438,6 +513,11 @@ def main():
 
     print("\n[4/4] Injecting build info & chat URL...")
     html = inject_build_info(html)
+
+    # Inject contract values for weighted average calculation
+    html = inject_contract_values(html)
+    # Patch avgProgress to use weighted average instead of simple average
+    html = patch_weighted_average(html)
 
     print("\n--- Writing index.html ---")
     out = PUBLIC_DIR / "index.html"
