@@ -142,22 +142,52 @@ def parse_date_id(date_str: str):
 def find_photo_dir(month_folder: str, date_folder: str):
     """Find the photo directory for a given date, handling edge cases.
 
-    Google Drive sometimes creates duplicate folders with "(1)" suffix.
-    This tries the exact match first, then falls back to prefix match.
+    1. Try exact match first.
+    2. Try prefix match (handles "01 05 2026 (1)" etc.)
+    3. Fallback to the latest available date in the same month that is <= target date.
+       Returns (path, actual_date_folder) so the caller knows which date was used.
     """
+    from datetime import datetime
     base = DOKUMEN_DIR / month_folder
 
-    # Try exact match
+    # 1. Exact match
     exact = base / date_folder
     if exact.is_dir():
-        return exact
+        return exact, date_folder
 
-    # Try prefix match (handles "01 05 2026 (1)" etc.)
+    # 2. Prefix match (handles "01 05 2026 (1)" etc.)
     for d in base.iterdir():
         if d.is_dir() and d.name.startswith(date_folder):
-            return d
+            return d, d.name
 
-    return None
+    # 3. Fallback: find latest date <= target
+    # Parse target date for comparison
+    try:
+        target_dt = datetime.strptime(date_folder, "%d %m %Y")
+    except ValueError:
+        return None, None
+
+    best_dir = None
+    best_date_str = None
+    best_dt = None
+
+    if base.is_dir():
+        for d in sorted(base.iterdir()):
+            if not d.is_dir():
+                continue
+            # Try to parse folder name like "25 05 2026" or "25 05 2026 (1)"
+            folder_date_str = d.name.split(" (")[0]  # strip "(1)" suffix
+            try:
+                folder_dt = datetime.strptime(folder_date_str, "%d %m %Y")
+            except ValueError:
+                continue
+            if folder_dt <= target_dt:
+                if best_dt is None or folder_dt > best_dt:
+                    best_dt = folder_dt
+                    best_dir = d
+                    best_date_str = d.name
+
+    return best_dir, best_date_str
 
 
 def get_building_photos(building_dir: Path):
@@ -264,10 +294,12 @@ def populate_photos(html: str) -> str:
     def get_cached_photos(month_folder, date_folder, building_code):
         key = (month_folder, date_folder, building_code)
         if key not in photo_cache:
-            photo_dir = find_photo_dir(month_folder, date_folder)
+            photo_dir, actual_date = find_photo_dir(month_folder, date_folder)
             if photo_dir:
-                taken_date = date_folder  # e.g. "25 05 2026"
+                # Use actual_date from the folder that was found (may differ from requested)
+                taken_date = actual_date if actual_date else date_folder
                 photo_cache[key] = build_photo_objects(photo_dir, building_code, taken_date)
+                photo_cache[key + ('_actual_date',)] = taken_date  # store for logging
             else:
                 photo_cache[key] = []
         return photo_cache[key]
@@ -327,25 +359,24 @@ def populate_photos(html: str) -> str:
                 if date_info and building_code:
                     month_folder, date_folder = date_info
 
-                    # Look up photos (cached internally)
                     photos = get_cached_photos(month_folder, date_folder, building_code)
+                    actual_date = photo_cache.get((month_folder, date_folder, building_code, '_actual_date'), '')
 
                     if photos:
-                        # Replace with actual photo JSON
                         indent = line[:len(line) - len(line.lstrip())]
                         repl = photo_json_array(photos)
-                        # Indent replacement to match
                         repl_lines = repl.split("\n")
                         repl_indented = "\n".join(
                             indent + rl if rl.strip() else rl
                             for rl in repl_lines
                         )
                         new_lines.append(repl_indented)
-                        print(f"  ✅ {building_name} ({building_date}): {len(photos)} foto → fotos/{building_code}/")
+                        date_info = f"foto: {actual_date}" if actual_date and actual_date != date_folder else building_date
+                        print(f"  ✅ {building_name} ({building_date}): {len(photos)} foto → fotos/{building_code}/ [{date_info}]")
                         replacement_count += 1
                         i += 1
                         continue
-            
+
             # If we get here, no replacement happened
             # If it has trailing comma, leave it
             if stripped.endswith(","):
@@ -381,6 +412,7 @@ def populate_photos(html: str) -> str:
                     month_folder, date_folder = date_info
 
                     photos = get_cached_photos(month_folder, date_folder, building_code)
+                    actual_date = photo_cache.get((month_folder, date_folder, building_code, '_actual_date'), '')
 
                     if photos:
                         indent = line[:len(line) - len(line.lstrip())]
@@ -391,14 +423,15 @@ def populate_photos(html: str) -> str:
                             for rl in repl_lines
                         )
                         new_lines.append(repl_indented)
-                        print(f"  ✅ {building_name} ({building_date}): {len(photos)} foto → fotos/{building_code}/")
+                        date_info = f"foto: {actual_date}" if actual_date and actual_date != date_folder else building_date
+                        print(f"  ✅ {building_name} ({building_date}): {len(photos)} foto → fotos/{building_code}/ [{date_info}]")
                         replacement_count += 1
                         i += 1
                         continue
-            
+
             # Fall through
             new_lines.append(line.rstrip())
-        
+
         else:
             new_lines.append(line.rstrip())
         
