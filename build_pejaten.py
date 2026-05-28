@@ -433,9 +433,10 @@ def inject_contract_values(html: str) -> str:
     }
     for name, value in contract_map.items():
         # Only inject if not already present
-        # Pattern: name: "Gedung X",\n            date: ...
-        pattern = rf'(name:\s*"{re.escape(name)}",\s*\n\s*date:)'
-        replacement = rf'\1\n            contractValue: {value},'
+        # Pattern: name: "Gedung X",\n            date: "..."
+        # We want to insert contractValue between name and date
+        pattern = rf'(name:\s*"{re.escape(name)}",)(\s*\n\s*date:)'
+        replacement = rf'\1\n            contractValue: {value},\2'
         if f'contractValue: {value}' not in html:
             new_html = re.sub(pattern, replacement, html)
             if new_html != html:
