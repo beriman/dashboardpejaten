@@ -4,7 +4,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
   "schemaVersion": "2.0.0",
   "projectName": "Renovasi Pejaten",
   "moduleName": "Monitoring Shopdrawing",
-  "lastUpdated": "2026-05-25T11:20:07+07:00",
+  "lastUpdated": "2026-05-29T10:50:30+07:00",
   "sourceWorkbook": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
   "sourceNote": "Terhubung ke workbook MONITOR GAMBAR DED DAN SD PEJATEN.xlsx di folder 03 Shop Drawing. Nama dokumen menjadi identitas utama; tanggal pengajuan/approval menjadi metadata pendukung.",
   "statusLegend": {
@@ -29,9 +29,9 @@ window.SHOPDRAWING_MONITORING_DATA = {
   ],
   "summary": {
     "total": 335,
-    "approved": 30,
+    "approved": 29,
     "approvedAsNoted": 0,
-    "submitted": 11,
+    "submitted": 12,
     "reviewOrRevision": 0,
     "draftOrNotStarted": 294
   },
@@ -5495,9 +5495,9 @@ window.SHOPDRAWING_MONITORING_DATA = {
       "buildingName": "Gedung K",
       "summary": {
         "total": 109,
-        "approved": 16,
+        "approved": 15,
         "approvedAsNoted": 0,
-        "submitted": 4,
+        "submitted": 5,
         "reviewOrRevision": 0,
         "draftOrNotStarted": 89,
         "overdue": 0
@@ -5684,7 +5684,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "priority": "Normal",
           "sourceType": "Excel Monitoring",
           "plannedSubmitDate": "",
-          "actualSubmitDate": "RESEND",
+          "actualSubmitDate": "APROVE",
           "targetApprovalDate": "",
           "approvalDate": "22 Mei 2026",
           "reviewer": "MK/PPK",
@@ -5693,7 +5693,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "filePathOrUrl": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
           "sourceDedPath": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
           "dedStatus": "OK",
-          "remarks": "-"
+          "remarks": "25 Mei 2026"
         },
         {
           "id": "SD-K-0009",
@@ -5708,7 +5708,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "priority": "Normal",
           "sourceType": "Excel Monitoring",
           "plannedSubmitDate": "",
-          "actualSubmitDate": "RESEND",
+          "actualSubmitDate": "APROVE",
           "targetApprovalDate": "",
           "approvalDate": "22 Mei 2026",
           "reviewer": "MK/PPK",
@@ -5717,7 +5717,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "filePathOrUrl": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
           "sourceDedPath": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
           "dedStatus": "OK",
-          "remarks": "-"
+          "remarks": "25 Mei 2026"
         },
         {
           "id": "SD-K-0010",
@@ -5732,7 +5732,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "priority": "Normal",
           "sourceType": "Excel Monitoring",
           "plannedSubmitDate": "",
-          "actualSubmitDate": "RESEND",
+          "actualSubmitDate": "APROVE",
           "targetApprovalDate": "",
           "approvalDate": "22 Mei 2026",
           "reviewer": "MK/PPK",
@@ -5741,7 +5741,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "filePathOrUrl": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
           "sourceDedPath": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
           "dedStatus": "OK",
-          "remarks": "-"
+          "remarks": "25 Mei 2026"
         },
         {
           "id": "SD-K-0011",
@@ -5756,7 +5756,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "priority": "Normal",
           "sourceType": "Excel Monitoring",
           "plannedSubmitDate": "",
-          "actualSubmitDate": "RESEND",
+          "actualSubmitDate": "APROVE",
           "targetApprovalDate": "",
           "approvalDate": "22 Mei 2026",
           "reviewer": "MK/PPK",
@@ -5765,7 +5765,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "filePathOrUrl": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
           "sourceDedPath": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
           "dedStatus": "OK",
-          "remarks": "-"
+          "remarks": "25 Mei 2026"
         },
         {
           "id": "SD-K-0012",
@@ -5780,7 +5780,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "priority": "Normal",
           "sourceType": "Excel Monitoring",
           "plannedSubmitDate": "",
-          "actualSubmitDate": "RESEND",
+          "actualSubmitDate": "APROVE",
           "targetApprovalDate": "",
           "approvalDate": "22 Mei 2026",
           "reviewer": "MK/PPK",
@@ -5789,7 +5789,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "filePathOrUrl": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
           "sourceDedPath": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
           "dedStatus": "OK",
-          "remarks": "-"
+          "remarks": "25 Mei 2026"
         },
         {
           "id": "SD-K-0013",
@@ -5948,7 +5948,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "priority": "Normal",
           "sourceType": "Excel Monitoring",
           "plannedSubmitDate": "",
-          "actualSubmitDate": "RESEND",
+          "actualSubmitDate": "APROVE",
           "targetApprovalDate": "",
           "approvalDate": "22 Mei 2026",
           "reviewer": "MK/PPK",
@@ -5957,7 +5957,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "filePathOrUrl": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
           "sourceDedPath": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
           "dedStatus": "OK",
-          "remarks": "-"
+          "remarks": "25 Mei 2026"
         },
         {
           "id": "SD-K-0020",
@@ -5972,7 +5972,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "priority": "Normal",
           "sourceType": "Excel Monitoring",
           "plannedSubmitDate": "",
-          "actualSubmitDate": "RESEND",
+          "actualSubmitDate": "APROVE",
           "targetApprovalDate": "",
           "approvalDate": "22 Mei 2026",
           "reviewer": "MK/PPK",
@@ -5981,7 +5981,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "filePathOrUrl": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
           "sourceDedPath": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
           "dedStatus": "OK",
-          "remarks": "-"
+          "remarks": "25 Mei 2026"
         },
         {
           "id": "SD-K-0021",
@@ -5996,7 +5996,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "priority": "Normal",
           "sourceType": "Excel Monitoring",
           "plannedSubmitDate": "",
-          "actualSubmitDate": "RESEND",
+          "actualSubmitDate": "APROVE",
           "targetApprovalDate": "",
           "approvalDate": "22 Mei 2026",
           "reviewer": "MK/PPK",
@@ -6005,7 +6005,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "filePathOrUrl": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
           "sourceDedPath": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
           "dedStatus": "OK",
-          "remarks": "-"
+          "remarks": "25 Mei 2026"
         },
         {
           "id": "SD-K-0022",
@@ -7480,14 +7480,14 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "documentNumber": "SD.ARS.GDK-0010.01",
           "dedDocumentNumber": "-",
           "revision": "",
-          "status": "approved",
+          "status": "submitted",
           "priority": "Normal",
           "sourceType": "Excel Monitoring",
           "plannedSubmitDate": "",
-          "actualSubmitDate": "REEEND",
+          "actualSubmitDate": "ON REVIEW",
           "targetApprovalDate": "",
-          "approvalDate": "22 Mei 2026",
-          "reviewer": "MK/PPK",
+          "approvalDate": "",
+          "reviewer": "",
           "pic": "",
           "relatedIssueOrRfi": "",
           "filePathOrUrl": "https://docs.google.com/spreadsheets/d/1x8lLGFwz25JI6tUynvaygJuedHrokXTY/edit?usp=sharing&ouid=103578648072291369345&rtpof=true&sd=true",
@@ -7508,7 +7508,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "priority": "Normal",
           "sourceType": "Excel Monitoring",
           "plannedSubmitDate": "",
-          "actualSubmitDate": "ON GOING",
+          "actualSubmitDate": "ON REVIEW",
           "targetApprovalDate": "",
           "approvalDate": "",
           "reviewer": "",
@@ -7532,7 +7532,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "priority": "Normal",
           "sourceType": "Excel Monitoring",
           "plannedSubmitDate": "",
-          "actualSubmitDate": "ON GOING",
+          "actualSubmitDate": "ON REVIEW",
           "targetApprovalDate": "",
           "approvalDate": "",
           "reviewer": "",
@@ -7556,7 +7556,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "priority": "Normal",
           "sourceType": "Excel Monitoring",
           "plannedSubmitDate": "",
-          "actualSubmitDate": "ON GOING",
+          "actualSubmitDate": "ON REVIEW",
           "targetApprovalDate": "",
           "approvalDate": "",
           "reviewer": "",
@@ -7580,7 +7580,7 @@ window.SHOPDRAWING_MONITORING_DATA = {
           "priority": "Normal",
           "sourceType": "Excel Monitoring",
           "plannedSubmitDate": "",
-          "actualSubmitDate": "ON GOING",
+          "actualSubmitDate": "ON REVIEW",
           "targetApprovalDate": "",
           "approvalDate": "",
           "reviewer": "",
