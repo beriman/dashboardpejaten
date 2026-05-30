@@ -578,12 +578,17 @@ def main():
     copy_assets()
     copy_models()
 
-    # Also copy ifc-viewer.html to public/
+    # Also copy ifc-viewer.html and mobile-ui.js to public/
     viewer_src = SHARED_DIR / "ifc-viewer.html"
     viewer_dst = PUBLIC_DIR / "ifc-viewer.html"
     if viewer_src.exists():
         shutil.copy2(viewer_src, viewer_dst)
         print(f"  Copied: ifc-viewer.html")
+    mobile_js_src = SHARED_DIR / "mobile-ui.js"
+    mobile_js_dst = PUBLIC_DIR / "mobile-ui.js"
+    if mobile_js_src.exists():
+        shutil.copy2(mobile_js_src, mobile_js_dst)
+        print(f"  Copied: mobile-ui.js")
 
     print(f"\n✅ DONE: {out} ({out.stat().st_size:,} bytes)")
     print(f"   Sekarang tinggal git add → commit → push, Vercel auto-deploy! 🚀")

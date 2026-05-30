@@ -563,5 +563,52 @@
   setStatus(`Viewer siap. Klik "STR" untuk mulai.`);
   loadDiscipline(disciplineParam);
 </script>
+
+<!-- Mobile UI enhancements -->
+<script src="/mobile-ui.js" defer></script>
+<script>
+  // Inline critical mobile CSS
+  var _mc = document.createElement('style');
+  _mc.textContent = `
+    /* Mobile toolbar collapse */
+    .toolbar-mobile { flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+    .toolbar-mobile.toolbar-expanded { flex-wrap:nowrap; }
+    .toolbar-mobile #btnToolbarMore { display:inline-flex; font-size:18px; padding:8px 12px; flex-shrink:0; }
+    @media(min-width:1024px) { .toolbar-mobile #btnToolbarMore { display:none !important; } }
+
+    /* Hide desktop panels on mobile, use bottom sheets instead */
+    body.is-mobile .slice-panel,
+    body.is-mobile .layer-panel,
+    body.is-mobile .legend,
+    body.is-mobile #slice-indicator { display:none !important; }
+
+    body.is-mobile header { padding:8px 12px; }
+    body.is-mobile .sub { display:none; }
+    body.is-mobile #status { font-size:10px; padding:6px 10px; max-width:calc(100vw - 24px); }
+
+    /* Bottom sheet */
+    .bs-sheet { position:fixed; bottom:0; left:0; right:0; background:rgba(16,28,47,.97); border:1px solid #253955; border-radius:18px 18px 0 0; padding:16px; z-index:100; transform:translateY(100%); transition:transform .3s cubic-bezier(.4,0,.2,1); max-height:70vh; overflow-y:auto; backdrop-filter:blur(12px); }
+    .bs-sheet.open { transform:translateY(0); }
+    .bs-handle { width:40px; height:4px; background:#374151; border-radius:2px; margin:0 auto 12px; }
+    .bs-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+    .bs-title { font-size:15px; font-weight:700; color:#38bdf8; }
+    .bs-close { background:none; border:none; color:#94a3b8; font-size:20px; cursor:pointer; padding:4px; }
+
+    /* FAB */
+    #mobileFAB { display:none; }
+    body.is-mobile #mobileFAB { display:flex; position:fixed; bottom:24px; right:20px; width:56px; height:56px; border-radius:50%; background:#0284c7; color:#fff; font-size:24px; align-items:center; justify-content:center; z-index:90; box-shadow:0 4px 20px rgba(2,132,199,.5); cursor:pointer; -webkit-tap-highlight-color:transparent; }
+    #fabMenu { display:none; }
+    body.is-mobile #fabMenu { display:block; position:fixed; bottom:88px; right:20px; z-index:91; transform:scale(0); transform-origin:bottom right; transition:transform .2s; }
+    body.is-mobile #fabMenu.open { transform:scale(1); }
+    .fab-menu-item { background:rgba(16,28,47,.95); border:1px solid #253955; border-radius:12px; padding:12px 16px; font-size:14px; color:#e8f0ff; margin-bottom:6px; cursor:pointer; white-space:nowrap; min-width:160px; text-align:left; }
+    .fab-menu-item:active { background:#1e3a5f; }
+
+    /* Larger touch targets on mobile */
+    body.is-mobile button { min-height:44px; min-width:44px; font-size:14px; padding:10px 14px; }
+    body.is-mobile input[type=range] { height:44px; }
+    body.is-mobile .layer-item { min-height:48px; }
+  `;
+  document.head.appendChild(_mc);
+</script>
 </body>
 </html>
