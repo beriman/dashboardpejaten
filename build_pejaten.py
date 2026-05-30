@@ -26,6 +26,9 @@ ASSET_FILES = [
     "denah_pancang_gedung_K.png",
 ]
 
+MODELS_DIR = SHARED_DIR / "models"
+PUBLIC_MODELS_DIR = PUBLIC_DIR / "models"
+
 # Map Indonesian month names to folder names and number
 MONTH_FOLDER = {
     "April": "1. Dokumentasi April",
@@ -101,6 +104,21 @@ def copy_assets():
             print(f"  Copied: {name} ({dst.stat().st_size} bytes)")
         else:
             print(f"  SKIP: {name} not found")
+
+
+def copy_models():
+    """Copy IFC 3D models from Google Drive to public/models for Vercel deployment."""
+    if PUBLIC_MODELS_DIR.exists():
+        shutil.rmtree(PUBLIC_MODELS_DIR)
+    if MODELS_DIR.exists():
+        shutil.copytree(MODELS_DIR, PUBLIC_MODELS_DIR)
+        ifc_files = list(PUBLIC_MODELS_DIR.rglob("*.ifc"))
+        print(f"  📦 Copied models/: {len(ifc_files)} IFC files")
+        for f in ifc_files:
+            rel = f.relative_to(PUBLIC_MODELS_DIR)
+            print(f"     ✓ {rel} ({f.stat().st_size // 1024} KB)")
+    else:
+        print(f"  SKIP: models/ not found in Dashboard")
 
 
 # ─── Dokumentasi Foto ────────────────────────────────────────────────────────
@@ -558,6 +576,14 @@ def main():
     out.write_text(html, encoding="utf-8")
 
     copy_assets()
+    copy_models()
+
+    # Also copy ifc-viewer.html to public/
+    viewer_src = SHARED_DIR / "ifc-viewer.html"
+    viewer_dst = PUBLIC_DIR / "ifc-viewer.html"
+    if viewer_src.exists():
+        shutil.copy2(viewer_src, viewer_dst)
+        print(f"  Copied: ifc-viewer.html")
 
     print(f"\n✅ DONE: {out} ({out.stat().st_size:,} bytes)")
     print(f"   Sekarang tinggal git add → commit → push, Vercel auto-deploy! 🚀")
