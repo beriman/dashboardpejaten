@@ -68,6 +68,20 @@
     #tooltip .tt-name { font-weight:700; margin-bottom:4px; }
     .tt-attr { color:var(--muted); margin-bottom:2px; }
     .tt-attr span { color:var(--text); }
+
+    /* ─── Orientation banner ──────────────────────────────────── */
+    #orient-banner { display:none; position:fixed; inset:0; z-index:999; background:rgba(8,17,31,.95); backdrop-filter:blur(8px); align-items:center; justify-content:center; flex-direction:column; gap:16px; }
+    #orient-banner.show { display:flex; }
+    #orient-banner .icon { font-size:64px; animation: orientPulse 2s ease-in-out infinite; }
+    #orient-banner .msg { color:var(--text); font-size:16px; font-weight:600; text-align:center; padding:0 24px; }
+    #orient-banner .sub { color:var(--muted); font-size:13px; text-align:center; padding:0 24px; }
+    #orient-banner button { margin-top:8px; }
+    @keyframes orientPulse { 0%,100%{transform:rotate(0deg)} 50%{transform:rotate(90deg)} }
+
+    /* ─── Portrait mode: auto-rotate hint ─────────────────────── */
+    @media screen and (orientation: portrait) and (max-width: 1023px) {
+      #orient-banner.show { display:flex; }
+    }
   </style>
 </head>
 <body>
@@ -87,8 +101,18 @@
       <button id="btnLayer">Layers</button>
       <button id="btnReset">Reset</button>
       <button id="btnScreenshot">📷</button>
+      <button id="btnOrient" title="Rotate device for landscape view">🔄 Putar</button>
     </div>
   </header>
+
+  <!-- Orientation banner: shown on mobile portrait -->
+  <div id="orient-banner">
+    <div class="icon">📱</div>
+    <div class="msg">Putar HP ke Landscape</div>
+    <div class="sub">Untuk tampilan 3D yang lebih baik, putar perangkat Anda ke mode landscape (miring).</div>
+    <button id="orientDismiss" onclick="document.getElementById('orient-banner').classList.remove('show')">Lewati</button>
+    <button id="orientForce" onclick="lockOrientationLandscape()" style="margin-top:4px;">🔒 Kunci Landscape</button>
+  </div>
 
   <main>
     <div id="viewer"></div>
@@ -153,6 +177,61 @@
     const el = document.getElementById('status');
     if (el) el.innerHTML = `<strong>Status:</strong> Error: ${event.reason?.message || 'unknown'}`;
   });
+</script>
+
+<script>
+  // ─── Orientation handling ─────────────────────────────────────
+  (function() {
+    var banner = document.getElementById('orient-banner');
+    var btnOrient = document.getElementById('btnOrient');
+
+    function isMobile() { return window.innerWidth < 1024 && ('ontouchstart' in window || navigator.maxTouchPoints > 0); }
+
+    function checkOrientation() {
+      if (!isMobile()) {
+        if (banner) banner.classList.remove('show');
+        return;
+      }
+      var isPortrait = window.innerHeight > window.innerWidth;
+      if (isPortrait) {
+        if (banner) banner.classList.add('show');
+      } else {
+        if (banner) banner.classList.remove('show');
+      }
+    }
+
+    // Screen Orientation API — lock to landscape
+    window.lockOrientationLandscape = function() {
+      try {
+        if (screen.orientation && screen.orientation.lock) {
+          screen.orientation.lock('landscape').then(function() {
+            if (banner) banner.classList.remove('show');
+          }).catch(function() {
+            // API not available, just show banner
+          });
+        }
+      } catch(e) {}
+    };
+
+    // Listen for orientation changes
+    window.addEventListener('orientationchange', function() {
+      setTimeout(checkOrientation, 300);
+    });
+    window.addEventListener('resize', function() {
+      clearTimeout(window._orientTimer);
+      window._orientTimer = setTimeout(checkOrientation, 200);
+    });
+
+    // Manual button
+    if (btnOrient) {
+      btnOrient.addEventListener('click', function() {
+        lockOrientationLandscape();
+      });
+    }
+
+    // Initial check after a short delay
+    setTimeout(checkOrientation, 1000);
+  })();
 </script>
 
 <script type="module">
