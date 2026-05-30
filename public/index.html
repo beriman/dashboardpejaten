@@ -404,7 +404,7 @@
       .shop-summary { grid-template-columns: 1fr; }
       .metric-grid { grid-template-columns: 1fr; }
     }
-
+  
     /* ── Chat Widget ─────────────────────────────────────────── */
     .chat-widget { position:fixed; bottom:24px; right:24px; z-index:9999; }
     .chat-toggle { width:60px; height:60px; border-radius:50%; background:linear-gradient(135deg,#0284c7,#0ea5e9); border:2px solid rgba(56,189,248,.4); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 28px rgba(2,132,199,.45); transition:transform .2s,box-shadow .2s; overflow:hidden; padding:0; animation:chatPulse 3s ease-in-out infinite; }
@@ -471,9 +471,9 @@
   body.day-mode .meeting-title { color: #0f172a; }
 </style>
 <meta name="webchat-url" content="http://127.0.0.1:18999/chat">
-  <!-- Built for Vercel from Google Drive dashboard on 29 May 2026 10:50 local time. -->
+  <!-- Built for Vercel from Google Drive dashboard on 30 May 2026 12:41 local time. -->
 <meta name="dashboard-build" content="Pejaten dashboard static web build">
-<meta name="dashboard-build-id" content="20260529105031">
+<meta name="dashboard-build-id" content="20260530124143">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
 </head>
 <body class="is-loading">
@@ -16375,7 +16375,6 @@ const pileMonitoringData = {
         buildings: [
           {
             name: "Gedung B",
-            contractValue: 26851505405.41,
             date: "BULAN 2 s.d. M6",
             dailyPlan: 0.3775,
             dailyReal: 0.4338,
@@ -16390,7 +16389,6 @@ const pileMonitoringData = {
           },
           {
             name: "Gedung D",
-            contractValue: 31590007207.21,
             date: "BULAN 2 s.d. M6",
             dailyPlan: 2.2872,
             dailyReal: 2.4915,
@@ -16405,7 +16403,6 @@ const pileMonitoringData = {
           },
           {
             name: "Gedung K",
-            contractValue: 51151511711.71,
             date: "BULAN 2 s.d. M6",
             dailyPlan: 2.7333,
             dailyReal: 2.8735,
@@ -16441,11 +16438,7 @@ const pileMonitoringData = {
 
     const available = data.buildings.filter(b => b.cumReal !== null);
     const avg = arr => arr.reduce((a,b) => a+b,0) / arr.length;
-    // Weighted average: sum(realization) / sum(contract) for accurate combined progress
-    const avgProgress = available.length
-      ? available.reduce((sum, b) => sum + (b.cumReal * (b.contractValue || 1)), 0) /
-        available.reduce((sum, b) => sum + (b.contractValue || 1), 0)
-      : 0;
+    const avgProgress = available.length ? avg(available.map(b => b.cumReal)) : 0;
     const leadProgress = available.length ? available.reduce((a,b)=> b.cumReal > a.cumReal ? b : a) : null;
     const leadDeviation = available.length ? available.reduce((a,b)=> b.deviation > a.deviation ? b : a) : null;
 
@@ -17007,9 +17000,9 @@ const pileMonitoringData = {
           <div class="label">Ringkasan Progres Per Gedung</div>
           <div class="summary-grid" style="margin-bottom:16px;">
             <div class="mini">
-              <div class="label">Rata-rata progres gedung tertimbang</div>
+              <div class="label">Rata-rata progres gedung terbaca</div>
               <div class="n">${avgProgress.toFixed(2)}%</div>
-              <div class="sub">rata-rata tertimbang realisasi Gedung B, D, dan K (berdasarkan nilai kontrak)</div>
+              <div class="sub">rata-rata kumulatif realisasi Gedung B, D, dan K</div>
             </div>
             <div class="mini">
               <div class="label">Progress tertinggi</div>
@@ -17026,8 +17019,8 @@ const pileMonitoringData = {
 
         <section class="card full">
           <div class="label">Kurva S Gabungan</div>
-          ${makeChartSVG(combinedLabels, combinedPlan, combinedReal, 'Kurva S Gabungan Gedung B + D + K', 'Gabungan menggunakan rata-rata tertimbang berdasarkan nilai kontrak (B=Rp26,85M, D=Rp31,59M, K=Rp51,15M)')}
-          <div class="note">Status gabungan saat ini: ${scheduleText(combinedDeviation)}${combinedDeviation === null ? '' : ` dengan deviasi ${combinedDeviation > 0 ? '+' : ''}${combinedDeviation.toFixed(2)}% terhadap kurva S rencana`}. Kurva gabungan menggunakan rata-rata tertimbang berdasarkan nilai kontrak (B=Rp26,85M, D=Rp31,59M, K=Rp51,15M). Data DPT belum tersedia.</div>
+          ${makeChartSVG(combinedLabels, combinedPlan, combinedReal, 'Kurva S Gabungan Gedung B + D + K', 'Gabungan sementara menggunakan rata-rata progres kumulatif dari gedung yang datanya sudah tersedia')}
+          <div class="note">Status gabungan saat ini: ${scheduleText(combinedDeviation)}${combinedDeviation === null ? '' : ` dengan deviasi ${combinedDeviation > 0 ? '+' : ''}${combinedDeviation.toFixed(2)}% terhadap kurva S rencana`}. Catatan: kurva gabungan ini masih bersifat indikatif karena bobot masing-masing gedung belum dibaca dari dokumen sumber, dan data DPT belum tersedia pada folder laporan harian yang dicek.</div>
         </section>
 
         <section class="card full">
@@ -17144,7 +17137,42 @@ const pileMonitoringData = {
           .status,.badge,.module-pill { display:inline-block; border:1px solid #d1d5db; border-radius:999px; padding:5px 9px; font-size:11px; }
           svg { max-width:100%; } img { max-width:100%; } .photo-stage img { max-height:230px; object-fit:cover; }
           a { color:#0369a1; text-decoration:none; }
-        </style></head><body><div class="Section1">${cloned.innerHTML}</div>
+        
+    /* ===== DATE LOOKBACK / HISTORICAL VIEW ===== */
+    .lookback-wrap {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+      padding: 10px 16px; background: rgba(56,189,248,.06);
+      border: 1px solid rgba(56,189,248,.15); border-radius: 12px;
+      margin-bottom: 12px;
+    }
+    .lookback-wrap::-webkit-scrollbar { height: 4px; }
+    .lookback-label {
+      font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--muted); white-space: nowrap; font-weight: 700;
+    }
+    .lookback-date-input {
+      border: 1px solid var(--line);
+      background: color-mix(in srgb, var(--panel) 92%, transparent);
+      color: var(--text); border-radius: 8px; padding: 7px 10px;
+      font-size: 13px; outline: none; color-scheme: dark;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+    body.day-mode .lookback-date-input {
+      background: #fff; border-color: #cbd5e1; color: #0f172a; color-scheme: light;
+    }
+    .lookback-btn {
+      border: 1px solid var(--line); background: rgba(56,189,248,.12);
+      color: #bae6fd; border-radius: 8px; padding: 7px 12px;
+      cursor: pointer; font-size: 12px; font-weight: 700; white-space: nowrap;
+    }
+    .lookback-btn:hover { background: rgba(56,189,248,.22); border-color: rgba(56,189,248,.5); }
+    .lookback-status {
+      font-size: 11px; color: var(--muted); white-space: nowrap; margin-left: 4px;
+    }
+    .lookback-status.is-historical {
+      color: var(--blue); font-weight: 700;
+    }
+</style></head><body><div class="Section1">${cloned.innerHTML}</div>
 <!-- Chat Widget -->
 <div class="chat-widget" id="chatWidget">
   <button class="chat-toggle" id="chatToggle" title="Chat dengan AI Assistant"><img src="joker-profile-picture.png" alt="AI Assistant" /></button>
@@ -17334,6 +17362,119 @@ const pileMonitoringData = {
       localStorage.setItem('dashboard-theme', mode);
     };
     const savedTheme = localStorage.getItem('dashboard-theme') || 'night';
+    // ===== DATE LOOKBACK / HISTORICAL VIEW =====
+    (function() {
+      const dateInput = document.getElementById('lookback-date');
+      const applyBtn = document.getElementById('lookback-apply');
+      const resetBtn = document.getElementById('lookback-reset');
+      const statusEl = document.getElementById('lookback-status');
+      if (!dateInput || !applyBtn) return;
+
+      // Parse date labels like "27 Apr", "15 Mei" -> Date
+      const months = {
+        'Jan':0,'Feb':1,'Mar':2,'Apr':3,'Mei':4,'May':4,
+        'Jun':5,'Jul':6,'Agu':7,'Aug':7,'Sep':8,
+        'Okt':9,'Oct':9,'Nov':10,'Des':11,'Dec':11
+      };
+      function parseLabel(label, year) {
+        const p = label.trim().split(/\s+/);
+        if (p.length < 2) return null;
+        const day = parseInt(p[0]), mon = months[p[1]];
+        return (isNaN(day) || mon === undefined) ? null : new Date(year, mon, day);
+      }
+      function fmtDate(d) {
+        return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+      }
+
+      // Get available date range from daily data
+      const labels0 = (dataSets.daily.buildings[0]?.labels) || [];
+      const curYear = new Date().getFullYear();
+      const firstDate = labels0.length ? parseLabel(labels0[0], curYear) : null;
+      const lastDate  = labels0.length ? parseLabel(labels0[labels0.length-1], curYear) : null;
+
+      if (firstDate && lastDate) {
+        dateInput.min = fmtDate(firstDate);
+        dateInput.max = fmtDate(lastDate);
+        dateInput.value = fmtDate(lastDate);
+      }
+
+      // Store original daily data
+      let origDaily = null;
+      function saveOrig() {
+        if (!origDaily) origDaily = JSON.parse(JSON.stringify(dataSets.daily));
+      }
+
+      function setStatus(txt, isHist) {
+        if (!statusEl) return;
+        statusEl.textContent = txt;
+        statusEl.className = 'lookback-status' + (isHist ? ' is-historical' : '');
+      }
+
+      function applyLookback(dateStr) {
+        saveOrig();
+        const [y,m,d] = dateStr.split('-').map(Number);
+        const target = new Date(y, m-1, d);
+
+        const truncBuildings = origDaily.buildings.map(b => {
+          const labels=b.labels||[], cp=b.curvePlan||[], cr=b.curveReal||[];
+          let cutIdx = labels.length;
+          for (let i=0; i<labels.length; i++) {
+            const ld = parseLabel(labels[i], y);
+            if (ld && ld > target) { cutIdx = i; break; }
+          }
+          const tLabels = labels.slice(0, cutIdx);
+          const tCP = cp.slice(0, cutIdx);
+          const tCR = cr.slice(0, cutIdx);
+          const li = cutIdx - 1;
+          const newCumPlan = li>=0 ? (tCP[li]||0) : 0;
+          const newCumReal = li>=0 ? (tCR[li]||0) : 0;
+          const newCumDev  = Math.round((newCumReal - newCumPlan)*100)/100;
+          const newDayPlan = li>=1 ? Math.round((tCP[li]-tCP[li-1])*10000)/10000 : (li===0?Math.round((tCP[0]||0)*10000)/10000:0);
+          const newDayReal = li>=1 ? Math.round((tCR[li]-tCR[li-1])*10000)/10000 : (li===0?Math.round((tCR[0]||0)*10000)/10000:0);
+
+          return {
+            ...b,
+            date: tLabels.length ? tLabels[tLabels.length-1] : 'N/A',
+            cumPlan: newCumPlan, cumReal: newCumReal, deviation: newCumDev,
+            dailyPlan: newDayPlan, dailyReal: newDayReal,
+            labels: tLabels, curvePlan: tCP, curveReal: tCR,
+            note: 'Lookback s.d. ' + (tLabels.length ? tLabels[tLabels.length-1] : dateStr)
+          };
+        });
+
+        dataSets.daily = { ...origDaily, sourceDate: 'Data per '+dateStr+' (lookback)', buildings: truncBuildings };
+        window.location.reload();
+      }
+
+      function resetLookback() {
+        if (origDaily) dataSets.daily = JSON.parse(JSON.stringify(origDaily));
+        localStorage.removeItem('dashboard-lookback-date');
+        window.location.reload();
+      }
+
+      applyBtn.addEventListener('click', () => {
+        if (dateInput.value) {
+          localStorage.setItem('dashboard-lookback-date', dateInput.value);
+          applyLookback(dateInput.value);
+        }
+      });
+
+      resetBtn.addEventListener('click', () => {
+        localStorage.removeItem('dashboard-lookback-date');
+        resetLookback();
+      });
+
+      // Check if there's a saved lookback date
+      const savedDate = localStorage.getItem('dashboard-lookback-date');
+      if (savedDate) {
+        dateInput.value = savedDate;
+        setStatus('Data per ' + savedDate, true);
+      } else {
+        setStatus('Data terkini', false);
+      }
+    })();
+
+
     applyTheme(savedTheme);
 themeToggle.addEventListener('click', () => {
       const next = document.body.classList.contains('day-mode') ? 'night' : 'day';
@@ -17404,3 +17545,14 @@ themeToggle.addEventListener('click', () => {
 </script>
 </body>
 </html>
+      <!-- Date Lookback / Historical View -->
+      <section class="card full" style="margin-bottom:12px;padding:0;background:transparent;border:none;box-shadow:none;">
+        <div class="lookback-wrap">
+          <span class="lookback-label">&#128197; Lihat per tanggal</span>
+          <input type="date" class="lookback-date-input" id="lookback-date" />
+          <button class="lookback-btn" id="lookback-apply" type="button">Tampilkan</button>
+          <button class="lookback-btn" id="lookback-reset" type="button">Terkini</button>
+          <span class="lookback-status" id="lookback-status"></span>
+        </div>
+      </section>
+
