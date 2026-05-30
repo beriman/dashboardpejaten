@@ -5,59 +5,160 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>3D IFC Viewer - Renovasi Pejaten</title>
   <style>
-    :root { color-scheme: dark; --bg:#08111f; --panel:#101c2f; --line:#253955; --text:#e8f0ff; --muted:#94a3b8; --blue:#38bdf8; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:Inter,Segoe UI,Arial,sans-serif; background:var(--bg); color:var(--text); overflow:hidden; }
+    :root { color-scheme: dark; --bg:#08111f; --panel:rgba(16,28,47,.96); --line:#253955; --text:#e8f0ff; --muted:#94a3b8; --blue:#38bdf8; --accent:#0284c7; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Inter,Segoe UI,Arial,sans-serif; background:var(--bg); color:var(--text); overflow:hidden; }
     #app { display:grid; grid-template-rows:auto 1fr; width:100vw; height:100vh; }
-    header { display:flex; gap:12px; align-items:center; justify-content:space-between; padding:12px 16px; background:rgba(16,28,47,.94); border-bottom:1px solid var(--line); }
-    h1 { margin:0; font-size:16px; letter-spacing:.02em; }
-    .sub { color:var(--muted); font-size:12px; margin-top:2px; }
-    .toolbar { display:flex; gap:8px; flex-wrap:wrap; align-items:center; justify-content:flex-end; }
-    button, select { border:1px solid var(--line); background:#14243a; color:var(--text); border-radius:10px; padding:8px 10px; cursor:pointer; }
+
+    /* ─── Header ─────────────────────────────────────────────── */
+    header { display:flex; gap:12px; align-items:center; justify-content:space-between; padding:10px 16px; background:var(--panel); border-bottom:1px solid var(--line); flex-wrap:wrap; }
+    .header-left h1 { font-size:15px; font-weight:800; letter-spacing:.01em; }
+    .header-left .sub { color:var(--muted); font-size:11px; margin-top:2px; }
+
+    /* ─── Toolbar buttons ────────────────────────────────────── */
+    .toolbar { display:flex; gap:6px; flex-wrap:wrap; align-items:center; }
+    button { border:1px solid var(--line); background:#14243a; color:var(--text); border-radius:8px; padding:6px 10px; cursor:pointer; font-size:12px; transition:all .15s; }
     button:hover { border-color:var(--blue); color:white; }
-    button.active { background:#0284c7; border-color:#38bdf8; color:white; }
+    button.active { background:var(--accent); border-color:#38bdf8; color:white; }
+    button.danger { border-color:#dc2626; color:#fca5a5; }
+    button.danger:hover { background:#dc2626; color:white; }
+
+    /* ─── Slice panel ────────────────────────────────────────── */
+    .slice-panel { position:absolute; top:60px; right:16px; width:260px; background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:14px; z-index:10; display:none; }
+    .slice-panel.open { display:block; }
+    .slice-panel h3 { font-size:13px; font-weight:700; margin-bottom:10px; color:var(--blue); }
+    .slice-row { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+    .slice-row label { font-size:11px; color:var(--muted); min-width:40px; }
+    .slice-row input[type="range"] { flex:1; accent-color:var(--blue); }
+    .slice-row .val { font-size:11px; color:var(--text); min-width:35px; text-align:right; }
+    .slice-axis-btns { display:flex; gap:4px; margin-bottom:10px; }
+    .slice-axis-btns button { flex:1; padding:4px; font-size:11px; }
+
+    /* ─── Layer panel ────────────────────────────────────────── */
+    .layer-panel { position:absolute; top:60px; left:16px; width:220px; background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:14px; z-index:10; max-height:60vh; overflow-y:auto; }
+    .layer-panel h3 { font-size:13px; font-weight:700; margin-bottom:10px; color:var(--blue); }
+    .layer-item { display:flex; align-items:center; gap:8px; padding:6px 0; border-bottom:1px solid rgba(37,57,85,.5); }
+    .layer-item:last-child { border-bottom:none; }
+    .layer-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+    .layer-name { flex:1; font-size:11px; }
+    .layer-opacity { width:50px; accent-color:var(--blue); }
+    .layer-visible { cursor:pointer; font-size:14px; opacity:.7; }
+    .layer-visible:hover { opacity:1; }
+
+    /* ─── Viewer canvas ──────────────────────────────────────── */
     main { position:relative; min-height:0; }
     #viewer { position:absolute; inset:0; }
-    #status { position:absolute; left:16px; bottom:16px; max-width:min(680px, calc(100vw - 32px)); background:rgba(8,17,31,.88); border:1px solid var(--line); border-radius:14px; padding:10px 12px; color:var(--muted); font-size:12px; line-height:1.45; }
+
+    /* ─── Status bar ─────────────────────────────────────────── */
+    #status { position:absolute; left:16px; bottom:16px; max-width:min(500px, calc(100vw - 400px)); background:rgba(8,17,31,.88); border:1px solid var(--line); border-radius:10px; padding:8px 12px; color:var(--muted); font-size:11px; line-height:1.5; z-index:5; }
     #status strong { color:var(--text); }
-    .hidden { display:none; }
+
+    /* ─── Cross-section indicator ────────────────────────────── */
+    #slice-indicator { position:absolute; bottom:60px; right:16px; background:rgba(8,17,31,.85); border:1px solid var(--line); border-radius:8px; padding:6px 10px; font-size:11px; color:var(--muted); z-index:5; display:none; }
+    #slice-indicator.active { display:block; }
+
+    /* ─── Legend ─────────────────────────────────────────────── */
+    .legend { position:absolute; bottom:16px; right:16px; background:rgba(8,17,31,.85); border:1px solid var(--line); border-radius:10px; padding:8px 12px; z-index:5; }
+    .legend-title { font-size:10px; color:var(--muted); margin-bottom:4px; text-transform:uppercase; letter-spacing:.05em; }
+    .legend-item { display:flex; align-items:center; gap:6px; font-size:11px; margin-bottom:2px; }
+    .legend-dot { width:8px; height:8px; border-radius:50%; }
+
+    /* ─── Tooltip ────────────────────────────────────────────── */
+    #tooltip { position:absolute; background:rgba(15,23,42,.95); border:1px solid var(--line); border-radius:8px; padding:8px 12px; font-size:11px; color:var(--text); pointer-events:none; z-index:20; display:none; max-width:300px; }
+    #tooltip .tt-name { font-weight:700; margin-bottom:4px; }
+    .tt-attr { color:var(--muted); margin-bottom:2px; }
+    .tt-attr span { color:var(--text); }
   </style>
 </head>
 <body>
 <div id="app">
   <header>
-    <div>
-      <h1>3D IFC Viewer - <span id="buildingLabel">Gedung</span></h1>
-      <div class="sub">Prototype viewer untuk rapat koordinasi. Source: IFC export dari Revit.</div>
+    <div class="header-left">
+      <h1>3D IFC Viewer — <span id="buildingLabel">Gedung</span></h1>
+      <div class="sub">Klik objek untuk isolasi. Scroll=zoom, drag=orbit, right-drag=pan.</div>
     </div>
-    <div class="toolbar">
+    <div class="toolbar" id="disciplineBtns">
       <button data-discipline="ARS">ARS</button>
       <button data-discipline="STR" class="active">STR</button>
       <button data-discipline="INT">INT</button>
       <button data-discipline="MEP">MEP</button>
       <button id="showAll">All</button>
-      <button id="sectionToggle">Section Cut</button>
-      <button id="resetView">Reset View</button>
+      <button id="btnSlice" class="danger">Slice</button>
+      <button id="btnLayer">Layers</button>
+      <button id="btnReset">Reset</button>
+      <button id="btnScreenshot">📷</button>
     </div>
   </header>
+
   <main>
     <div id="viewer"></div>
-    <div id="status"><strong>Status:</strong> loading viewer...</div>
+    <div id="status"><strong>Status:</strong> memuat...</div>
+    <div id="slice-indicator">Slice: <span id="sliceAxis">-</span> @ <span id="slicePos">-</span></div>
   </main>
 </div>
+
+<!-- Layer Panel -->
+<div class="layer-panel" id="layerPanel" style="display:none;">
+  <h3>🏗️ Layers</h3>
+  <div id="layerList"></div>
+</div>
+
+<!-- Slice Panel -->
+<div class="slice-panel" id="slicePanel">
+  <h3>✂️ Section Slice</h3>
+  <div class="slice-axis-btns">
+    <button data-axis="x" class="active">X-Axis</button>
+    <button data-axis="y">Y-Axis</button>
+    <button data-axis="z">Z-Axis</button>
+  </div>
+  <div class="slice-row">
+    <label>Posisi</label>
+    <input type="range" id="slicePosSlider" min="-50" max="50" step="0.5" value="0">
+    <span class="val" id="slicePosVal">0.0</span>
+  </div>
+  <div class="slice-row">
+    <label>Transparan</label>
+    <input type="range" id="sliceOpacitySlider" min="0" max="100" step="5" value="100">
+    <span class="val" id="sliceOpacityVal">100%</span>
+  </div>
+  <div class="slice-axis-btns" style="margin-top:8px;">
+    <button id="sliceToggleSemi" style="flex:1;">Semi-transparent</button>
+    <button id="sliceToggleCap" style="flex:1;">Show Cap</button>
+  </div>
+  <div style="margin-top:10px; color:var(--muted); font-size:10px; line-height:1.4;">
+    Geser slider untuk memotong model.<br>
+    Y-Axis = potongan horizontal (lantai).<br>
+    X/Z-Axis = potongan vertikal (dinding).
+  </div>
+</div>
+
+<!-- Legend -->
+<div class="legend" id="legendPanel">
+  <div class="legend-title">Disiplin</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div>Struktur</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div>Arsitektur</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div>Interior</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div>MEP</div>
+</div>
+
+<!-- Tooltip -->
+<div id="tooltip"></div>
+
 <script>
   window.addEventListener('error', event => {
     const el = document.getElementById('status');
-    if (el) el.innerHTML = `<strong>Status:</strong> Error script: ${event.message || 'unknown'} di ${event.filename || ''}:${event.lineno || ''}`;
+    if (el) el.innerHTML = `<strong>Status:</strong> Error: ${event.message || 'unknown'}`;
   });
   window.addEventListener('unhandledrejection', event => {
     const el = document.getElementById('status');
-    if (el) el.innerHTML = `<strong>Status:</strong> Error promise: ${event.reason?.message || event.reason || 'unknown'}`;
+    if (el) el.innerHTML = `<strong>Status:</strong> Error: ${event.reason?.message || 'unknown'}`;
   });
 </script>
+
 <script type="module">
+  // ─── Imports ───────────────────────────────────────────────────
   const bootStatus = document.getElementById('status');
-  if (bootStatus) bootStatus.innerHTML = '<strong>Status:</strong> memuat library 3D viewer...';
+  bootStatus.innerHTML = '<strong>Status:</strong> memuat library 3D...';
 
   let THREE, OrbitControls, IFCLoader;
   try {
@@ -65,65 +166,166 @@
     ({ OrbitControls } = await import('https://esm.sh/three@0.152.2/examples/jsm/controls/OrbitControls.js?bundle'));
     ({ IFCLoader } = await import('https://esm.sh/web-ifc-three@0.0.126/IFCLoader.js?bundle&deps=three@0.152.2,web-ifc@0.0.44'));
   } catch (err) {
-    const el = document.getElementById('status');
-    if (el) el.innerHTML = `<strong>Status:</strong> gagal memuat library viewer dari CDN. ${err?.message || err}`;
+    bootStatus.innerHTML = `<strong>Status:</strong> gagal memuat library: ${err?.message || err}`;
     throw err;
   }
 
+  // ─── Config ───────────────────────────────────────────────────
   const params = new URLSearchParams(location.search);
   const building = (params.get('building') || 'D').toUpperCase();
   const disciplineParam = (params.get('discipline') || 'STR').toUpperCase();
   const labels = { B: 'Gedung B', D: 'Gedung D', K: 'Gedung K' };
   document.getElementById('buildingLabel').textContent = labels[building] || `Gedung ${building}`;
 
+  // Per-building color tint for loaded models
+  const buildingColors = { B: 0x88bbff, D: 0xffbb88, K: 0x88ffbb };
+
   const modelMap = {
-    B: {
-      STR: '/models/Gedung B/IFC/STR/STR-B.ifc'
-    },
-    D: {
-      STR: '/models/Gedung D/IFC/STR/STR D.ifc'
-    },
-    K: {
-      STR: '/models/Gedung K/IFC/STR/STR-K.ifc',
-      ARS: '/models/Gedung K/IFC/ARS/ARS-K.ifc'
-    }
+    B: { STR: '/models/Gedung B/IFC/STR/STR-B.ifc' },
+    D: { STR: '/models/Gedung D/IFC/STR/STR D.ifc' },
+    K: { STR: '/models/Gedung K/IFC/STR/STR-K.ifc', ARS: '/models/Gedung K/IFC/ARS/ARS-K.ifc' }
   };
 
-  const status = document.getElementById('status');
+  // ─── Scene ────────────────────────────────────────────────────
+  const statusEl = document.getElementById('status');
   const container = document.getElementById('viewer');
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x08111f);
+  scene.fog = new THREE.FogExp2(0x08111f, 0.002);
 
-  const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000000);
+  const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 2000000);
   camera.position.set(35, 28, 35);
 
-  const renderer = new THREE.WebGLRenderer({ antialias: true, logarithmicDepthBuffer: true });
+  const renderer = new THREE.WebGLRenderer({ antialias: true, logarithmicDepthBuffer: true, preserveDrawingBuffer: true });
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
   renderer.setSize(container.clientWidth, container.clientHeight);
   renderer.localClippingEnabled = true;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   container.appendChild(renderer.domElement);
 
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
   controls.dampingFactor = 0.08;
+  controls.maxDistance = 50000;
 
-  scene.add(new THREE.AmbientLight(0xffffff, 0.85));
-  const dir = new THREE.DirectionalLight(0xffffff, 1.4);
-  dir.position.set(50, 80, 30);
-  scene.add(dir);
-  const grid = new THREE.GridHelper(120, 60, 0x2b6cb0, 0x1e293b);
+  // Lights
+  const ambient = new THREE.AmbientLight(0xffffff, 0.7);
+  scene.add(ambient);
+  const dir1 = new THREE.DirectionalLight(0xffffff, 1.2);
+  dir1.position.set(50, 80, 30);
+  dir1.castShadow = true;
+  scene.add(dir1);
+  const dir2 = new THREE.DirectionalLight(0xffffff, 0.4);
+  dir2.position.set(-30, 40, -20);
+  scene.add(dir2);
+
+  const grid = new THREE.GridHelper(200, 100, 0x2b6cb0, 0x1e293b);
   scene.add(grid);
-  const axes = new THREE.AxesHelper(12);
+  const axes = new THREE.AxesHelper(15);
   scene.add(axes);
 
-  const clippingPlane = new THREE.Plane(new THREE.Vector3(-1, 0, 0), 0);
-  let sectionOn = false;
+  // ─── Slice planes ─────────────────────────────────────────────
+  let clipX = 1000, clipY = 1000, clipZ = 1000;
+  let clipEnabled = { x: true, y: true, z: true };
+  const planes = [
+    new THREE.Plane(new THREE.Vector3(-1, 0, 0), clipX),
+    new THREE.Plane(new THREE.Vector3(0, -1, 0), clipY),
+    new THREE.Plane(new THREE.Vector3(0, 0, -1), clipZ),
+  ];
+
+  function updateClipping() {
+    [clipX, clipY, clipZ].forEach((v, i) => { planes[i].constant = v; });
+    const active = [];
+    if (clipEnabled.x) active.push(planes[0]);
+    if (clipEnabled.y) active.push(planes[1]);
+    if (clipEnabled.z) active.push(planes[2]);
+    scene.traverse(obj => {
+      if (obj.material) {
+        obj.material.clippingPlanes = active;
+        obj.material.clipShadows = true;
+        obj.material.needsUpdate = true;
+      }
+    });
+  }
+
+  // Toggle helpers
+  let sliceSemiTransparent = false;
+  let clipCapEnabled = true;
+  let clipCapMeshes = [];
+  let activeSliceAxis = 'x';
+  let sliceActive = false;
+
+  document.getElementById('sliceToggleSemi').addEventListener('click', e => {
+    sliceSemiTransparent = !sliceSemiTransparent;
+    e.target.classList.toggle('active', sliceSemiTransparent);
+    // reduce opacity of elements being cut
+    scene.traverse(obj => {
+      if (obj.material && sliceSemiTransparent) {
+        obj.material.opacity = 0.15;
+        obj.material.transparent = true;
+      }
+    });
+    setStatus(sliceSemiTransparent ? 'Semi-transparent: ON' : 'Semi-transparent: OFF');
+  });
+
+  document.querySelectorAll('.slice-axis-btns button[data-axis]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.slice-axis-btns button[data-axis]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeSliceAxis = btn.dataset.axis;
+      // Reset slider to match current clip value
+      const slider = document.getElementById('slicePosSlider');
+      const valSpan = document.getElementById('slicePosVal');
+      const axisIdx = { x: 0, y: 1, z: 2 }[activeSliceAxis];
+      const currentVal = [clipX, clipY, clipZ][axisIdx];
+      slider.value = currentVal;
+      valSpan.textContent = currentVal.toFixed(1);
+      document.getElementById('sliceAxis').textContent = activeSliceAxis.toUpperCase();
+    });
+  });
+
+  document.getElementById('slicePosSlider').addEventListener('input', e => {
+    const val = parseFloat(e.target.value);
+    document.getElementById('slicePosVal').textContent = val.toFixed(1);
+    document.getElementById('slicePos').textContent = val.toFixed(1);
+    if (activeSliceAxis === 'x') clipX = val;
+    else if (activeSliceAxis === 'y') clipY = val;
+    else clipZ = val;
+    updateClipping();
+  });
+
+  document.getElementById('sliceOpacitySlider').addEventListener('input', e => {
+    document.getElementById('sliceOpacityVal').textContent = e.target.value + '%';
+  });
+
+  // ─── Model management ─────────────────────────────────────────
   const loaded = {};
+  const origMaterials = new WeakMap();
+  const origVisible = {};
 
   const loader = new IFCLoader();
   loader.ifcManager.setWasmPath('https://cdn.jsdelivr.net/npm/web-ifc@0.0.44/', true);
 
-  function setStatus(html) { status.innerHTML = `<strong>Status:</strong> ${html}`; }
+  const disciplineColors = { STR: 0xef4444, ARS: 0x3b82f6, INT: 0x22c55e, MEP: 0xf59e0b };
+  const legDisc = { STR: 'Struktur', ARS: 'Arsitektur', INT: 'Interior', MEP: 'MEP' };
+
+  function tintModel(model, color) {
+    model.traverse(child => {
+      if (child.isMesh && child.material) {
+        const mats = Array.isArray(child.material) ? child.material : [child.material];
+        mats.forEach(mat => {
+          if (!origMaterials.has(mat)) origMaterials.set(mat, { color: mat.color.clone(), opacity: mat.opacity, transparent: mat.transparent });
+          const orig = origMaterials.get(mat);
+          mat.color.lerp(new THREE.Color(color), 0.4);
+          mat.clippingPlanes = [];
+          mat.clipShadows = true;
+        });
+      }
+    });
+  }
+
+  function setStatus(html) { statusEl.innerHTML = `<strong>Status:</strong> ${html}`; }
 
   function frameObject(object) {
     const box = new THREE.Box3().setFromObject(object);
@@ -132,8 +334,7 @@
     const center = box.getCenter(new THREE.Vector3());
     controls.target.copy(center);
     const maxDim = Math.max(size.x, size.y, size.z) || 20;
-    const dist = maxDim * 1.4;
-    camera.position.set(center.x + dist, center.y + dist * 0.7, center.z + dist);
+    camera.position.set(center.x + maxDim * 1.4, center.y + maxDim * 1.0, center.z + maxDim * 1.4);
     camera.near = Math.max(maxDim / 1000, 0.1);
     camera.far = maxDim * 1000;
     camera.updateProjectionMatrix();
@@ -142,50 +343,90 @@
 
   async function loadDiscipline(discipline) {
     const url = modelMap[building]?.[discipline];
-    if (!url) {
-      setStatus(`${labels[building] || building} - ${discipline} belum ada file IFC di paket dashboard. Upload/export IFC dulu lalu publish ulang.`);
-      return;
-    }
+    if (!url) { setStatus(`${labels[building]} - ${discipline}: IFC belum tersedia.`); return; }
     if (loaded[discipline]) {
       Object.values(loaded).forEach(m => m.visible = false);
       loaded[discipline].visible = true;
       frameObject(loaded[discipline]);
       setStatus(`Menampilkan ${labels[building]} - ${discipline}.`);
+      updateLayerPanel();
       return;
     }
-    setStatus(`Memuat ${discipline}: ${url}`);
+    setStatus(`Memuat ${discipline}...`);
     try {
       const model = await loader.loadAsync(url);
       model.name = `${building}-${discipline}`;
-      model.traverse(child => {
-        if (child.material) {
-          child.material.clippingPlanes = sectionOn ? [clippingPlane] : [];
-          child.material.clipShadows = true;
-        }
-      });
+      tintModel(model, disciplineColors[discipline] || 0xcccccc);
       loaded[discipline] = model;
       Object.values(loaded).forEach(m => m.visible = false);
       model.visible = true;
       scene.add(model);
       frameObject(model);
-      setStatus(`Berhasil memuat ${labels[building]} - ${discipline}. Gunakan mouse untuk orbit/pan/zoom.`);
+      setStatus(`${labels[building]} - ${discipline} dimuat. Klik objek untuk isolasi.`);
+      updateLayerPanel();
     } catch (err) {
       console.error(err);
-      setStatus(`Gagal memuat IFC ${discipline}. Detail: ${err?.message || err}`);
+      setStatus(`Gagal memuat ${discipline}: ${err?.message || err}`);
     }
   }
 
   async function showAll() {
     const entries = Object.keys(modelMap[building] || {});
-    if (!entries.length) { setStatus(`Belum ada IFC untuk ${labels[building] || building}.`); return; }
+    if (!entries.length) { setStatus(`Belum ada IFC untuk ${labels[building]}.`); return; }
     for (const d of entries) await loadDiscipline(d);
     Object.values(loaded).forEach(m => m.visible = true);
-    const group = new THREE.Group();
-    Object.values(loaded).forEach(m => group.add(m.clone()));
-    frameObject(group);
-    setStatus(`Menampilkan semua IFC tersedia untuk ${labels[building] || building}: ${entries.join(', ')}.`);
+    setStatus(`Semua IFC ${labels[building]}: ${entries.join(', ')}.`);
+    updateLayerPanel();
   }
 
+  // ─── Layer panel ──────────────────────────────────────────────
+  function updateLayerPanel() {
+    const list = document.getElementById('layerList');
+    list.innerHTML = '';
+    Object.entries(loaded).forEach(([key, model]) => {
+      const div = document.createElement('div');
+      div.className = 'layer-item';
+      const color = disciplineColors[key] || 0xcccccc;
+      div.innerHTML = `
+        <span class="layer-visible" data-disc="${key}">${model.visible ? '👁️' : '🚫'}</span>
+        <div class="layer-dot" style="background:#${color.toString(16).padStart(6,'0')}"></div>
+        <span class="layer-name">${legDisc[key] || key}</span>
+        <input class="layer-opacity" type="range" min="0" max="100" value="${model.visible ? 100 : 0}" data-disc="${key}">`;
+      list.appendChild(div);
+    });
+
+    document.querySelectorAll('.layer-visible').forEach(el => {
+      el.addEventListener('click', () => {
+        const d = el.dataset.disc;
+        if (loaded[d]) loaded[d].visible = !loaded[d].visible;
+        el.textContent = loaded[d].visible ? '👁️' : '🚫';
+      });
+    });
+
+    document.querySelectorAll('.layer-opacity').forEach(el => {
+      el.addEventListener('input', e => {
+        const d = e.target.dataset.disc;
+        const opacity = parseInt(e.target.value) / 100;
+        if (loaded[d]) {
+          loaded[d].visible = opacity > 0;
+          loaded[d].traverse(child => {
+            if (child.material) {
+              const mats = Array.isArray(child.material) ? child.material : [child.material];
+              mats.forEach(mat => {
+                // Only set opacity on semi-transparent mode
+                if (mat.transparent) mat.opacity = opacity;
+                else if (opacity > 0.5) { mat.opacity = 1; mat.transparent = false; }
+                else { mat.opacity = opacity; mat.transparent = true; }
+              });
+            }
+          });
+        }
+        el.previousElementSibling.textContent = opacity > 0 ? '👁️' : '🚫';
+      });
+    });
+  }
+
+  // ─── UI bindings ──────────────────────────────────────────────
   document.querySelectorAll('[data-discipline]').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('[data-discipline]').forEach(b => b.classList.remove('active'));
@@ -193,20 +434,118 @@
       loadDiscipline(btn.dataset.discipline);
     });
   });
+
   document.getElementById('showAll').addEventListener('click', showAll);
-  document.getElementById('sectionToggle').addEventListener('click', e => {
-    sectionOn = !sectionOn;
-    e.currentTarget.classList.toggle('active', sectionOn);
-    Object.values(loaded).forEach(model => model.traverse(child => {
-      if (child.material) child.material.clippingPlanes = sectionOn ? [clippingPlane] : [];
-    }));
-    setStatus(sectionOn ? 'Section cut aktif. Prototype ini memakai potongan vertikal sederhana.' : 'Section cut nonaktif.');
-  });
-  document.getElementById('resetView').addEventListener('click', () => {
-    const visible = Object.values(loaded).find(m => m.visible) || Object.values(loaded)[0];
-    if (visible) frameObject(visible);
+  document.getElementById('btnReset').addEventListener('click', () => {
+    const v = Object.values(loaded).find(m => m.visible) || Object.values(loaded)[0];
+    if (v) frameObject(v);
+    // Reset clipping
+    clipX = 1000; clipY = 1000; clipZ = 1000;
+    clipEnabled = { x: true, y: true, z: true };
+    document.getElementById('slicePosSlider').value = 0;
+    document.getElementById('slicePosVal').textContent = '0.0';
+    updateClipping();
+    document.getElementById('slice-indicator').classList.remove('active');
+    sliceActive = false;
+    setStatus('View & slice direset.');
   });
 
+  document.getElementById('btnSlice').addEventListener('click', e => {
+    const panel = document.getElementById('slicePanel');
+    panel.classList.toggle('open');
+    sliceActive = panel.classList.contains('open');
+    document.getElementById('slice-indicator').classList.toggle('active', sliceActive);
+    e.target.classList.toggle('active', sliceActive);
+    if (sliceActive) {
+      document.getElementById('sliceAxis').textContent = activeSliceAxis.toUpperCase();
+      document.getElementById('slicePos').textContent = document.getElementById('slicePosVal').textContent;
+      updateClipping();
+    }
+  });
+
+  document.getElementById('btnLayer').addEventListener('click', () => {
+    const pnl = document.getElementById('layerPanel');
+    pnl.style.display = pnl.style.display === 'none' ? 'block' : 'none';
+  });
+
+  // Screenshot
+  document.getElementById('btnScreenshot').addEventListener('click', () => {
+    renderer.render(scene, camera);
+    const link = document.createElement('a');
+    link.download = `pejaten-${building}-${Date.now()}.png`;
+    link.href = renderer.domElement.toDataURL('image/png');
+    link.click();
+  });
+
+  // ─── Raycaster for selection / isolation ──────────────────────
+  const raycaster = new THREE.Raycaster();
+  const mouse = new THREE.Vector2();
+  const tooltip = document.getElementById('tooltip');
+  let isolated = null;
+
+  container.addEventListener('click', event => {
+    if (event.button !== 0) return;
+    const rect = container.getBoundingClientRect();
+    mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+    raycaster.setFromCamera(mouse, camera);
+    const meshes = [];
+    Object.values(loaded).filter(m => m.visible).forEach(m => m.traverse(c => { if (c.isMesh) meshes.push(c); }));
+    const hits = raycaster.intersectObjects(meshes, false);
+
+    if (hits.length > 0) {
+      const obj = hits[0].object;
+
+      if (isolated === obj) {
+        // Restore all
+        Object.values(loaded).forEach(m => m.traverse(c => { if (c.isMesh) c.visible = origVisible[c.uuid] !== false; }));
+        isolated = null;
+        tooltip.style.display = 'none';
+        setStatus('Semua objek ditampilkan.');
+      } else {
+        // Isolate clicked
+        if (!isolated) {
+          Object.values(loaded).forEach(m => m.traverse(c => { if (c.isMesh) origVisible[c.uuid] = c.visible; }));
+        }
+        Object.values(loaded).forEach(m => m.traverse(c => { if (c.isMesh) c.visible = (c === obj); }));
+        isolated = obj;
+
+        // Try to get IFC properties
+        const ifcManager = loader.ifcManager;
+        const modelID = obj.modelID || 0;
+        const expressID = obj.userData?.expressID;
+        let info = `<div class="tt-name">${obj.name || 'Element'}</div>`;
+        info += `<div class="tt-attr">Model: ${obj.parent?.name || building}</div>`;
+        if (expressID) {
+          try {
+            const props = ifcManager.getItemProperties(modelID, expressID, false);
+            if (props?.Name?.value) info += `<div class="tt-attr">Name: <span>${props.Name.value}</span></div>`;
+            if (props?.ObjectType?.value) info += `<div class="tt-attr">Type: <span>${props.ObjectType.value}</span></div>`;
+            if (props?.Tag?.value) info += `<div class="tt-attr">Tag: <span>${props.Tag.value}</span></div>`;
+          } catch(e) {}
+        }
+        tooltip.innerHTML = info;
+        tooltip.style.display = 'block';
+        tooltip.style.left = (event.clientX - rect.left + 15) + 'px';
+        tooltip.style.top = (event.clientY - rect.top + 10) + 'px';
+        setStatus(`Isolated: ${obj.name || 'Element'} — klik lagi untuk restore.`);
+      }
+    } else {
+      tooltip.style.display = 'none';
+    }
+  });
+
+  container.addEventListener('dblclick', () => {
+    if (isolated) {
+      Object.values(loaded).forEach(m => m.traverse(c => { if (c.isMesh) c.visible = origVisible[c.uuid] !== false; }));
+      isolated = null;
+      tooltip.style.display = 'none';
+      setStatus('Semua objek ditampilkan.');
+    }
+  });
+
+  // ─── Animation loop ───────────────────────────────────────────
   addEventListener('resize', () => {
     camera.aspect = container.clientWidth / container.clientHeight;
     camera.updateProjectionMatrix();
@@ -219,6 +558,9 @@
     renderer.render(scene, camera);
   }
   animate();
+
+  // Start
+  setStatus(`Viewer siap. Klik "STR" untuk mulai.`);
   loadDiscipline(disciplineParam);
 </script>
 </body>
