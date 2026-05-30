@@ -405,28 +405,7 @@
       .metric-grid { grid-template-columns: 1fr; }
     }
   
-    /* ── Chat Widget ─────────────────────────────────────────── */
-    .chat-widget { position:fixed; bottom:24px; right:24px; z-index:9999; }
-    .chat-toggle { width:60px; height:60px; border-radius:50%; background:linear-gradient(135deg,#0284c7,#0ea5e9); border:2px solid rgba(56,189,248,.4); cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 28px rgba(2,132,199,.45); transition:transform .2s,box-shadow .2s; overflow:hidden; padding:0; animation:chatPulse 3s ease-in-out infinite; }
-    .chat-toggle:hover { transform:scale(1.1); box-shadow:0 6px 36px rgba(56,189,248,.6); animation:none; }
-    .chat-toggle img { width:100%; height:100%; object-fit:cover; border-radius:50%; }
-    @keyframes chatPulse { 0%,100% { box-shadow:0 4px 28px rgba(2,132,199,.45); } 50% { box-shadow:0 4px 40px rgba(56,189,248,.7); } }
-    .chat-pin-modal { display:none; position:fixed; inset:0; z-index:10001; background:rgba(2,6,23,.88); backdrop-filter:blur(8px); align-items:center; justify-content:center; }
-    .chat-pin-modal.open { display:flex; }
-    .chat-pin-box { background:var(--panel,#101c2f); border:1px solid var(--line,#253955); border-radius:16px; padding:28px 24px; text-align:center; max-width:340px; width:90%; }
-    .chat-pin-box h3 { margin:0 0 6px; font-size:18px; }
-    .chat-pin-box .sub { color:var(--muted,#94a3b8); font-size:13px; margin-bottom:18px; }
-    .chat-pin-box input { width:100%; padding:12px; border:1px solid var(--line,#253955); border-radius:10px; background:#0f172a; color:var(--text,#e8f0ff); font-size:20px; text-align:center; letter-spacing:6px; outline:none; }
-    .chat-pin-box input:focus { border-color:var(--blue,#38bdf8); }
-    .chat-pin-box .pin-error { color:#f87171; font-size:12px; margin-top:8px; min-height:18px; }
-    .chat-pin-box button { margin-top:12px; width:100%; padding:12px; border-radius:10px; border:none; background:linear-gradient(135deg,#0284c7,#38bdf8); color:#fff; font-weight:700; font-size:15px; cursor:pointer; }
-    .chat-pin-box button:hover { opacity:.9; }
-    .chat-pin-box .pin-alt { margin-top:10px; font-size:11px; color:var(--muted,#94a3b8); }
-    .chat-pin-box .pin-alt a { color:var(--muted,#94a3b8); text-decoration:underline; }
-    @media (max-width:640px) { .chat-widget { bottom:16px; right:16px; } .chat-toggle { width:52px; height:52px; } }
-
-    .chat-btn { background:linear-gradient(135deg,#0284c7,#0ea5e9); border-color:rgba(56,189,248,.5); font-weight:700; letter-spacing:.03em; }
-    .chat-btn:hover { background:linear-gradient(135deg,#0369a1,#0284c7); border-color:#38bdf8; box-shadow:0 0 16px rgba(56,189,248,.3); }
+    /* ── Chat Widget ─────────────────────────────────────────── */.chat-btn:hover { background:linear-gradient(135deg,#0369a1,#0284c7); border-color:#38bdf8; box-shadow:0 0 16px rgba(56,189,248,.3); }
     .chat-btn-icon { margin-right:4px; }
 
   /* MEETING POPUP */
@@ -471,9 +450,9 @@
   body.day-mode .meeting-title { color: #0f172a; }
 </style>
 <meta name="webchat-url" content="http://127.0.0.1:18999/chat">
-  <!-- Built for Vercel from Google Drive dashboard on 30 May 2026 13:06 local time. -->
+  <!-- Built for Vercel from Google Drive dashboard on 30 May 2026 15:03 local time. -->
 <meta name="dashboard-build" content="Pejaten dashboard static web build">
-<meta name="dashboard-build-id" content="20260530130621">
+<meta name="dashboard-build-id" content="20260530150340">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
 </head>
 <body class="is-loading">
@@ -487,9 +466,7 @@
   </div>
   <div class="wrap">
     <div class="toolbar">
-      <button class="export-btn chat-btn" type="button" id="header-chat-btn" title="Chat dengan AI Assistant">
-        <span class="chat-btn-icon">💬</span> CHAT
-      </button>
+      
       <button class="export-btn" type="button" id="export-pdf">Export PDF</button>
       <button class="export-btn" type="button" id="export-ppt">Export PPT</button>
       <button class="theme-toggle" type="button" id="theme-toggle">Day mode</button>
@@ -18123,19 +18100,6 @@ const pileMonitoringData = {
     }
 </style></head><body><div class="Section1">${cloned.innerHTML}</div>
 <!-- Chat Widget -->
-<div class="chat-widget" id="chatWidget">
-  <button class="chat-toggle" id="chatToggle" title="Chat dengan AI Assistant"><img src="joker-profile-picture.png" alt="AI Assistant" /></button>
-</div>
-<div class="chat-pin-modal" id="chatPinModal">
-  <div class="chat-pin-box">
-    <h3>&#x1F510; Verifikasi PIN</h3>
-    <div class="sub">Masukkan PIN untuk mengakses AI Assistant</div>
-    <input type="password" id="chatPinInput" placeholder="&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;" maxlength="9" inputmode="numeric" autocomplete="off" />
-    <div class="pin-error" id="chatPinError"></div>
-    <button id="chatPinSubmit">Buka Chat</button>
-    <div class="pin-alt">Butuh akses? Hubungi Jakoners &bull; <a href="#" id="chatPinSkip">Nanti saja</a></div>
-  </div>
-</div>
 <script>
 (function() {
   window.DASHBOARD_WEBCHAT_URL = document.querySelector('meta[name="webchat-url"]')?.getAttribute('content') || '';
@@ -18311,117 +18275,7 @@ const pileMonitoringData = {
       localStorage.setItem('dashboard-theme', mode);
     };
     const savedTheme = localStorage.getItem('dashboard-theme') || 'night';
-    // ===== DATE LOOKBACK / HISTORICAL VIEW =====
-    (function() {
-      const dateInput = document.getElementById('lookback-date');
-      const applyBtn = document.getElementById('lookback-apply');
-      const resetBtn = document.getElementById('lookback-reset');
-      const statusEl = document.getElementById('lookback-status');
-      if (!dateInput || !applyBtn) return;
-
-      // Parse date labels like "27 Apr", "15 Mei" -> Date
-      const months = {
-        'Jan':0,'Feb':1,'Mar':2,'Apr':3,'Mei':4,'May':4,
-        'Jun':5,'Jul':6,'Agu':7,'Aug':7,'Sep':8,
-        'Okt':9,'Oct':9,'Nov':10,'Des':11,'Dec':11
-      };
-      function parseLabel(label, year) {
-        const p = label.trim().split(/\s+/);
-        if (p.length < 2) return null;
-        const day = parseInt(p[0]), mon = months[p[1]];
-        return (isNaN(day) || mon === undefined) ? null : new Date(year, mon, day);
-      }
-      function fmtDate(d) {
-        return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
-      }
-
-      // Get available date range from daily data
-      const labels0 = (dataSets.daily.buildings[0]?.labels) || [];
-      const curYear = new Date().getFullYear();
-      const firstDate = labels0.length ? parseLabel(labels0[0], curYear) : null;
-      const lastDate  = labels0.length ? parseLabel(labels0[labels0.length-1], curYear) : null;
-
-      if (firstDate && lastDate) {
-        dateInput.min = fmtDate(firstDate);
-        dateInput.max = fmtDate(lastDate);
-        dateInput.value = fmtDate(lastDate);
-      }
-
-      // Store original daily data
-      let origDaily = null;
-      function saveOrig() {
-        if (!origDaily) origDaily = JSON.parse(JSON.stringify(dataSets.daily));
-      }
-
-      function setStatus(txt, isHist) {
-        if (!statusEl) return;
-        statusEl.textContent = txt;
-        statusEl.className = 'lookback-status' + (isHist ? ' is-historical' : '');
-      }
-
-      function applyLookback(dateStr) {
-        saveOrig();
-        const [y,m,d] = dateStr.split('-').map(Number);
-        const target = new Date(y, m-1, d);
-
-        const truncBuildings = origDaily.buildings.map(b => {
-          const labels=b.labels||[], cp=b.curvePlan||[], cr=b.curveReal||[];
-          let cutIdx = labels.length;
-          for (let i=0; i<labels.length; i++) {
-            const ld = parseLabel(labels[i], y);
-            if (ld && ld > target) { cutIdx = i; break; }
-          }
-          const tLabels = labels.slice(0, cutIdx);
-          const tCP = cp.slice(0, cutIdx);
-          const tCR = cr.slice(0, cutIdx);
-          const li = cutIdx - 1;
-          const newCumPlan = li>=0 ? (tCP[li]||0) : 0;
-          const newCumReal = li>=0 ? (tCR[li]||0) : 0;
-          const newCumDev  = Math.round((newCumReal - newCumPlan)*100)/100;
-          const newDayPlan = li>=1 ? Math.round((tCP[li]-tCP[li-1])*10000)/10000 : (li===0?Math.round((tCP[0]||0)*10000)/10000:0);
-          const newDayReal = li>=1 ? Math.round((tCR[li]-tCR[li-1])*10000)/10000 : (li===0?Math.round((tCR[0]||0)*10000)/10000:0);
-
-          return {
-            ...b,
-            date: tLabels.length ? tLabels[tLabels.length-1] : 'N/A',
-            cumPlan: newCumPlan, cumReal: newCumReal, deviation: newCumDev,
-            dailyPlan: newDayPlan, dailyReal: newDayReal,
-            labels: tLabels, curvePlan: tCP, curveReal: tCR,
-            note: 'Lookback s.d. ' + (tLabels.length ? tLabels[tLabels.length-1] : dateStr)
-          };
-        });
-
-        dataSets.daily = { ...origDaily, sourceDate: 'Data per '+dateStr+' (lookback)', buildings: truncBuildings };
-        window.location.reload();
-      }
-
-      function resetLookback() {
-        if (origDaily) dataSets.daily = JSON.parse(JSON.stringify(origDaily));
-        localStorage.removeItem('dashboard-lookback-date');
-        window.location.reload();
-      }
-
-      applyBtn.addEventListener('click', () => {
-        if (dateInput.value) {
-          localStorage.setItem('dashboard-lookback-date', dateInput.value);
-          applyLookback(dateInput.value);
-        }
-      });
-
-      resetBtn.addEventListener('click', () => {
-        localStorage.removeItem('dashboard-lookback-date');
-        resetLookback();
-      });
-
-      // Check if there's a saved lookback date
-      const savedDate = localStorage.getItem('dashboard-lookback-date');
-      if (savedDate) {
-        dateInput.value = savedDate;
-        setStatus('Data per ' + savedDate, true);
-      } else {
-        setStatus('Data terkini', false);
-      }
-    })();
+    // ===== DATE LOOKBACK / HISTORICAL VIEW =====();
 
 
     applyTheme(savedTheme);
