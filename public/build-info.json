@@ -1,6 +1,6 @@
 {
-  "builtAt": "2026-05-30T15:03:40",
-  "buildId": "20260530150340",
+  "builtAt": "2026-06-04T10:43:14",
+  "buildId": "20260604104314",
   "sourceDashboard": "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\Dashboard_Perkembangan_Proyek_Renovasi_Pejaten.html",
   "sourceDataFiles": [
     "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\shopdrawing_monitoring_data.js",
@@ -24,7 +24,7 @@
     {
       "source": "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\shopdrawing_monitoring_data.js",
       "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\shopdrawing_monitoring_data.js",
-      "bytes": 374850
+      "bytes": 429514
     },
     {
       "source": "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\rfi_monitoring_data.js",
@@ -34,12 +34,12 @@
     {
       "source": "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\approval_material_monitoring_data.js",
       "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\approval_material_monitoring_data.js",
-      "bytes": 351599
+      "bytes": 311007
     },
     {
       "source": "H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Dashboard\\pile_monitoring_data.js",
       "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\pile_monitoring_data.js",
-      "bytes": 1886
+      "bytes": 1888
     }
   ],
   "copiedViewerAssets": [
@@ -80,14 +80,21 @@
       "discipline": "STR",
       "source": "H:\\My Drive\\Work in Progress\\04 Model 3D\\Gedung B\\02 IFC\\STR\\STR-B.ifc",
       "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\models\\Gedung B\\IFC\\STR\\STR-B.ifc",
-      "bytes": 6861253
+      "bytes": 4218213
     },
     {
       "building": "Gedung D",
       "discipline": "STR",
       "source": "H:\\My Drive\\Work in Progress\\04 Model 3D\\Gedung D\\02 IFC\\STR\\STR D.ifc",
       "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\models\\Gedung D\\IFC\\STR\\STR D.ifc",
-      "bytes": 2213788
+      "bytes": 3188567
+    },
+    {
+      "building": "Gedung D",
+      "discipline": "STR",
+      "source": "H:\\My Drive\\Work in Progress\\04 Model 3D\\Gedung D\\02 IFC\\STR\\STR-D.ifc",
+      "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\models\\Gedung D\\IFC\\STR\\STR-D.ifc",
+      "bytes": 3223037
     },
     {
       "building": "Gedung K",
@@ -105,5 +112,5 @@
     }
   ],
   "output": "C:\\Users\\bim\\.openclaw\\workspace\\deploy\\pejaten-dashboard-web\\public\\index.html",
-  "bytes": 1031428
+  "bytes": 1056807
 }
