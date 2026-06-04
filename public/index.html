@@ -19271,6 +19271,7 @@ const pileMonitoringData = {
     themeToggle.addEventListener('click', () => {
       const next = document.body.classList.contains('day-mode') ? 'night' : 'day';
       applyTheme(next);
+    });
 
     document.getElementById('header-chat-btn')?.addEventListener('click', () => {
       if (localStorage.getItem('dashboard_chat_pin_ok') === '1') {
