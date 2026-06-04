@@ -1,0 +1,168 @@
+# DED STATUS — GEDUNG K
+> Sumber: `shopdrawing_monitoring_data.js` (dari workbook MONITOR GAMBAR DED DAN SD PEJATEN)
+> Update: 2026-05-29
+
+## Ringkasan
+
+| Disiplin | Total | ✅ Approved | 📤 Submitted | ⬜ Not Started |
+|----------|-------|-----------|------------|---------------|
+| Struktur | 24 | 15 | 0 | 9 |
+| Arsitektur | 63 | 0 | 5 | 58 |
+| Interior | 5 | 0 | 0 | 5 |
+| MEP | 17 | 0 | 0 | 17 |
+| **TOTAL** | **109** | **15** | **5** | **89** |
+
+---
+
+## 🔧 STRUKTUR (24 dokumen)
+
+### ✅ Approved (15)
+
+| No | Document Number | DED Number | Nama Dokumen |
+|----|----------------|------------|-------------|
+| 1 | SD.STR.GDK-0000.01 | K-SD-01 | STANDAR DETAIL 1 |
+| 2 | SD.STR.GDK-0000.02 | K-SD-02 | STANDAR DETAIL 2 |
+| 3 | SD.STR.GDK-0000.03 | K-SD-03 | STANDAR DETAIL 3 |
+| 4 | SD.STR.GDK-0000.04 | K-SD-04 | STANDAR DETAIL 4 |
+| 5 | SD.STR.GDK-0000.05 | K-SD-05 | STANDAR DETAIL 5 |
+| 6 | SD.STR.GDK-0001.01 | K-STR-01 | DENAH TIANG PANCANG |
+| 7 | SD.STR.GDK-0001.02 | K-STR-02 | DETAIL TIANG PANCANG |
+| 8 | SD.STR.GDK-0002.01 | K-STR-03 | DENAH PILE CAP |
+| 9 | SD.STR.GDK-0002.02 | K-STR-05 | DETAIL PILE CAP |
+| 10 | SD.STR.GDK-0003.01 | K-STR-04 | DENAH KOLOM |
+| 11 | SD.STR.GDK-0003.02 | K-STR-14 | DETAIL KOLOM |
+| 12 | SD.STR.GDK-0004.01 | K-STR-06 | DENAH BALOK LANTAI 1 / TIE BEAM |
+| 13 | SD.STR.GDK-0005.01 | K-STR-06 | DENAH PLAT LANTAI 1 |
+| 14 | SD.STR.GDK-0005.02 | K-STR-06 | DETAIL PLAT LANTAI 1 |
+| 15 | SD.STR.GDK-0006.01 | K-STR-13 | TABEL BALOK |
+
+### ⬜ Not Started (9)
+
+| No | Document Number | DED Number | Nama Dokumen |
+|----|----------------|------------|-------------|
+| 1 | SD.STR.GDK-0004.02 | K-STR-07 | DENAH BALOK LANTAI 2 |
+| 2 | SD.STR.GDK-0004.03 | K-STR-08 | DENAH BALOK LANTAI 3 |
+| 3 | SD.STR.GDK-0004.04 | K-STR-09 | DENAH BALOK LANTAI 4 |
+| 4 | SD.STR.GDK-0004.05 | K-STR-10 | DENAH BALOK LANTAI 5 |
+| 5 | SD.STR.GDK-0004.06 | K-STR-11 | DENAH BALOK LANTAI DAK |
+| 6 | SD.STR.GDK-0004.07 | K-STR-12 | DENAH BALOK ATAP |
+| 7 | SD.STR.GDK-0007.01 | K-STR-15 | DETAIL PENULANGAN LANTAI |
+| 8 | SD.STR.GDK-0008.01 | K-STR-16 | DETAIL PENULANGAN SHEAR WALL |
+| 9 | SD.STR.GDK-0009.01 | K-STR-21 | DENAH STRUKTUR GWT & R. POMPA |
+
+---
+
+## 🏛️ ARSITEKTUR (63 dokumen)
+
+### 📤 Submitted (5)
+
+| No | Document Number | DED Number | Nama Dokumen |
+|----|----------------|------------|-------------|
+| 1 | SD.ARS.GDK-0010.01 | - | DENAH DINDING GEDUNG SERVER |
+| 2 | SD.ARS.GDK-0010.02 | - | DENAH DINDING GEDUNG SERVER |
+| 3 | SD.ARS.GDK-0010.03 | - | TAMPAK DEPAN |
+| 4 | SD.ARS.GDK-0010.04 | - | TAMPAK SAMPING |
+| 5 | SD.ARS.GDK-0010.05 | - | TAMPAK BELAKANG |
+
+### ⬜ Not Started (58)
+
+| No | Document Number | DED Number | Nama Dokumen |
+|----|----------------|------------|-------------|
+| 1 | A.01-1 | A.01-1 | SITE PLAN |
+| 2 | A.01-2 | A.01-2 | BLOCK PLAN |
+| 3 | A.01-3 | A.01-3 | DENAH LANTAI 1 |
+| 4 | A.01-4 | A.01-4 | DENAH LANTAI 2 |
+| 5 | A.01-5 | A.01-5 | DENAH LANTAI 3 |
+| 6 | A.01-6 | A.01-6 | DENAH LANTAI 4 |
+| 7 | A.01-7 | A.01-7 | DENAH LANTAI 5 |
+| 8 | A.01-8 | A.01-8 | DENAH DAK ATAP |
+| 9 | A.01-9 | A.01-9 | DENAH ATAP |
+| 10 | AR.02-1 | AR.02-1 | TAMPAK DEPAN |
+| 11 | AR.02-2 | AR.02-2 | TAMPAK BELAKANG |
+| 12 | AR.02-3 | AR.02-3 | TAMPAK SAMPING |
+| 13 | - | - | POTONGAN A-B |
+| 14 | - | - | POTONGAN C |
+| 15 | - | - | POTONGAN D |
+| 16 | - | - | POTONGAN E |
+| 17 | - | - | POTONGAN F |
+| 18 | AR.04-1 | AR.04-1 | DENAH POLA LANTAI 1 |
+| 19 | AR.04-2 | AR.04-2 | DENAH POLA LANTAI 2 |
+| 20 | AR.04-3 | AR.04-3 | DENAH POLA LANTAI 3 |
+| 21 | AR.04-4 | AR.04-4 | DENAH POLA LANTAI 4 |
+| 22 | AR.04-5 | AR.04-5 | DENAH POLA LANTAI 5 |
+| 23 | AR.04-6 | AR.04-6 | DENAH POLA LANTAI DAK |
+| 24 | AR.05-1 | AR.05-1 | DENAH PLAFON LANTAI 1 |
+| 25 | AR.05-2 | AR.05-2 | DENAH PLAFON LANTAI 2 |
+| 26 | AR.05-3 | AR.05-3 | DENAH PLAFON LANTAI 3 |
+| 27 | AR.05-4 | AR.05-4 | DENAH PLAFON LANTAI 4 |
+| 28 | AR.05-5 | AR.05-5 | DENAH PLAFON LANTAI 5 |
+| 29 | AR.06-1 | AR.06-1 | DENAH TITIK LAMPU LT. 1 |
+| 30 | AR.06-2 | AR.06-2 | DENAH TITIK LAMPU LT. 2 |
+| 31 | AR.06-3 | AR.06-3 | DENAH TITIK LAMPU LT. 3 |
+| 32 | AR.06-4 | AR.06-4 | DENAH TITIK LAMPU LT. 4 |
+| 33 | AR.06-5 | AR.06-5 | DENAH TITIK LAMPU LT. 5 |
+| 34 | AR.07-1 | AR.07-1 | DENAH TANGGA |
+| 35 | AR.07-2 | AR.07-2 | DETAIL TANGGA |
+| 36 | AR.08-1 | AR.08-1 | DENAH RENCANA KUSEN LT. 1 |
+| 37 | AR.08-2 | AR.08-2 | DENAH RENCANA KUSEN LT. 2 |
+| 38 | AR.08-3 | AR.08-3 | DENAH RENCANA KUSEN LT. 3 |
+| 39 | AR.08-4 | AR.08-4 | DENAH RENCANA KUSEN LT. 4 |
+| 40 | AR.08-5 | AR.08-5 | DENAH RENCANA KUSEN LT. 5 |
+| 41 | AR.08-6 | AR.08-6 | DENAH RENCANA KUSEN LT. DAK ATAP |
+| 42 | AR.08-7 | AR.08-7 | DETAIL KUSEN #1 |
+| 43 | AR.08-8 | AR.08-8 | DETAIL KUSEN #2 |
+| 44 | AR.08-9 | AR.08-9 | DETAIL KUSEN #3 |
+| 45 | AR.08-10 | AR.08-10 | DETAIL KUSEN #4 |
+| 46 | AR.08-11 | AR.08-11 | DETAIL KUSEN #5 |
+| 47 | AR.08-12 | AR.08-12 | DETAIL KUSEN #6 |
+| 48 | AR.08-13 | AR.08-13 | DETAIL KUSEN #7 |
+| 49 | AR.08-14 | AR.08-14 | DETAIL KUSEN #8 |
+| 50 | AR.08-15 | AR.08-15 | DETAIL KUSEN #9 |
+| 51 | A.09-01 | A.09-01 | DETAIL TOILET |
+| 52 | A.09-02 | A.09-02 | DETAIL TOILET |
+| 53 | A.09-03 | A.09-03 | DETAIL TOILET |
+| 54 | A.09-04 | A.09-04 | DETAIL TOILET |
+| 55 | A.09-05 | A.09-05 | DETAIL TOILET |
+| 56 | A.09-06 | A.09-06 | DETAIL TOILET |
+| 57 | A.09-07 | A.09-07 | DETAIL TOILET |
+| 58 | A.09-08 | A.09-08 | DETAIL TOILET |
+
+---
+
+## 🏠 INTERIOR (5 dokumen)
+
+### ⬜ Not Started (semua 5)
+
+| No | Document Number | DED Number | Nama Dokumen |
+|----|----------------|------------|-------------|
+| 1 | 1.01 | 1.01 | DENAH INTERIOR LT.1 |
+| 2 | 1.02 | 1.02 | DENAH INTERIOR LT.2 |
+| 3 | 1.03 | 1.03 | DENAH INTERIOR LT.3 |
+| 4 | 1.04 | 1.04 | DENAH INTERIOR LT.4 |
+| 5 | 1.05 | 1.05 | DENAH INTERIOR LT.5 |
+
+---
+
+## ⚡ MEP (17 dokumen)
+
+### ⬜ Not Started (semua 17)
+
+| No | Document Number | DED Number | Nama Dokumen |
+|----|----------------|------------|-------------|
+| 1 | K-M 00001 WO | K-M 00001 WO | DIAGRAM SKEMATIK PRESSURIZED |
+| 2 | K-M 00002 WO | K-M 00002 WO | DIAGRAM SKEMATIK EXHAUST LT.1 |
+| 3 | K-M 00003 WO | K-M 00003 WO | DIAGRAM SKEMATIK EXHAUST LT.2 |
+| 4 | K-M 00004 WO | K-M 00004 WO | DIAGRAM SKEMATIK EXHAUST LT.3 |
+| 5 | K-M 00005 WO | K-M 00005 WO | DIAGRAM SKEMATIK EXHAUST LT.4 |
+| 6 | K-EL WO 0001 | K-EL WO 0001 | DENAH INSTALASI TELEPON LT.1 |
+| 7 | K-EL WO 0002 | K-EL WO 0002 | DENAH INSTALASI TELEPON LT.2 |
+| 8 | K-EL WO 0003 | K-EL WO 0003 | DENAH INSTALASI TELEPON LT.3 |
+| 9 | K-EL WO 0004 | K-EL WO 0004 | DENAH INSTALASI TELEPON LT.4 |
+| 10 | K-EL WO 0005 | K-EL WO 0005 | DENAH INSTALASI DATA LT.1 |
+| 11 | K-EL WO 0006 | K-EL WO 0006 | DENAH INSTALASI DATA LT.2 |
+| 12 | K-EL WO 0007 | K-EL WO 0007 | DENAH INSTALASI DATA LT.3 |
+| 13 | K-EL WO 0008 | K-EL WO 0008 | DENAH INSTALASI DATA LT.4 |
+| 14 | K-EL WO 0009 | K-EL WO 0009 | DENAH INSTALASI TATA SUARA LT.1 |
+| 15 | K-EL WO 0010 | K-EL WO 0010 | DENAH INSTALASI TATA SUARA LT.2 |
+| 16 | K-EL WO 0011 | K-EL WO 0011 | DENAH INSTALASI TATA SUARA LT.3 |
+| 17 | K-EL WO 0012 | K-EL WO 0012 | DENAH INSTALASI TATA SUARA LT.4 |

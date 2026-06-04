@@ -1,0 +1,140 @@
+# DED STATUS — GEDUNG D
+> Sumber: `shopdrawing_monitoring_data.js` (dari workbook MONITOR GAMBAR DED DAN SD PEJATEN)
+> Update: 2026-05-29
+
+## Ringkasan
+
+| Disiplin | Total | ✅ Approved | 📤 Submitted | ⬜ Not Started |
+|----------|-------|-----------|------------|---------------|
+| Struktur | 26 | 5 | 2 | 19 |
+| Arsitektur | 30 | 0 | 0 | 30 |
+| Interior | 8 | 0 | 0 | 8 |
+| MEP | 17 | 0 | 0 | 17 |
+| **TOTAL** | **81** | **5** | **2** | **74** |
+
+---
+
+## 🔧 STRUKTUR (26 dokumen)
+
+### ✅ Approved (5)
+
+| No | Document Number | DED Number | Nama Dokumen |
+|----|----------------|------------|-------------|
+| 1 | SD.D-STK-000.01 | D-STK 0001 | STANDAR DETAIL A |
+| 2 | SD.D-STK-000.02 | D-STK 0002 | STANDAR DETAIL B |
+| 3 | SD.D-STK-000.03 | D-STK 0003 | STANDAR DETAIL C |
+| 4 | SD.D-STK-000.04 | D-STK 0004 | STANDAR DETAIL D |
+| 5 | SD.D-STK-000.05 | D-STK 0005 | STANDAR DETAIL E |
+
+### 📤 Submitted (2)
+
+| No | Document Number | DED Number | Nama Dokumen |
+|----|----------------|------------|-------------|
+| 1 | SD.STR.GDD-0002.01 | D-STK 0701 | DETAIL BALOK 1/2 |
+| 2 | SD.STR.GDD-0004.01 | D-STK 0801 | DETAIL PENULANGAN PLAT LT.1 |
+
+### ⬜ Not Started (19)
+
+| No | Document Number | DED Number | Nama Dokumen |
+|----|----------------|------------|-------------|
+| 1 | SD.STR.GDD-0002.01 | D-STK 0201 | DENAH PONDASI |
+| 2 | D-STK 0202 | D-STK 0202 | DENAH LANTAI 1 |
+| 3 | D-STK 0203 | D-STK 0203 | DENAH LANTAI 2 |
+| 4 | D-STK 0204 | D-STK 0204 | DENAH LANTAI 3 |
+| 5 | D-STK 0205 | D-STK 0205 | DENAH LANTAI 4 |
+| 6 | D-STK 0206 | D-STK 0206 | DENAH ATAP DAK |
+| 7 | SD.STR.GDD-0008.01 | D-STK 0301 | POTONGAN MEMANJANG |
+| 8 | D-STK 0302 | D-STK 0302 | POTONGAN MELINTANG |
+| 9 | SD.STR.GDD-0001.01 | D-STK 0401 | DETAIL TIANG PANCANG |
+| 10 | SD.STR.GDD-0003.01 | D-STK 0501 | DETAIL KOLOM |
+| 11 | D-STK 0702 | D-STK 0702 | DETAIL BALOK 2/4 |
+| 12 | D-STK 0703 | D-STK 0703 | DETAIL BALOK 3/4 |
+| 13 | D-STK 0704 | D-STK 0704 | DETAIL BALOK 4/4 |
+| 14 | SD.STR.GDD-0005.01 | D-STK 0901 | DETAIL TANGGA |
+| 15 | SD.STR.GDD-0006.01 | D-STK 1101 | DENAH KANOPI ATAP |
+| 16 | D-STK 1102 | D-STK 1102 | DETAIL SAMBUNGAN KANOPI ATAP |
+| 17 | SD.STR.GDD-0007.01 | D-STK 1201 | DETAIL KANOPI |
+| 18 | SD.STR.GDD-0008.01 | D-STK 1202 | DETAIL GWT |
+| 19 | SD.STR.GDD-0009.01 | D-STK 1203 | DETAIL STP BIOFILTER & SAWAGE PIT 1 & 2 |
+
+---
+
+## 🏛️ ARSITEKTUR (30 dokumen)
+
+### ⬜ Not Started (semua 30)
+
+| No | Document Number | DED Number | Nama Dokumen |
+|----|----------------|------------|-------------|
+| 1 | D-AK 0101.00 | D-AK 0101.00 | SITE PLAN |
+| 2 | D-AK 0102.00 | D-AK 0102.00 | BLOCK PLAN |
+| 3 | D-AK 0201.00 | D-AK 0201.00 | DENAH LANTAI 1 |
+| 4 | D-AK 0202.00 | D-AK 0202.00 | DENAH LANTAI 2 |
+| 5 | D-AK 0203.00 | D-AK 0203.00 | DENAH LANTAI 3 |
+| 6 | D-AK 0204.00 | D-AK 0204.00 | DENAH LANTAI 4 |
+| 7 | D-AK 0205.00 | D-AK 0205.00 | DENAH LANTAI ATAP |
+| 8 | D-AK 0301.00 | D-AK 0301.00 | TAMPAK 1 |
+| 9 | D-AK 101.08 | D-AK 101.08 | DEAIL CORE |
+| 10 | D-AK 101.09 | D-AK 101.09 | DEAIL CORE POTONGAN |
+| 11 | B-AK 101.09 | B-AK 101.09 | DETAIL TANGGA #1 |
+| 12 | B-AK 101.10 | B-AK 101.10 | DETAIL TANGGA #2 |
+| 13 | B-AK 101.11 | B-AK 101.11 | DETAIL TANGGA #3 |
+| 14 | B-AK 101.12 | B-AK 101.12 | DETAIL TANGGA #4 |
+| 15 | B-AK 101.12 | B-AK 101.12 | DENAH POLA LANTAI 1 |
+| 16 | B-AK 101.13 | B-AK 101.13 | DENAH POLA LANTAI 2 |
+| 17 | B-AK 101.14 | B-AK 101.14 | DENAH POLA LANTAI 3 |
+| 18 | B-AK 101.15 | B-AK 101.15 | DENAH POLA LANTAI 4 |
+| 19 | B-AK 101.16 | B-AK 101.16 | DENAH POLA LANTAI ATAP |
+| 20 | B-AK 101.16 | B-AK 101.16 | DENAH PLAFON LANTAI 1 |
+| 21 | B-AK 101.17 | B-AK 101.17 | DENAH PLAFON LANTAI 2 |
+| 22 | B-AK 101.18 | B-AK 101.18 | DENAH PLAFON LANTAI 3 |
+| 23 | B-AK 101.19 | B-AK 101.19 | DENAH PLAFON LANTAI 4 |
+| 24 | B-AK 101.19 | B-AK 101.19 | DETAIL TOILET |
+| 25 | B-AK 101.20 | B-AK 101.20 | DETAIL TOILET |
+| 26 | B-AK 101.20 | B-AK 101.20 | DENAH KUSEN LANTAI 1 |
+| 27 | B-AK 101.21 | B-AK 101.21 | DENAH KUSEN LANTAI 2 |
+| 28 | B-AK 101.22 | B-AK 101.22 | DENAH KUSEN LANTAI 3 |
+| 29 | B-AK 101.23 | B-AK 101.23 | DENAH KUSEN LANTAI 4 |
+| 30 | B-AK 101.24 | B-AK 101.24 | DENAH KUSEN LANTAI ATAP |
+
+---
+
+## 🏠 INTERIOR (8 dokumen)
+
+### ⬜ Not Started (semua 8)
+
+| No | Document Number | DED Number | Nama Dokumen |
+|----|----------------|------------|-------------|
+| 1 | B-INT AK 101.1 | B-INT AK 101.1 | DENAH INTERIOR LT.1 |
+| 2 | B-INT AK 101.2 | B-INT AK 101.2 | DENAH INTERIOR LT.2 |
+| 3 | B-INT AK 101.3 | B-INT AK 101.3 | DENAH INTERIOR LT.3 |
+| 4 | B-INT AK 101.4 | B-INT AK 101.4 | DENAH INTERIOR LT.4 |
+| 5 | B-INT AK 101.5 | B-INT AK 101.5 | RUANG KERJA STAFF |
+| 6 | B-INT AK 101.6 | B-INT AK 101.6 | RUANG KERJA DIREKTUR |
+| 7 | B-INT AK 101.7 | B-INT AK 101.7 | RUANG RAPAT |
+| 8 | B-INT AK 101.8 | B-INT AK 101.8 | LOBBY |
+
+---
+
+## ⚡ MEP (17 dokumen)
+
+### ⬜ Not Started (semua 17)
+
+| No | Document Number | DED Number | Nama Dokumen |
+|----|----------------|------------|-------------|
+| 1 | B-M 00001 WO | B-M 00001 WO | DIAGRAM SKEMATIK PRESSURIZED |
+| 2 | B-M 00002 WO | B-M 00002 WO | DIAGRAM SKEMATIK EXHAUST LT.1 |
+| 3 | B-M 00003 WO | B-M 00003 WO | DIAGRAM SKEMATIK EXHAUST LT.2 |
+| 4 | B-M 00004 WO | B-M 00004 WO | DIAGRAM SKEMATIK EXHAUST LT.3 |
+| 5 | B-M 00005 WO | B-M 00005 WO | DIAGRAM SKEMATIK EXHAUST LT.4 |
+| 6 | B-EL WO 0001 | B-EL WO 0001 | DENAH INSTALASI TELEPON LT.1 |
+| 7 | B-EL WO 0002 | B-EL WO 0002 | DENAH INSTALASI TELEPON LT.2 |
+| 8 | B-EL WO 0003 | B-EL WO 0003 | DENAH INSTALASI TELEPON LT.3 |
+| 9 | B-EL WO 0004 | B-EL WO 0004 | DENAH INSTALASI TELEPON LT.4 |
+| 10 | B-EL WO 0005 | B-EL WO 0005 | DENAH INSTALASI DATA LT.1 |
+| 11 | B-EL WO 0006 | B-EL WO 0006 | DENAH INSTALASI DATA LT.2 |
+| 12 | B-EL WO 0007 | B-EL WO 0007 | DENAH INSTALASI DATA LT.3 |
+| 13 | B-EL WO 0008 | B-EL WO 0008 | DENAH INSTALASI DATA LT.4 |
+| 14 | B-EL WO 0009 | B-EL WO 0009 | DENAH INSTALASI TATA SUARA LT.1 |
+| 15 | B-EL WO 0010 | B-EL WO 0010 | DENAH INSTALASI TATA SUARA LT.2 |
+| 16 | B-EL WO 0011 | B-EL WO 0011 | DENAH INSTALASI TATA SUARA LT.3 |
+| 17 | B-EL WO 0012 | B-EL WO 0012 | DENAH INSTALASI TATA SUARA LT.4 |

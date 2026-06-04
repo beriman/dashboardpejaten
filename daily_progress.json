@@ -1,0 +1,957 @@
+{
+  "Gedung B": [
+    {
+      "dailyPlan": 0.1,
+      "dailyReal": 0.02,
+      "cumPlan": 0.47,
+      "cumReal": 0.48,
+      "deviation": 0.01,
+      "date": "28 April 2026"
+    },
+    {
+      "date": "25 April 2026"
+    },
+    {
+      "date": "26 April 2026"
+    },
+    {
+      "dailyPlan": 0.03,
+      "dailyReal": 0.05,
+      "cumPlan": 0.37,
+      "cumReal": 0.46,
+      "deviation": 0.09,
+      "date": "27 April 2026"
+    },
+    {
+      "dailyPlan": 0.13,
+      "dailyReal": 0.13,
+      "cumPlan": 0.6,
+      "cumReal": 0.62,
+      "deviation": 0.01,
+      "date": "29 April 2026"
+    },
+    {
+      "dailyPlan": 0.13,
+      "dailyReal": 0.13,
+      "cumPlan": 0.73,
+      "cumReal": 0.75,
+      "deviation": 0.02,
+      "date": "30 April 2026"
+    },
+    {
+      "dailyPlan": 0.13,
+      "dailyReal": 0.14,
+      "cumPlan": 0.85,
+      "cumReal": 0.88,
+      "deviation": 0.03,
+      "date": "01 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.13,
+      "dailyReal": 0.14,
+      "cumPlan": 0.98,
+      "cumReal": 1.02,
+      "deviation": 0.04,
+      "date": "02 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.13,
+      "dailyReal": 0.14,
+      "cumPlan": 1.1,
+      "cumReal": 1.16,
+      "deviation": 0.05,
+      "date": "03 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.16,
+      "dailyReal": 0.17,
+      "cumPlan": 1.27,
+      "cumReal": 1.33,
+      "deviation": 0.06,
+      "date": "04 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.16,
+      "dailyReal": 0.16,
+      "cumPlan": 1.43,
+      "cumReal": 1.48,
+      "deviation": 0.05,
+      "date": "05 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.01,
+      "dailyReal": 0.02,
+      "cumPlan": 1.44,
+      "cumReal": 1.5,
+      "deviation": 0.06,
+      "date": "06 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.01,
+      "dailyReal": 0.02,
+      "cumPlan": 1.45,
+      "cumReal": 1.53,
+      "deviation": 0.08,
+      "date": "07 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.01,
+      "dailyReal": 0.02,
+      "cumPlan": 1.46,
+      "cumReal": 1.55,
+      "deviation": 0.09,
+      "date": "08 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.01,
+      "dailyReal": 0.02,
+      "cumPlan": 1.47,
+      "cumReal": 1.57,
+      "deviation": 0.1,
+      "date": "09 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.01,
+      "dailyReal": 0.02,
+      "cumPlan": 1.48,
+      "cumReal": 1.59,
+      "deviation": 0.11,
+      "date": "10 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.07,
+      "cumPlan": 1.54,
+      "cumReal": 1.66,
+      "deviation": 0.12,
+      "date": "11 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.06,
+      "cumPlan": 1.67,
+      "cumReal": 1.82,
+      "deviation": 0.15,
+      "date": "13 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.09,
+      "cumPlan": 1.61,
+      "cumReal": 1.76,
+      "deviation": 0.15,
+      "date": "12 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.06,
+      "cumPlan": 1.73,
+      "cumReal": 1.88,
+      "deviation": 0.15,
+      "date": "14 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.06,
+      "cumPlan": 1.79,
+      "cumReal": 1.94,
+      "deviation": 0.15,
+      "date": "15 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.06,
+      "cumPlan": 1.86,
+      "cumReal": 2.01,
+      "deviation": 0.15,
+      "date": "16 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.07,
+      "dailyReal": 0.07,
+      "cumPlan": 1.99,
+      "cumReal": 2.14,
+      "deviation": 0.15,
+      "date": "18 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.07,
+      "cumPlan": 1.92,
+      "cumReal": 2.07,
+      "deviation": 0.15,
+      "date": "17 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.07,
+      "dailyReal": 0.07,
+      "cumPlan": 2.06,
+      "cumReal": 2.21,
+      "deviation": 0.16,
+      "date": "19 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.14,
+      "dailyReal": 0.14,
+      "cumPlan": 2.33,
+      "cumReal": 2.5,
+      "deviation": 0.17,
+      "date": "21 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.14,
+      "dailyReal": 0.14,
+      "cumPlan": 2.19,
+      "cumReal": 2.36,
+      "deviation": 0.16,
+      "date": "20 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.07,
+      "dailyReal": 0.08,
+      "cumPlan": 2.54,
+      "cumReal": 2.72,
+      "deviation": 0.18,
+      "date": "23 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.14,
+      "dailyReal": 0.14,
+      "cumPlan": 2.47,
+      "cumReal": 2.64,
+      "deviation": 0.17,
+      "date": "22 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.07,
+      "dailyReal": 0.09,
+      "cumPlan": 2.6,
+      "cumReal": 2.81,
+      "deviation": 0.21,
+      "date": "24 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.09,
+      "dailyReal": 0.09,
+      "cumPlan": 2.69,
+      "cumReal": 2.9,
+      "deviation": 0.21,
+      "date": "25 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.09,
+      "dailyReal": 0.09,
+      "cumPlan": 2.69,
+      "cumReal": 2.9,
+      "deviation": 0.21,
+      "date": "25 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.09,
+      "dailyReal": 0.09,
+      "cumPlan": 2.78,
+      "cumReal": 2.99,
+      "deviation": 0.21,
+      "date": "26 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.0,
+      "dailyReal": 0.0,
+      "cumPlan": 2.78,
+      "cumReal": 2.99,
+      "deviation": 0.21,
+      "date": "27 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.21,
+      "dailyReal": 1.44,
+      "cumPlan": 3.21,
+      "cumReal": 4.67,
+      "deviation": 1.46,
+      "date": "29 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.21,
+      "dailyReal": 0.24,
+      "cumPlan": 2.99,
+      "cumReal": 3.23,
+      "deviation": 0.24,
+      "date": "28 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.13,
+      "dailyReal": 0.26,
+      "cumPlan": 3.33,
+      "cumReal": 4.11,
+      "deviation": 0.78,
+      "date": "30 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.13,
+      "dailyReal": 0.31,
+      "cumPlan": 3.46,
+      "cumReal": 4.42,
+      "deviation": 0.96,
+      "date": "31 Mei 2026"
+    },
+    {
+      "date": "01 JUNI 2026"
+    },
+    {
+      "dailyPlan": 0.37,
+      "dailyReal": 0.14,
+      "cumPlan": 4.19,
+      "cumReal": 5.07,
+      "deviation": 0.87,
+      "date": "02 Juni 2026"
+    },
+    {
+      "dailyPlan": 0.37,
+      "dailyReal": 0.08,
+      "cumPlan": 4.56,
+      "cumReal": 5.15,
+      "deviation": 0.59,
+      "date": "03 Juni 2026"
+    }
+  ],
+  "Gedung D": [
+    {
+      "dailyPlan": 0.12,
+      "dailyReal": 0.14,
+      "cumPlan": 1.91,
+      "cumReal": 1.94,
+      "deviation": 0.03,
+      "date": "28 April 2026"
+    },
+    {
+      "dailyPlan": 0.04,
+      "dailyReal": 0.04,
+      "cumPlan": 1.84,
+      "cumReal": 1.98,
+      "deviation": 0.15,
+      "date": "29 April 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.01,
+      "cumPlan": 1.79,
+      "cumReal": 1.8,
+      "deviation": 0.0,
+      "date": "27 April 2026"
+    },
+    {
+      "dailyPlan": 0.05,
+      "dailyReal": 0.01,
+      "cumPlan": 0.97,
+      "cumReal": 1.57,
+      "deviation": 0.59,
+      "date": "26 April 2026"
+    },
+    {
+      "date": "24 April 2026"
+    },
+    {
+      "dailyPlan": 0.04,
+      "dailyReal": 0.04,
+      "cumPlan": 1.88,
+      "cumReal": 1.96,
+      "deviation": 0.08,
+      "date": "30 April 2026"
+    },
+    {
+      "dailyPlan": 0.04,
+      "dailyReal": 0.05,
+      "cumPlan": 1.92,
+      "cumReal": 2.01,
+      "deviation": 0.09,
+      "date": "01 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.04,
+      "dailyReal": 0.05,
+      "cumPlan": 1.92,
+      "cumReal": 2.01,
+      "deviation": 0.09,
+      "date": "02 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.04,
+      "dailyReal": 0.05,
+      "cumPlan": 2.0,
+      "cumReal": 2.11,
+      "deviation": 0.11,
+      "date": "03 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.04,
+      "dailyReal": 0.05,
+      "cumPlan": 2.04,
+      "cumReal": 2.16,
+      "deviation": 0.12,
+      "date": "04 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.04,
+      "dailyReal": 0.05,
+      "cumPlan": 2.08,
+      "cumReal": 2.22,
+      "deviation": 0.13,
+      "date": "05 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.04,
+      "dailyReal": 0.06,
+      "cumPlan": 2.12,
+      "cumReal": 2.28,
+      "deviation": 0.15,
+      "date": "06 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.04,
+      "dailyReal": 0.05,
+      "cumPlan": 2.16,
+      "cumReal": 2.33,
+      "deviation": 0.17,
+      "date": "07 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.04,
+      "dailyReal": 0.05,
+      "cumPlan": 2.21,
+      "cumReal": 2.38,
+      "deviation": 0.18,
+      "date": "08 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.04,
+      "dailyReal": 0.05,
+      "cumPlan": 2.25,
+      "cumReal": 2.44,
+      "deviation": 0.19,
+      "date": "09 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.04,
+      "dailyReal": 0.05,
+      "cumPlan": 2.29,
+      "cumReal": 2.49,
+      "deviation": 0.2,
+      "date": "10 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.23,
+      "dailyReal": 0.23,
+      "cumPlan": 2.74,
+      "cumReal": 2.78,
+      "deviation": 0.04,
+      "date": "11 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.23,
+      "dailyReal": 0.24,
+      "cumPlan": 3.19,
+      "cumReal": 3.27,
+      "deviation": 0.08,
+      "date": "13 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.23,
+      "dailyReal": 0.25,
+      "cumPlan": 2.97,
+      "cumReal": 3.03,
+      "deviation": 0.06,
+      "date": "12 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.23,
+      "dailyReal": 0.24,
+      "cumPlan": 3.42,
+      "cumReal": 3.51,
+      "deviation": 0.09,
+      "date": "14 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.23,
+      "dailyReal": 0.24,
+      "cumPlan": 3.42,
+      "cumReal": 3.7,
+      "deviation": 0.28,
+      "date": "15 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.18,
+      "dailyReal": 0.19,
+      "cumPlan": 3.6,
+      "cumReal": 3.89,
+      "deviation": 0.29,
+      "date": "16 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.11,
+      "dailyReal": 0.12,
+      "cumPlan": 3.89,
+      "cumReal": 4.33,
+      "deviation": 0.44,
+      "date": "18 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.18,
+      "dailyReal": 0.25,
+      "cumPlan": 3.78,
+      "cumReal": 4.21,
+      "deviation": 0.43,
+      "date": "16 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.22,
+      "dailyReal": 0.23,
+      "cumPlan": 4.11,
+      "cumReal": 4.55,
+      "deviation": 0.45,
+      "date": "19 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.55,
+      "dailyReal": 0.04,
+      "cumPlan": 5.09,
+      "cumReal": 4.81,
+      "deviation": -0.28,
+      "date": "21 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.44,
+      "dailyReal": 0.21,
+      "cumPlan": 4.54,
+      "cumReal": 4.76,
+      "deviation": 0.22,
+      "date": "20 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.22,
+      "dailyReal": 0.04,
+      "cumPlan": 5.56,
+      "cumReal": 5.1,
+      "deviation": -0.46,
+      "date": "23 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.26,
+      "dailyReal": 0.25,
+      "cumPlan": 5.35,
+      "cumReal": 5.06,
+      "deviation": -0.29,
+      "date": "22 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.13,
+      "dailyReal": 0.04,
+      "cumPlan": 5.29,
+      "cumReal": 5.15,
+      "deviation": -0.14,
+      "date": "24 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.04,
+      "cumPlan": 5.35,
+      "cumReal": 5.19,
+      "deviation": -0.16,
+      "date": "25 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.04,
+      "cumPlan": 5.35,
+      "cumReal": 5.19,
+      "deviation": -0.16,
+      "date": "25 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.05,
+      "cumPlan": 5.42,
+      "cumReal": 5.25,
+      "deviation": -0.18,
+      "date": "26 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.04,
+      "dailyReal": 0.04,
+      "cumPlan": 5.47,
+      "cumReal": 5.29,
+      "deviation": -0.18,
+      "date": "27 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.08,
+      "cumPlan": 5.62,
+      "cumReal": 5.41,
+      "deviation": -0.2,
+      "date": "29 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.05,
+      "cumPlan": 5.54,
+      "cumReal": 5.34,
+      "deviation": -0.21,
+      "date": "28 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.05,
+      "cumPlan": 5.69,
+      "cumReal": 5.46,
+      "deviation": -0.23,
+      "date": "30 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.05,
+      "cumPlan": 5.77,
+      "cumReal": 5.51,
+      "deviation": -0.26,
+      "date": "31 Mei 2026"
+    },
+    {
+      "date": "01 Juni 2026"
+    },
+    {
+      "dailyPlan": 0.27,
+      "dailyReal": 0.14,
+      "cumPlan": 6.3,
+      "cumReal": 6.15,
+      "deviation": -0.15,
+      "date": "02 Juni 2026"
+    },
+    {
+      "dailyPlan": 0.27,
+      "dailyReal": 1.07,
+      "cumPlan": 6.56,
+      "cumReal": 7.22,
+      "deviation": 0.66,
+      "date": "03 Juni 2026"
+    }
+  ],
+  "Gedung K": [
+    {
+      "dailyPlan": 0.15,
+      "dailyReal": 0.13,
+      "cumPlan": 1.86,
+      "cumReal": 1.87,
+      "deviation": 0.01,
+      "date": "28 April 2026"
+    },
+    {
+      "date": "25 April 2026"
+    },
+    {
+      "dailyPlan": 0.11,
+      "dailyReal": 0.1,
+      "cumPlan": 1.6,
+      "cumReal": 1.6,
+      "deviation": 0.0,
+      "date": "26 April 2026"
+    },
+    {
+      "dailyPlan": 0.15,
+      "dailyReal": 0.15,
+      "cumPlan": 1.72,
+      "cumReal": 1.74,
+      "deviation": 0.02,
+      "date": "27 April 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.07,
+      "cumPlan": 1.92,
+      "cumReal": 1.94,
+      "deviation": 0.02,
+      "date": "29 April 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.07,
+      "cumPlan": 1.98,
+      "cumReal": 2.01,
+      "deviation": 0.03,
+      "date": "30 April 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.06,
+      "cumPlan": 2.04,
+      "cumReal": 2.07,
+      "deviation": 0.03,
+      "date": "01 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.07,
+      "cumPlan": 2.09,
+      "cumReal": 2.14,
+      "deviation": 0.04,
+      "date": "02 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.09,
+      "cumPlan": 2.15,
+      "cumReal": 2.22,
+      "deviation": 0.07,
+      "date": "03 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.09,
+      "cumPlan": 2.23,
+      "cumReal": 2.31,
+      "deviation": 0.08,
+      "date": "04 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.09,
+      "cumPlan": 2.32,
+      "cumReal": 2.4,
+      "deviation": 0.09,
+      "date": "05 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.09,
+      "cumPlan": 2.4,
+      "cumReal": 2.5,
+      "deviation": 0.09,
+      "date": "06 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.1,
+      "cumPlan": 2.48,
+      "cumReal": 2.59,
+      "deviation": 0.11,
+      "date": "07 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.1,
+      "cumPlan": 2.57,
+      "cumReal": 2.69,
+      "deviation": 0.13,
+      "date": "08 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.1,
+      "cumPlan": 2.65,
+      "cumReal": 2.79,
+      "deviation": 0.14,
+      "date": "09 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.08,
+      "cumPlan": 2.73,
+      "cumReal": 2.87,
+      "deviation": 0.14,
+      "date": "10 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.08,
+      "cumPlan": 2.82,
+      "cumReal": 2.95,
+      "deviation": 0.14,
+      "date": "11 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.09,
+      "cumPlan": 2.98,
+      "cumReal": 3.12,
+      "deviation": 0.14,
+      "date": "13 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.09,
+      "cumPlan": 2.9,
+      "cumReal": 3.04,
+      "deviation": 0.14,
+      "date": "11 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.08,
+      "cumPlan": 3.07,
+      "cumReal": 3.21,
+      "deviation": 0.14,
+      "date": "14 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.09,
+      "cumPlan": 3.15,
+      "cumReal": 3.3,
+      "deviation": 0.15,
+      "date": "15 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.09,
+      "cumPlan": 3.23,
+      "cumReal": 3.39,
+      "deviation": 0.15,
+      "date": "16 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.06,
+      "cumPlan": 3.37,
+      "cumReal": 3.54,
+      "deviation": 0.16,
+      "date": "18 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.08,
+      "dailyReal": 0.09,
+      "cumPlan": 3.31,
+      "cumReal": 3.48,
+      "deviation": 0.16,
+      "date": "17 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.06,
+      "cumPlan": 3.43,
+      "cumReal": 3.6,
+      "deviation": 0.17,
+      "date": "19 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.12,
+      "dailyReal": 0.12,
+      "cumPlan": 3.66,
+      "cumReal": 3.85,
+      "deviation": 0.18,
+      "date": "21 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.12,
+      "dailyReal": 0.12,
+      "cumPlan": 3.55,
+      "cumReal": 3.72,
+      "deviation": 0.18,
+      "date": "20 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.07,
+      "cumPlan": 3.84,
+      "cumReal": 4.05,
+      "deviation": 0.21,
+      "date": "23 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.12,
+      "dailyReal": 0.14,
+      "cumPlan": 3.78,
+      "cumReal": 3.98,
+      "deviation": 0.2,
+      "date": "22 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.07,
+      "cumPlan": 3.9,
+      "cumReal": 4.12,
+      "deviation": 0.23,
+      "date": "24 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.04,
+      "dailyReal": 0.07,
+      "cumPlan": 3.94,
+      "cumReal": 4.19,
+      "deviation": 0.25,
+      "date": "25 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.04,
+      "dailyReal": 0.07,
+      "cumPlan": 3.94,
+      "cumReal": 4.19,
+      "deviation": 0.25,
+      "date": "25 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.04,
+      "dailyReal": 0.08,
+      "cumPlan": 3.98,
+      "cumReal": 4.27,
+      "deviation": 0.29,
+      "date": "26 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.01,
+      "dailyReal": 0.01,
+      "cumPlan": 3.99,
+      "cumReal": 4.28,
+      "deviation": 0.29,
+      "date": "27 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.11,
+      "dailyReal": 0.41,
+      "cumPlan": 4.21,
+      "cumReal": 4.81,
+      "deviation": 0.6,
+      "date": "29 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.11,
+      "dailyReal": 0.11,
+      "cumPlan": 4.1,
+      "cumReal": 4.4,
+      "deviation": 0.3,
+      "date": "28 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.07,
+      "cumPlan": 4.27,
+      "cumReal": 4.82,
+      "deviation": 0.55,
+      "date": "30 Mei 2026"
+    },
+    {
+      "dailyPlan": 0.06,
+      "dailyReal": 0.22,
+      "cumPlan": 4.33,
+      "cumReal": 5.04,
+      "deviation": 0.71,
+      "date": "31 Mei 2026"
+    },
+    {
+      "date": "01 Juni 2026"
+    },
+    {
+      "dailyPlan": 0.09,
+      "dailyReal": 0.05,
+      "cumPlan": 4.52,
+      "cumReal": 5.31,
+      "deviation": 0.79,
+      "date": "02 Juni 2026"
+    },
+    {
+      "dailyPlan": 0.09,
+      "dailyReal": 0.08,
+      "cumPlan": 4.61,
+      "cumReal": 5.36,
+      "deviation": 0.74,
+      "date": "03 Juni 2026"
+    }
+  ]
+}
