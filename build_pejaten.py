@@ -264,6 +264,9 @@ def build_photo_objects(photo_dir: Path, building_code: str, taken_date: str):
     for filename, filepath in photos:
         # Copy (or overwrite) to public/fotos/<building>/
         dst = photo_out_dir / filename
+        if not filepath.exists():
+            print(f"    ⚠️  Skipping missing file: {filepath}")
+            continue
         if not dst.exists() or filepath.stat().st_mtime > dst.stat().st_mtime:
             shutil.copy2(filepath, dst)
 
