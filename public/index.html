@@ -553,9 +553,9 @@
     <!-- Built from Google Drive on 05 June 2026 14:52 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
 <meta name="dashboard-build-id" content="20260605145248">
-  <!-- Built from Google Drive on 05 June 2026 18:28 WIB -->
+  <!-- Built from Google Drive on 05 June 2026 19:01 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
-<meta name="dashboard-build-id" content="20260605182829">
+<meta name="dashboard-build-id" content="20260605190128">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
 </head>
 <body class="is-loading">
@@ -18627,25 +18627,10 @@ try {
     `).join('');
 
 
-    const tooltipCircles = (labels, plan, real) => {
-    console.log('DEBUG: before tooltipCircles');
-      return labels.map((lab, i) => {
-        const cx = x(i);
-        const cyPlan = y(plan[i]);
-        const cyReal = y(real[i]);
-        const valPlan = plan[i] !== null && plan[i] !== undefined ? plan[i].toFixed(2) + '%' : '-';
-        const valReal = real[i] !== null && real[i] !== undefined ? real[i].toFixed(2) + '%' : '-';
-        const tip = `${lab}\nRencana: ${valPlan}\nRealisasi: ${valReal}`;
-        return `<g class="tt-group">
-          <line x1="${cx}" y1="${mt}" x2="${cx}" y2="${h-mb}" class="tt-line" />
-          <circle cx="${cx}" cy="${cyPlan}" r="8" class="tt-dot" data-tip="${tip}" />
-          <circle cx="${cx}" cy="${cyReal}" r="8" class="tt-dot" data-tip="${tip}" />
-        </g>`;
-      }).join('');
-    };
     function makeChartSVG(labels, plan, real, title, subtitle) {
     console.log('DEBUG: before makeChartSVG');
       if (!labels.length) {
+
         return `
           <div class="chart-box">
             <h3>${title}</h3>
@@ -18658,6 +18643,24 @@ try {
       const maxVal = Math.max(...plan, ...real) * 1.15 || 1;
       const x = i => ml + (innerW * i / (labels.length - 1 || 1));
       const y = v => mt + innerH - (v / maxVal * innerH);
+      const tooltipCircles = (labels, plan, real) => {
+        return labels.map((lab, i) => {
+          const cx = x(i);
+          const cyPlan = y(plan[i]);
+          const cyReal = y(real[i]);
+          const valPlan = plan[i] !== null && plan[i] !== undefined ? plan[i].toFixed(2) + '%' : '-';
+          const valReal = real[i] !== null && real[i] !== undefined ? real[i].toFixed(2) + '%' : '-';
+          const tip = `${lab}
+Rencana: ${valPlan}
+Realisasi: ${valReal}`;
+          return `<g class="tt-group">
+            <line x1="${cx}" y1="${mt}" x2="${cx}" y2="${h-mb}" class="tt-line" />
+            <circle cx="${cx}" cy="${cyPlan}" r="8" class="tt-dot" data-tip="${tip}" />
+            <circle cx="${cx}" cy="${cyReal}" r="8" class="tt-dot" data-tip="${tip}" />
+          </g>`;
+        }).join('');
+      };
+
       const linePath = series => series.map((v,i) => `${i===0?'M':'L'} ${x(i).toFixed(2)} ${y(v).toFixed(2)}`).join(' ');
       const circles = (series, color) => series.map((v,i) => `<circle cx="${x(i)}" cy="${y(v)}" r="4" fill="${color}" />`).join('');
       const grid = Array.from({length:5}, (_,i) => {
