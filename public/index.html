@@ -553,9 +553,9 @@
     <!-- Built from Google Drive on 05 June 2026 14:52 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
 <meta name="dashboard-build-id" content="20260605145248">
-  <!-- Built from Google Drive on 05 June 2026 18:19 WIB -->
+  <!-- Built from Google Drive on 05 June 2026 18:24 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
-<meta name="dashboard-build-id" content="20260605181947">
+<meta name="dashboard-build-id" content="20260605182416">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
 </head>
 <body class="is-loading">
@@ -18730,6 +18730,7 @@ const pileMonitoringData = {
     `).join('');
 
     console.log('DEBUG: before photoGalleries');
+    try {
     let photoGalleries;
     try {
       photoGalleries = data.buildings.filter(b => (b.photos || []).length).map((b, idx) => {
@@ -18817,6 +18818,7 @@ const pileMonitoringData = {
       photoGalleries = [];
     }
 
+    console.log('DEBUG: before lightbox');
     const lightbox = `
       <div class="lightbox" id="lightbox">
         <div class="lightbox-frame">
@@ -18835,7 +18837,12 @@ const pileMonitoringData = {
     `;
 
     console.log('DEBUG: before app.innerHTML, reportModes=', typeof reportModes, 'dataSets=', typeof dataSets);
-    document.getElementById('app').innerHTML = `
+
+    } catch(e) {
+      console.log('ERROR in render section:', e.message, e.stack);
+      document.getElementById('app').innerHTML = '<div style="color:white;padding:40px;">Error: ' + e.message + '</div>';
+    }
+        document.getElementById('app').innerHTML = `
       <div class="topbar">
         <div>
           <div class="brand-header">
