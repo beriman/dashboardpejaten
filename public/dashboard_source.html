@@ -17944,7 +17944,6 @@ const pileMonitoringData = {
 
 </script>
   <script>
-try {
 
     const dataSets = {
       daily: {
@@ -18208,7 +18207,6 @@ try {
         ]
       }
     };
-    console.log('DEBUG: dataSets defined');
     let selectedReportMode = localStorage.getItem('dashboard-report-mode') || 'daily';
     if (!dataSets[selectedReportMode]) selectedReportMode = 'daily';
     const data = dataSets[selectedReportMode];
@@ -18258,7 +18256,6 @@ try {
         K: 'https://drive.google.com/drive/folders/1mYni2ASi1KhziMHGBp5myWMixrmDU2Dl'
       }
     };
-    console.log('DEBUG: reportFolders defined');
     const reportFolderFor = (code, type) => {
       if (type === 'daily') return reportFolders.dailyByBuilding[code] || reportFolders.dailyRoot;
       if (type === 'weekly') return reportFolders.weeklyRoot;
@@ -18463,7 +18460,6 @@ try {
         note: dataSets.monthly.sourceDate + ' (folder laporan bulanan dicek; jika belum ada file, dashboard memakai agregasi cutoff mingguan terakhir sebagai sementara).'
       }
     };
-    console.log('DEBUG: reportModes defined');
     const countBy = (items, key) => items.reduce((acc, item) => {
       const value = item[key] || 'Belum diklasifikasi';
       acc[value] = (acc[value] || 0) + 1;
@@ -18484,7 +18480,6 @@ try {
       </tr>
     `).join('');
     const renderBuildingDetail = (building) => {
-    console.log('DEBUG: before renderBuildingDetail');
       const code = buildingCodeFromName(building.name);
       const rfi = rfiByCode[code] || { rfis: [], summary: { total: 0 } };
       const rfis = rfi.rfis || [];
@@ -18624,7 +18619,6 @@ try {
 
 
     function makeChartSVG(labels, plan, real, title, subtitle) {
-    console.log('DEBUG: before makeChartSVG');
       if (!labels.length) {
 
         return `
@@ -18730,11 +18724,8 @@ Realisasi: ${valReal}`;
       </div>
     `).join('');
 
-    console.log('DEBUG: before photoGalleries');
     let photoGalleries;
-    try {
       photoGalleries = data.buildings.filter(b => (b.photos || []).length).map((b, idx) => {
-      console.log('DEBUG: inside photoGalleries try');
       // Group photos by takenDate
       var groups = [];
       var currentGroup = null;
@@ -18760,9 +18751,7 @@ Realisasi: ${valReal}`;
       limitedGroups.forEach(function(g) { latestPhotos = latestPhotos.concat(g.photos); });
 
       // Build date label map
-    console.log('DEBUG: after photoGalleries');
       function isoToID(iso) {
-    console.log('DEBUG: before isoToID');
         if (!iso) return iso;
         var parts = iso.split('-');
         if (parts.length !== 3) return iso;
@@ -18814,7 +18803,6 @@ Realisasi: ${valReal}`;
       </div>`;
     }).join('');
 
-    console.log('DEBUG: before lightbox');
     const lightbox = `
       <div class="lightbox" id="lightbox">
         <div class="lightbox-frame">
@@ -18832,12 +18820,7 @@ Realisasi: ${valReal}`;
       </div>
     `;
 
-    console.log('DEBUG: before app.innerHTML, reportModes=', typeof reportModes, 'dataSets=', typeof dataSets);
 
-    } catch(e) {
-      console.log('ERROR in render section:', e.message, e.stack);
-      document.getElementById('app').innerHTML = '<div style="color:white;padding:40px;">Error: ' + e.message + '</div>';
-    }
         document.getElementById('app').innerHTML = `
       <div class="topbar">
         <div>
@@ -19285,12 +19268,6 @@ Realisasi: ${valReal}`;
       document.body.classList.remove('is-loading');
     });
   
-} catch(e) {
-  console.log('FATAL ERROR in main script:', e.message);
-  console.log('Stack:', e.stack);
-  document.body.classList.remove('is-loading');
-  document.getElementById('app').innerHTML = '<div style="color:white;padding:40px;font-family:sans-serif;"><h1>Dashboard Error</h1><p>' + e.message + '</p><pre style="font-size:12px;color:#aaa;">' + e.stack + '</pre></div>';
-}
 </script>
 
 <script>
