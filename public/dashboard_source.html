@@ -18731,7 +18731,6 @@ Realisasi: ${valReal}`;
     `).join('');
 
     console.log('DEBUG: before photoGalleries');
-    try {
     let photoGalleries;
     try {
       photoGalleries = data.buildings.filter(b => (b.photos || []).length).map((b, idx) => {
@@ -18814,10 +18813,6 @@ Realisasi: ${valReal}`;
         </div>
       </div>`;
     }).join('');
-    } catch(e) {
-      console.log('ERROR in photoGalleries:', e.message, e.stack);
-      photoGalleries = [];
-    }
 
     console.log('DEBUG: before lightbox');
     const lightbox = `

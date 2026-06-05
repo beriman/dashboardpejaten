@@ -553,9 +553,9 @@
     <!-- Built from Google Drive on 05 June 2026 14:52 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
 <meta name="dashboard-build-id" content="20260605145248">
-  <!-- Built from Google Drive on 05 June 2026 19:01 WIB -->
+  <!-- Built from Google Drive on 05 June 2026 19:08 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
-<meta name="dashboard-build-id" content="20260605190128">
+<meta name="dashboard-build-id" content="20260605190836">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
 </head>
 <body class="is-loading">
@@ -18735,7 +18735,6 @@ Realisasi: ${valReal}`;
     `).join('');
 
     console.log('DEBUG: before photoGalleries');
-    try {
     let photoGalleries;
     try {
       photoGalleries = data.buildings.filter(b => (b.photos || []).length).map((b, idx) => {
@@ -18818,10 +18817,6 @@ Realisasi: ${valReal}`;
         </div>
       </div>`;
     }).join('');
-    } catch(e) {
-      console.log('ERROR in photoGalleries:', e.message, e.stack);
-      photoGalleries = [];
-    }
 
     console.log('DEBUG: before lightbox');
     const lightbox = `
