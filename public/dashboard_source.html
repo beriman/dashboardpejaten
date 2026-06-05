@@ -18482,6 +18482,7 @@ const pileMonitoringData = {
       </tr>
     `).join('');
     const renderBuildingDetail = (building) => {
+    console.log('DEBUG: before renderBuildingDetail');
       const code = buildingCodeFromName(building.name);
       const rfi = rfiByCode[code] || { rfis: [], summary: { total: 0 } };
       const rfis = rfi.rfis || [];
@@ -18621,6 +18622,7 @@ const pileMonitoringData = {
 
 
     const tooltipCircles = (labels, plan, real) => {
+    console.log('DEBUG: before tooltipCircles');
       return labels.map((lab, i) => {
         const cx = x(i);
         const cyPlan = y(plan[i]);
@@ -18636,6 +18638,7 @@ const pileMonitoringData = {
       }).join('');
     };
     function makeChartSVG(labels, plan, real, title, subtitle) {
+    console.log('DEBUG: before makeChartSVG');
       if (!labels.length) {
         return `
           <div class="chart-box">
@@ -18749,6 +18752,7 @@ const pileMonitoringData = {
 
       // Build date label map
       function isoToID(iso) {
+    console.log('DEBUG: before isoToID');
         if (!iso) return iso;
         var parts = iso.split('-');
         if (parts.length !== 3) return iso;

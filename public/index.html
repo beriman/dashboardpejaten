@@ -553,9 +553,9 @@
     <!-- Built from Google Drive on 05 June 2026 14:52 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
 <meta name="dashboard-build-id" content="20260605145248">
-  <!-- Built from Google Drive on 05 June 2026 18:04 WIB -->
+  <!-- Built from Google Drive on 05 June 2026 18:11 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
-<meta name="dashboard-build-id" content="20260605180440">
+<meta name="dashboard-build-id" content="20260605181115">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
 </head>
 <body class="is-loading">
@@ -18486,6 +18486,7 @@ const pileMonitoringData = {
       </tr>
     `).join('');
     const renderBuildingDetail = (building) => {
+    console.log('DEBUG: before renderBuildingDetail');
       const code = buildingCodeFromName(building.name);
       const rfi = rfiByCode[code] || { rfis: [], summary: { total: 0 } };
       const rfis = rfi.rfis || [];
@@ -18625,6 +18626,7 @@ const pileMonitoringData = {
 
 
     const tooltipCircles = (labels, plan, real) => {
+    console.log('DEBUG: before tooltipCircles');
       return labels.map((lab, i) => {
         const cx = x(i);
         const cyPlan = y(plan[i]);
@@ -18640,6 +18642,7 @@ const pileMonitoringData = {
       }).join('');
     };
     function makeChartSVG(labels, plan, real, title, subtitle) {
+    console.log('DEBUG: before makeChartSVG');
       if (!labels.length) {
         return `
           <div class="chart-box">
@@ -18753,6 +18756,7 @@ const pileMonitoringData = {
 
       // Build date label map
       function isoToID(iso) {
+    console.log('DEBUG: before isoToID');
         if (!iso) return iso;
         var parts = iso.split('-');
         if (parts.length !== 3) return iso;
