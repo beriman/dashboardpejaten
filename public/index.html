@@ -553,9 +553,9 @@
     <!-- Built from Google Drive on 05 June 2026 14:52 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
 <meta name="dashboard-build-id" content="20260605145248">
-  <!-- Built from Google Drive on 05 June 2026 18:11 WIB -->
+  <!-- Built from Google Drive on 05 June 2026 18:19 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
-<meta name="dashboard-build-id" content="20260605181115">
+<meta name="dashboard-build-id" content="20260605181947">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
 </head>
 <body class="is-loading">
@@ -18729,7 +18729,11 @@ const pileMonitoringData = {
       </div>
     `).join('');
 
-    const photoGalleries = data.buildings.filter(b => (b.photos || []).length).map((b, idx) => {
+    console.log('DEBUG: before photoGalleries');
+    let photoGalleries;
+    try {
+      photoGalleries = data.buildings.filter(b => (b.photos || []).length).map((b, idx) => {
+      console.log('DEBUG: inside photoGalleries try');
       // Group photos by takenDate
       var groups = [];
       var currentGroup = null;
@@ -18755,6 +18759,7 @@ const pileMonitoringData = {
       limitedGroups.forEach(function(g) { latestPhotos = latestPhotos.concat(g.photos); });
 
       // Build date label map
+    console.log('DEBUG: after photoGalleries');
       function isoToID(iso) {
     console.log('DEBUG: before isoToID');
         if (!iso) return iso;
@@ -18807,6 +18812,10 @@ const pileMonitoringData = {
         </div>
       </div>`;
     }).join('');
+    } catch(e) {
+      console.log('ERROR in photoGalleries:', e.message, e.stack);
+      photoGalleries = [];
+    }
 
     const lightbox = `
       <div class="lightbox" id="lightbox">
