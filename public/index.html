@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -550,9 +550,9 @@
     #chart-tooltip .tt-plan { color: #f59e0b; }
     #chart-tooltip .tt-real { color: #22c55e; }
     </style>
-    <!-- Built from Google Drive on 05 June 2026 14:18 WIB -->
+    <!-- Built from Google Drive on 05 June 2026 14:52 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
-<meta name="dashboard-build-id" content="20260605141802">
+<meta name="dashboard-build-id" content="20260605145248">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
 </head>
 <body class="is-loading">
@@ -19006,95 +19006,8 @@ const pileMonitoringData = {
           .status,.badge,.module-pill { display:inline-block; border:1px solid #d1d5db; border-radius:999px; padding:5px 9px; font-size:11px; }
           svg { max-width:100%; } img { max-width:100%; } .photo-stage img { max-height:230px; object-fit:cover; }
           a { color:#0369a1; text-decoration:none; }
-        </style></head><body><div class="Section1">${cloned.innerHTML}</div>
-<!-- Chat Widget -->
-<div class="chat-widget" id="chatWidget">
-  <button class="chat-toggle" id="chatToggle" title="Chat dengan AI Assistant"><img src="joker-profile-picture.png" alt="AI Assistant" /></button>
-</div>
-<div class="chat-pin-modal" id="chatPinModal">
-  <div class="chat-pin-box">
-    <h3>&#x1F510; Verifikasi PIN</h3>
-    <div class="sub">Masukkan PIN untuk mengakses AI Assistant</div>
-    <input type="password" id="chatPinInput" placeholder="&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;" maxlength="9" inputmode="numeric" autocomplete="off" />
-    <div class="pin-error" id="chatPinError"></div>
-    <button id="chatPinSubmit">Buka Chat</button>
-    <div class="pin-alt">Butuh akses? Hubungi Jakoners &bull; <a href="#" id="chatPinSkip">Nanti saja</a></div>
-  </div>
-</div>
-(function() {
-  window.DASHBOARD_WEBCHAT_URL = document.querySelector('meta[name="webchat-url"]')?.getAttribute('content') || '';
-  var CHAT_PIN = '987654321';
-  var STORAGE_KEY = 'dashboard_chat_pin_ok';
-  var WEBCHAT_URL = window.DASHBOARD_WEBCHAT_URL || '';
-
-  var modal = document.getElementById('chatPinModal');
-  var toggle = document.getElementById('chatToggle');
-  var input = document.getElementById('chatPinInput');
-  var errorEl = document.getElementById('chatPinError');
-  var submit = document.getElementById('chatPinSubmit');
-  var skip = document.getElementById('chatPinSkip');
-
-  function openChat() {
-    if (WEBCHAT_URL) {
-      window.open(WEBCHAT_URL, 'jakon-assistant', 'width=480,height=720');
-    }
-    modal.classList.remove('open');
-    input.value = '';
-    errorEl.textContent = '';
-  }
-
-  function tryPin() {
-    if (input.value === CHAT_PIN) {
-      localStorage.setItem(STORAGE_KEY, '1');
-      openChat();
-    } else {
-      errorEl.textContent = 'PIN salah. Coba lagi.';
-      input.value = '';
-      input.focus();
-    }
-  }
-
-  toggle.addEventListener('click', function() {
-    if (localStorage.getItem(STORAGE_KEY) === '1') {
-      openChat();
-    } else {
-      modal.classList.add('open');
-      setTimeout(function() { input.focus(); }, 150);
-    }
-  });
-
-  submit.addEventListener('click', tryPin);
-  input.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') tryPin();
-  });
-
-  skip.addEventListener('click', function(e) {
-    e.preventDefault();
-    modal.classList.remove('open');
-  });
-
-  modal.addEventListener('click', function(e) {
-    if (e.target === modal) modal.classList.remove('open');
-  });
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && modal.classList.contains('open')) {
-      modal.classList.remove('open');
-    }
-  });
-
-  // Also support password auth: jkmppejaten12345
-  var PASSWORD = 'jkmppejaten12345';
-  input.addEventListener('input', function() {
-    if (input.value === PASSWORD) {
-      localStorage.setItem(STORAGE_KEY, '1');
-      openChat();
-    }
-  });
-})();
-<\/script>
-
-<\/body><\/html>`;
+        </div>
+        </div>
       const blob = new Blob(['\ufeff', html], { type: 'application/vnd.ms-powerpoint;charset=utf-8' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
@@ -19377,8 +19290,6 @@ const pileMonitoringData = {
         document.getElementById('chatPinModal')?.classList.add('open');
         setTimeout(() => document.getElementById('chatPinInput')?.focus(), 150);
       }
-    });
-
     });
 
     window.requestAnimationFrame(() => {
