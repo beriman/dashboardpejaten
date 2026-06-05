@@ -553,9 +553,9 @@
     <!-- Built from Google Drive on 05 June 2026 14:52 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
 <meta name="dashboard-build-id" content="20260605145248">
-  <!-- Built from Google Drive on 05 June 2026 18:24 WIB -->
+  <!-- Built from Google Drive on 05 June 2026 18:28 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
-<meta name="dashboard-build-id" content="20260605182416">
+<meta name="dashboard-build-id" content="20260605182829">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
 </head>
 <body class="is-loading">
@@ -17948,6 +17948,8 @@ const pileMonitoringData = {
 
 </script>
   <script>
+try {
+
     const dataSets = {
       daily: {
         projectName: "Renovasi Pejaten",
@@ -19288,7 +19290,14 @@ const pileMonitoringData = {
     window.requestAnimationFrame(() => {
       document.body.classList.remove('is-loading');
     });
-  </script>
+
+} catch(e) {
+  console.log('FATAL ERROR in main script:', e.message);
+  console.log('Stack:', e.stack);
+  document.body.classList.remove('is-loading');
+  document.getElementById('app').innerHTML = '<div style="color:white;padding:40px;font-family:sans-serif;"><h1>Dashboard Error</h1><p>' + e.message + '</p><pre style="font-size:12px;color:#aaa;">' + e.stack + '</pre></div>';
+}
+</script>
 
 <script>
 (function() {

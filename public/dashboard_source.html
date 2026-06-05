@@ -17944,6 +17944,8 @@ const pileMonitoringData = {
 
 </script>
   <script>
+try {
+
     const dataSets = {
       daily: {
         projectName: "Renovasi Pejaten",
@@ -19284,7 +19286,14 @@ const pileMonitoringData = {
     window.requestAnimationFrame(() => {
       document.body.classList.remove('is-loading');
     });
-  </script>
+  
+} catch(e) {
+  console.log('FATAL ERROR in main script:', e.message);
+  console.log('Stack:', e.stack);
+  document.body.classList.remove('is-loading');
+  document.getElementById('app').innerHTML = '<div style="color:white;padding:40px;font-family:sans-serif;"><h1>Dashboard Error</h1><p>' + e.message + '</p><pre style="font-size:12px;color:#aaa;">' + e.stack + '</pre></div>';
+}
+</script>
 
 <script>
 (function() {
