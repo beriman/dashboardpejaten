@@ -554,9 +554,9 @@
 <meta name="dashboard-build" content="Pejaten dashboard static build">
 <meta name="dashboard-build-id" content="20260605145248">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
-  <!-- Built from Google Drive on 05 June 2026 15:09 WIB -->
+  <!-- Built from Google Drive on 05 June 2026 16:39 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
-<meta name="dashboard-build-id" content="20260605150917">
+<meta name="dashboard-build-id" content="20260605163937">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
 </head>
 <body class="is-loading">
@@ -18985,41 +18985,7 @@ const pileMonitoringData = {
         if (!wasDayMode) document.body.classList.remove('day-mode');
       }, 500);
     };
-    const exportDashboardPpt = () => {
-      const app = document.getElementById('app');
-      const cloned = app.cloneNode(true);
-      cloned.querySelectorAll('.report-mode-panel, .detail-tabs, .lightbox, script').forEach(el => el.remove());
-      cloned.querySelectorAll('[data-building-detail-panel]').forEach(panel => { panel.style.display = 'block'; });
-      cloned.querySelectorAll('.photo-nav, .thumb-row').forEach(el => el.remove());
-      const title = `Dashboard Progress Gedung - ${data.projectName} - ${data.modeLabel}`;
-      const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>${escapeHtml(title)}</title>
-        <style>
-          @page Section1 { size: 13.333in 7.5in; margin: .35in; }
-          div.Section1 { page: Section1; }
-          body { font-family: Segoe UI, Arial, sans-serif; color:#111827; background:#fff; }
-          .card, section { border:1px solid #d1d5db; border-radius:16px; padding:14px; margin:0 0 14px; page-break-inside:avoid; background:#fff; }
-          .topbar { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; }
-          .brand-header { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
-          .company-logo { width:210px; height:auto; }
-          h1 { font-size:28px; margin:0; } h2,h3 { margin:0 0 8px; }
-          .sub,.meta,.meta-line,.note,.caption { color:#374151; font-size:12px; line-height:1.45; }
-          .label { font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#64748b; margin-bottom:8px; }
-          .grid, .summary-grid, .building-progress-grid, .gallery-grid, .metric-grid, .progress-facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
-          .full { grid-column:1/-1; } .pct,.n,.value { font-size:24px; font-weight:800; }
-          .status,.badge,.module-pill { display:inline-block; border:1px solid #d1d5db; border-radius:999px; padding:5px 9px; font-size:11px; }
-          svg { max-width:100%; } img { max-width:100%; } .photo-stage img { max-height:230px; object-fit:cover; }
-          a { color:#0369a1; text-decoration:none; }
-        </div>
-        </div>
-      const blob = new Blob(['\ufeff', html], { type: 'application/vnd.ms-powerpoint;charset=utf-8' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = `${safeFileName(title)}.ppt`;
-      document.body.appendChild(a);
-      a.click();
-      URL.revokeObjectURL(a.href);
-      a.remove();
-    };
+    const exportDashboardPpt = () => { /* PPT export temporarily disabled */ };
 
     const openBuildingDetail = (code) => {
       document.querySelectorAll('[data-detail-tab]').forEach(tab => tab.classList.toggle('active', tab.dataset.detailTab === code));
@@ -19271,7 +19237,7 @@ const pileMonitoringData = {
     })(); // end gallery timeline filter
 
     document.getElementById('export-pdf')?.addEventListener('click', exportDashboardPdf);
-    document.getElementById('export-ppt')?.addEventListener('click', exportDashboardPpt);
+    // PPT export disabled: document.getElementById('export-ppt')?.addEventListener('click', exportDashboardPpt);
 
     const themeToggle = document.getElementById('theme-toggle');
     const applyTheme = (mode) => {
@@ -19284,6 +19250,7 @@ const pileMonitoringData = {
     themeToggle.addEventListener('click', () => {
       const next = document.body.classList.contains('day-mode') ? 'night' : 'day';
       applyTheme(next);
+    });
 
     document.getElementById('header-chat-btn')?.addEventListener('click', () => {
       if (localStorage.getItem('dashboard_chat_pin_ok') === '1') {
