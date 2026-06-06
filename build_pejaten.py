@@ -559,9 +559,37 @@ def main():
     html = read_source(DASHBOARD_FILE)
     print(f"  Loaded: {DASHBOARD_FILE} ({len(html)} chars)")
 
-    print("[2/4] Populating photo documentation from Dokumentasi folder...")
-    cleanup_old_photos()
+    print("[2/4] Populating photo documentation from Dokumentasi folder...\n")
     html = populate_photos(html)
+
+    # Always copy latest photos from Dokumentasi to public/fotos/
+    # (populate_photos may miss some if date formats don't match)
+    print("\n[2.5/4] Copying photo files to public/fotos/...")
+    foto_dir = PUBLIC_DIR / "fotos"
+    if foto_dir.exists():
+        shutil.rmtree(foto_dir)
+    copied = 0
+    for month_dir in sorted(DOKUMEN_DIR.iterdir()):
+        if not month_dir.is_dir():
+            continue
+        for date_dir in sorted(month_dir.iterdir()):
+            if not date_dir.is_dir():
+                continue
+            for bcode in ["B", "D", "K"]:
+                bdir = date_dir / bcode
+                if not bdir.is_dir():
+                    continue
+                photos = get_building_photos(bdir)
+                if not photos:
+                    continue
+                out_dir = foto_dir / bcode
+                out_dir.mkdir(parents=True, exist_ok=True)
+                for filename, filepath in photos:
+                    dst = out_dir / filename
+                    if not dst.exists() or filepath.stat().st_mtime > dst.stat().st_mtime:
+                        shutil.copy2(filepath, dst)
+                        copied += 1
+    print(f"  📸 Copied {copied} foto files to public/fotos/")
 
     print("\n[3/4] Inlining data JS files...")
     html = inline_data_scripts(html)
