@@ -544,10 +544,10 @@ def patch_weighted_average(html: str) -> str:
 
 def cleanup_old_photos():
     """Remove old photos from public/fotos/ before copying new ones."""
-    foto_dir = PUBLIC_DIR / "fotos"
-    if foto_dir.is_dir():
-        shutil.rmtree(foto_dir)
-        print("  🧹 Cleaned old fotos/")
+    # SKIP cleanup — photos are copied directly from Dokumentasi folder
+    # on every build step 2.5. This avoids deleting photos that can't be
+    # re-populated by populate_photos() due to date format mismatches.
+    print("  📸 Skipping fotos/ cleanup (handled by step 2.5 copy)")
 
 
 # ─── Main ────────────────────────────────────────────────────────────────────
