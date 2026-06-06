@@ -241,9 +241,9 @@
 
   let THREE, OrbitControls, IFCLoader;
   try {
-    THREE = await import('https://esm.sh/three@0.152.2?bundle');
-    ({ OrbitControls } = await import('https://esm.sh/three@0.152.2/examples/jsm/controls/OrbitControls.js?bundle'));
-    ({ IFCLoader } = await import('https://esm.sh/web-ifc-three@0.0.126/IFCLoader.js?bundle&deps=three@0.152.2,web-ifc@0.0.44'));
+    THREE = await import('https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js');
+    ({ OrbitControls } = await import('https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/controls/OrbitControls.js'));
+    ({ IFCLoader } = await import('https://cdn.jsdelivr.net/npm/web-ifc-three@0.0.127/IFCLoader.js'));
   } catch (err) {
     bootStatus.innerHTML = `<strong>Status:</strong> gagal memuat library: ${err?.message || err}`;
     throw err;
@@ -260,9 +260,9 @@
   const buildingColors = { B: 0x88bbff, D: 0xffbb88, K: 0x88ffbb };
 
   const modelMap = {
-    B: { STR: '/models/Gedung B/IFC/STR/STR-B.ifc' },
-    D: { STR: '/models/Gedung D/IFC/STR/STR D.ifc' },
-    K: { STR: '/models/Gedung K/IFC/STR/STR-K.ifc', ARS: '/models/Gedung K/IFC/ARS/ARS-K.ifc' }
+    B: { STR: '/models/Gedung%20B/IFC/STR/STR-B.ifc' },
+    D: { STR: '/models/Gedung%20D/IFC/STR/STR%20D.ifc' },
+    K: { STR: '/models/Gedung%20K/IFC/STR/STR-K.ifc', ARS: '/models/Gedung%20K/IFC/ARS/ARS-K.ifc' }
   };
 
   // ─── Scene ────────────────────────────────────────────────────
@@ -384,7 +384,9 @@
   const origVisible = {};
 
   const loader = new IFCLoader();
-  loader.ifcManager.setWasmPath('https://cdn.jsdelivr.net/npm/web-ifc@0.0.44/', true);
+  // Use web-ifc WASM from CDN (browser-compatible, no fs dependency)
+  const ifcAPI = loader.ifcManager.ifcAPI;
+  ifcAPI.SetWasmPath('https://cdn.jsdelivr.net/npm/web-ifc@0.0.44/', true);
 
   const disciplineColors = { STR: 0xef4444, ARS: 0x3b82f6, INT: 0x22c55e, MEP: 0xf59e0b };
   const legDisc = { STR: 'Struktur', ARS: 'Arsitektur', INT: 'Interior', MEP: 'MEP' };
