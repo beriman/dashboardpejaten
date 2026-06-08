@@ -1,0 +1,360 @@
+{
+  "date_folder": "05/06/2026",
+  "date_iso": "2026-06-05",
+  "buildings": {
+    "B": [
+      {
+        "src": "https://lh3.googleusercontent.com/d/1BAoYwnZR5gWcjvHG9MtG86nLXNwHcYmO=w800-h800-no",
+        "name": "fasad depan",
+        "takenDate": "2026-06-05",
+        "fileId": "1BAoYwnZR5gWcjvHG9MtG86nLXNwHcYmO"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1p6vNvQYlc_sGF8kBjjqwg9MAirulQWSZ=w800-h800-no",
+        "name": "instal bekisting tie beam",
+        "takenDate": "2026-06-05",
+        "fileId": "1p6vNvQYlc_sGF8kBjjqwg9MAirulQWSZ"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1zg85LZrjRx9mPGZLofGxzCslra-ismBh=w800-h800-no",
+        "name": "instal bekisting tie beam",
+        "takenDate": "2026-06-05",
+        "fileId": "1zg85LZrjRx9mPGZLofGxzCslra-ismBh"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1I_Tic209ZEkpKylHKzJeqvPFuWoz0NTA=w800-h800-no",
+        "name": "instal pembesian kolom",
+        "takenDate": "2026-06-05",
+        "fileId": "1I_Tic209ZEkpKylHKzJeqvPFuWoz0NTA"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/17HMTMAVtX1ZwoYRWYGUD8TroS7b0DnwW=w800-h800-no",
+        "name": "instal pembesian kolom PC",
+        "takenDate": "2026-06-05",
+        "fileId": "17HMTMAVtX1ZwoYRWYGUD8TroS7b0DnwW"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1eKZnrZ6TgFhU6mCNVKeSVMMSkbT3cJVC=w800-h800-no",
+        "name": "instal pembesian tie beam",
+        "takenDate": "2026-06-05",
+        "fileId": "1eKZnrZ6TgFhU6mCNVKeSVMMSkbT3cJVC"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1wFqQTyOsGqNaWk-8_GoJ4aK3jwNl3enD=w800-h800-no",
+        "name": "instal pembesian tie beam",
+        "takenDate": "2026-06-05",
+        "fileId": "1wFqQTyOsGqNaWk-8_GoJ4aK3jwNl3enD"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1jChKzGeKOy0nzzxVvmwA9RiyIJN1wIKN=w800-h800-no",
+        "name": "instal pembesian tie beam",
+        "takenDate": "2026-06-05",
+        "fileId": "1jChKzGeKOy0nzzxVvmwA9RiyIJN1wIKN"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1iW3OTUimxGwd19S1LVNUB8gU-iwDcYKG=w800-h800-no",
+        "name": "instal pembesian tie beam",
+        "takenDate": "2026-06-05",
+        "fileId": "1iW3OTUimxGwd19S1LVNUB8gU-iwDcYKG"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1H5lB_wcdw1Denfn4COjom6-8JByv0QYL=w800-h800-no",
+        "name": "pembersihan area",
+        "takenDate": "2026-06-05",
+        "fileId": "1H5lB_wcdw1Denfn4COjom6-8JByv0QYL"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1wyPElFT-lJJIe8kY-CwAuu8bQRXFJ_2K=w800-h800-no",
+        "name": "pembersihan area gedung",
+        "takenDate": "2026-06-05",
+        "fileId": "1wyPElFT-lJJIe8kY-CwAuu8bQRXFJ_2K"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1aogrQa-1oNqFdSmNd19ACOMI0MnhN6wy=w800-h800-no",
+        "name": "pengerukan PC",
+        "takenDate": "2026-06-05",
+        "fileId": "1aogrQa-1oNqFdSmNd19ACOMI0MnhN6wy"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1D8EZ8n-ShcTv2s2ytC7hPz23e1vXZbAr=w800-h800-no",
+        "name": "penimbunan keliling pondasi",
+        "takenDate": "2026-06-05",
+        "fileId": "1D8EZ8n-ShcTv2s2ytC7hPz23e1vXZbAr"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1QHG74z0M-ddWuA2jvFrPUX4MLdN1-JyV=w800-h800-no",
+        "name": "progres bekisting tie beam",
+        "takenDate": "2026-06-05",
+        "fileId": "1QHG74z0M-ddWuA2jvFrPUX4MLdN1-JyV"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1tQuI4Ev_6elXywRQiu7LYKOI8xifOpKE=w800-h800-no",
+        "name": "progres instal pembesian tie beam",
+        "takenDate": "2026-06-05",
+        "fileId": "1tQuI4Ev_6elXywRQiu7LYKOI8xifOpKE"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1q81Tlz_M-15wPMmAcrybMqh_1lnbphvG=w800-h800-no",
+        "name": "proses fabrasi untuk tie beam",
+        "takenDate": "2026-06-05",
+        "fileId": "1q81Tlz_M-15wPMmAcrybMqh_1lnbphvG"
+      }
+    ],
+    "D": [
+      {
+        "src": "https://lh3.googleusercontent.com/d/1DBUQCW72DftR44EobWcv-wmTCqe0tzP5=w800-h800-no",
+        "name": "fasad depan",
+        "takenDate": "2026-06-05",
+        "fileId": "1DBUQCW72DftR44EobWcv-wmTCqe0tzP5"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1iHVYv1XAHkaxUDT7HM7dOJWG-vCPZBDW=w800-h800-no",
+        "name": "instal bekisting tie beam",
+        "takenDate": "2026-06-05",
+        "fileId": "1iHVYv1XAHkaxUDT7HM7dOJWG-vCPZBDW"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/185v1n3GG1QcUsINqlEEQIebKaWSEZShE=w800-h800-no",
+        "name": "instal bekisting tie beam",
+        "takenDate": "2026-06-05",
+        "fileId": "185v1n3GG1QcUsINqlEEQIebKaWSEZShE"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1VOafSXHljcOwwaNGd-feW3KNkVL6mYpA=w800-h800-no",
+        "name": "instal bekisting tie beam",
+        "takenDate": "2026-06-05",
+        "fileId": "1VOafSXHljcOwwaNGd-feW3KNkVL6mYpA"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1rriN638pgkwYwJ5TQgxQ5Gm9XCUAcisv=w800-h800-no",
+        "name": "instal pembesian tie beam",
+        "takenDate": "2026-06-05",
+        "fileId": "1rriN638pgkwYwJ5TQgxQ5Gm9XCUAcisv"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1cCGf27FcCg2WZ8y2MVhvlyMAIrs5Yb28=w800-h800-no",
+        "name": "instal pembesian tie beam",
+        "takenDate": "2026-06-05",
+        "fileId": "1cCGf27FcCg2WZ8y2MVhvlyMAIrs5Yb28"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1-HfYU9uhkB9xjyKp2wVbJpfgqDC-bHJt=w800-h800-no",
+        "name": "pembersihan area gedung",
+        "takenDate": "2026-06-05",
+        "fileId": "1-HfYU9uhkB9xjyKp2wVbJpfgqDC-bHJt"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1lio3hWbNimda7i7mNYLo1xMn3uLJZZCz=w800-h800-no",
+        "name": "pembobokan pancang",
+        "takenDate": "2026-06-05",
+        "fileId": "1lio3hWbNimda7i7mNYLo1xMn3uLJZZCz"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/14l_w8odTFS2eZL9HEFYtKfylESLaflGW=w800-h800-no",
+        "name": "pengelasan fabrasi tie beam PC",
+        "takenDate": "2026-06-05",
+        "fileId": "14l_w8odTFS2eZL9HEFYtKfylESLaflGW"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1gERM6mAv-gywtdWzq-RvzCGAo5xGE4Ga=w800-h800-no",
+        "name": "pengelasan fabrasi tie beam PC",
+        "takenDate": "2026-06-05",
+        "fileId": "1gERM6mAv-gywtdWzq-RvzCGAo5xGE4Ga"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1Ju4YfxlGPQcFJyzIaFL4tSh0PuY6o71k=w800-h800-no",
+        "name": "pengerjaan bor pile",
+        "takenDate": "2026-06-05",
+        "fileId": "1Ju4YfxlGPQcFJyzIaFL4tSh0PuY6o71k"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1zIl-1woT1tqb_jYpd1s7MUff93xou6AQ=w800-h800-no",
+        "name": "pengerukan lantai PC",
+        "takenDate": "2026-06-05",
+        "fileId": "1zIl-1woT1tqb_jYpd1s7MUff93xou6AQ"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1cxAs_xLp-gv_2PkzeGnUuKlw0tjCntTI=w800-h800-no",
+        "name": "pengerukan lantai PC",
+        "takenDate": "2026-06-05",
+        "fileId": "1cxAs_xLp-gv_2PkzeGnUuKlw0tjCntTI"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1LGqlrdN2jTrfp8UYuvZa5AXQ1HdjxNUj=w800-h800-no",
+        "name": "penggalian lobang PC",
+        "takenDate": "2026-06-05",
+        "fileId": "1LGqlrdN2jTrfp8UYuvZa5AXQ1HdjxNUj"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1gmSf0QI9yczV-GZeUQYx3fc8bT7hlKzG=w800-h800-no",
+        "name": "progres bekisting tie beam",
+        "takenDate": "2026-06-05",
+        "fileId": "1gmSf0QI9yczV-GZeUQYx3fc8bT7hlKzG"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/10bz8PATM3rMnzt58GHyUebp4KKY9C6qD=w800-h800-no",
+        "name": "progres bor pile",
+        "takenDate": "2026-06-05",
+        "fileId": "10bz8PATM3rMnzt58GHyUebp4KKY9C6qD"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1UADaA9-5nVWwz7y1Kanp3pbwgYn9JZFk=w800-h800-no",
+        "name": "progres bor pile",
+        "takenDate": "2026-06-05",
+        "fileId": "1UADaA9-5nVWwz7y1Kanp3pbwgYn9JZFk"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1wi12IWcwW-dwZPJhaGFAPrzPhixVr_9T=w800-h800-no",
+        "name": "progres pembesian",
+        "takenDate": "2026-06-05",
+        "fileId": "1wi12IWcwW-dwZPJhaGFAPrzPhixVr_9T"
+      }
+    ],
+    "K": [
+      {
+        "src": "https://lh3.googleusercontent.com/d/1R2GPPI7wHrKqg-MqtIaWMohnYnGDLN0P=w800-h800-no",
+        "name": "after pengecoran plat lantai",
+        "takenDate": "2026-06-05",
+        "fileId": "1R2GPPI7wHrKqg-MqtIaWMohnYnGDLN0P"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1K_5n4HAxAbtxrf98MoyY4wqt6Vwu5kCg=w800-h800-no",
+        "name": "after pengecoran plat lantai",
+        "takenDate": "2026-06-05",
+        "fileId": "1K_5n4HAxAbtxrf98MoyY4wqt6Vwu5kCg"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1nmrifyo0TafTmsTeLlDgBWzreDSy6oPE=w800-h800-no",
+        "name": "after pengecoran plat lantai",
+        "takenDate": "2026-06-05",
+        "fileId": "1nmrifyo0TafTmsTeLlDgBWzreDSy6oPE"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1YG0YYsIsSRnTBgzPntHIbbb7_ltx1v9u=w800-h800-no",
+        "name": "fasad depan",
+        "takenDate": "2026-06-05",
+        "fileId": "1YG0YYsIsSRnTBgzPntHIbbb7_ltx1v9u"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1VhJmBFkQ8Jl3237W-hEDiyW3uIzL4mAc=w800-h800-no",
+        "name": "galian instalasi pipa toilet",
+        "takenDate": "2026-06-05",
+        "fileId": "1VhJmBFkQ8Jl3237W-hEDiyW3uIzL4mAc"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1_rjoZxOnegs-Xutnkyvzu56ZhM6Sz5Cq=w800-h800-no",
+        "name": "galian instalasi pipa toilet",
+        "takenDate": "2026-06-05",
+        "fileId": "1_rjoZxOnegs-Xutnkyvzu56ZhM6Sz5Cq"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1v2_bUqDQ_HqZQDIYfEMi_OvdRpEGSwL1=w800-h800-no",
+        "name": "galian instalasi pipa toilet",
+        "takenDate": "2026-06-05",
+        "fileId": "1v2_bUqDQ_HqZQDIYfEMi_OvdRpEGSwL1"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/18APKbykAofpWzIRsEh0TZlPHTWpqqduW=w800-h800-no",
+        "name": "instal pembesian kolom",
+        "takenDate": "2026-06-05",
+        "fileId": "18APKbykAofpWzIRsEh0TZlPHTWpqqduW"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1UYhh7vDaGhid60O-W6E4u_8zqVIRauIQ=w800-h800-no",
+        "name": "instal pembesian kolom",
+        "takenDate": "2026-06-05",
+        "fileId": "1UYhh7vDaGhid60O-W6E4u_8zqVIRauIQ"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1xGoOkTP9NkENSjFC1ci_80XCNXNw85yj=w800-h800-no",
+        "name": "instal pembesian kolom",
+        "takenDate": "2026-06-05",
+        "fileId": "1xGoOkTP9NkENSjFC1ci_80XCNXNw85yj"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1QOb2kjbI7AmDLnxmuOy8gLYY8dp58yJD=w800-h800-no",
+        "name": "instal pembesian kolom",
+        "takenDate": "2026-06-05",
+        "fileId": "1QOb2kjbI7AmDLnxmuOy8gLYY8dp58yJD"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1w0_LduxhzOc5gOGZFCWc_3dCbg3rj0Gn=w800-h800-no",
+        "name": "install pembesian kolom",
+        "takenDate": "2026-06-05",
+        "fileId": "1w0_LduxhzOc5gOGZFCWc_3dCbg3rj0Gn"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1dP4nfi2ZeV8diso3JTPR_ETM2okAvIYS=w800-h800-no",
+        "name": "pembersihan area gedung",
+        "takenDate": "2026-06-05",
+        "fileId": "1dP4nfi2ZeV8diso3JTPR_ETM2okAvIYS"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1Ha3HNb_8Avp3tb4fvTvPBK7Mcr4c2oFA=w800-h800-no",
+        "name": "pembesian kolom",
+        "takenDate": "2026-06-05",
+        "fileId": "1Ha3HNb_8Avp3tb4fvTvPBK7Mcr4c2oFA"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1qwvq2z2SevVW_RD_yIrlX-brztAG2ASg=w800-h800-no",
+        "name": "pembobokan pancang",
+        "takenDate": "2026-06-05",
+        "fileId": "1qwvq2z2SevVW_RD_yIrlX-brztAG2ASg"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1ltwmJdX13t6fDmLk-b-LWM52a3nqBH84=w800-h800-no",
+        "name": "posisi PC untuk lift",
+        "takenDate": "2026-06-05",
+        "fileId": "1ltwmJdX13t6fDmLk-b-LWM52a3nqBH84"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1pFWfFCOP4PqZpN3SKC06XcGgZfIKhE44=w800-h800-no",
+        "name": "progres pembuatan LC PC",
+        "takenDate": "2026-06-05",
+        "fileId": "1pFWfFCOP4PqZpN3SKC06XcGgZfIKhE44"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/18IsXHcLxVmiGSEzUO5aMGJ6dL4HJrh-D=w800-h800-no",
+        "name": "progres pembuatan LC PC",
+        "takenDate": "2026-06-05",
+        "fileId": "18IsXHcLxVmiGSEzUO5aMGJ6dL4HJrh-D"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/18qKoI1-fUR3-g_Fen8yZN_cf1sZN87Ge=w800-h800-no",
+        "name": "progres pembuatan toilet",
+        "takenDate": "2026-06-05",
+        "fileId": "18qKoI1-fUR3-g_Fen8yZN_cf1sZN87Ge"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/15PoG6RyO1kazk_ClXZn8YbwVj_9voi8d=w800-h800-no",
+        "name": "progres pembuatan toilet",
+        "takenDate": "2026-06-05",
+        "fileId": "15PoG6RyO1kazk_ClXZn8YbwVj_9voi8d"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1ntP5s_Ie48LCous2XhcXOlQi0KMpITim=w800-h800-no",
+        "name": "progres pembuatan toilet",
+        "takenDate": "2026-06-05",
+        "fileId": "1ntP5s_Ie48LCous2XhcXOlQi0KMpITim"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1mOIyUwp2znHjwKV2exJ9eonBzhXZbzU3=w800-h800-no",
+        "name": "progres pengerjaan sticker pagar depan",
+        "takenDate": "2026-06-05",
+        "fileId": "1mOIyUwp2znHjwKV2exJ9eonBzhXZbzU3"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1rlUEIGeiy_NXLW3qOC1RpWvfZmikKf8M=w800-h800-no",
+        "name": "progres ruangan server",
+        "takenDate": "2026-06-05",
+        "fileId": "1rlUEIGeiy_NXLW3qOC1RpWvfZmikKf8M"
+      },
+      {
+        "src": "https://lh3.googleusercontent.com/d/1d4BoeqBgEw8_nVhbez0qnjDZvjA7VlLp=w800-h800-no",
+        "name": "progres ruangan server 2",
+        "takenDate": "2026-06-05",
+        "fileId": "1d4BoeqBgEw8_nVhbez0qnjDZvjA7VlLp"
+      }
+    ]
+  }
+}

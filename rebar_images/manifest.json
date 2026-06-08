@@ -1,0 +1,211 @@
+{
+  "B": [
+    {
+      "code": "011",
+      "name": "Detail Bor Pile Dia 400",
+      "pages": 1,
+      "preview": "B-011_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "010",
+      "name": "Denah Titik Pancang",
+      "pages": 2,
+      "preview": "B-010_p1.png",
+      "key_file": false
+    },
+    {
+      "code": "009",
+      "name": "Detail Plat Lantai 1",
+      "pages": 4,
+      "preview": "B-009_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "008",
+      "name": "Detail Pile Cap",
+      "pages": 1,
+      "preview": "B-008_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "006",
+      "name": "Denah Balok Lt 1 & Skedul",
+      "pages": 2,
+      "preview": "B-006_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "005",
+      "name": "Denah Kolom Lt Atap-Dak",
+      "pages": 1,
+      "preview": "B-005_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "004",
+      "name": "Denah Kolom Lt1 Lt2 Dak Atap",
+      "pages": 4,
+      "preview": "B-004_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "001",
+      "name": "Pile Cap & Titik Pancang",
+      "pages": 5,
+      "preview": "B-001_p1.png",
+      "key_file": true
+    }
+  ],
+  "D": [
+    {
+      "code": "010",
+      "name": "Detail Pile Cap",
+      "pages": 3,
+      "preview": "D-010_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "009",
+      "name": "Denah Pile Cap",
+      "pages": 3,
+      "preview": "D-009_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "008",
+      "name": "Denah Tie Beam & Plat Lt1",
+      "pages": 10,
+      "preview": "D-008_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "007",
+      "name": "Standart Detail",
+      "pages": 5,
+      "preview": "D-007_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "005",
+      "name": "Layout GWT & Denah Pancang",
+      "pages": 3,
+      "preview": "D-005_p1.png",
+      "key_file": false
+    },
+    {
+      "code": "006",
+      "name": "Denah Titik Pancang",
+      "pages": 2,
+      "preview": "D-006_p1.png",
+      "key_file": false
+    },
+    {
+      "code": "004",
+      "name": "Detail Tower Crane",
+      "pages": 1,
+      "preview": "D-004_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "002",
+      "name": "Denah Kolom",
+      "pages": 3,
+      "preview": "D-002_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "001",
+      "name": "Titik Pancang Bore Pile Pile Cap",
+      "pages": 7,
+      "preview": "D-001_p1.png",
+      "key_file": true
+    }
+  ],
+  "K": [
+    {
+      "code": "015",
+      "name": "Standart Detail",
+      "pages": 5,
+      "preview": "K-015_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "012",
+      "name": "Tabel Penulangan Balok",
+      "pages": 1,
+      "preview": "K-012_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "014",
+      "name": "Denah Pile Cap & Detail",
+      "pages": 2,
+      "preview": "K-014_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "013",
+      "name": "Denah Titik Pancang",
+      "pages": 2,
+      "preview": "K-013_p1.png",
+      "key_file": false
+    },
+    {
+      "code": "011",
+      "name": "Denah Plat Lantai & Detail",
+      "pages": 2,
+      "preview": "K-011_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "010",
+      "name": "Denah Tie Beam",
+      "pages": 1,
+      "preview": "K-010_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "009",
+      "name": "Denah & Detail Kolom",
+      "pages": 2,
+      "preview": "K-009_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "008",
+      "name": "Denah & Detail Pile Cap",
+      "pages": 2,
+      "preview": "K-008_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "004",
+      "name": "Denah & Detail Plat Lt 1",
+      "pages": 2,
+      "preview": "K-004_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "003",
+      "name": "Denah Tie Beam",
+      "pages": 1,
+      "preview": "K-003_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "002",
+      "name": "Denah Kolom",
+      "pages": 1,
+      "preview": "K-002_p1.png",
+      "key_file": true
+    },
+    {
+      "code": "001",
+      "name": "Titik Pancang & Pile Cap",
+      "pages": 5,
+      "preview": "K-001_p1.png",
+      "key_file": true
+    }
+  ]
+}

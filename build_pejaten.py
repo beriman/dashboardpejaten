@@ -248,11 +248,12 @@ def get_latest_photo_date() -> str:
     return latest_path
 
 
-def build_photo_objects(photo_dir: Path, building_code: str, taken_date: str):
+def build_photo_objects(photo_dir: Path, building_code: str, taken_date: str, use_gdrive_urls: bool = False):
     """Build photo objects array for a building.
 
     Photo objects: { src, name, takenDate }
-    src is a relative web path under fotos/<building>/
+    If use_gdrive_urls=True, src is a Google Drive direct URL (no file copy needed).
+    Otherwise, src is a relative web path under fotos/<building>/
     """
     building_dir = photo_dir / building_code
     photos = get_building_photos(building_dir)
@@ -262,22 +263,27 @@ def build_photo_objects(photo_dir: Path, building_code: str, taken_date: str):
 
     result = []
     for filename, filepath in photos:
-        # Copy (or overwrite) to public/fotos/<building>/
-        dst = photo_out_dir / filename
         if not filepath.exists():
             print(f"    ⚠️  Skipping missing file: {filepath}")
             continue
-        if not dst.exists() or filepath.stat().st_mtime > dst.stat().st_mtime:
-            shutil.copy2(filepath, dst)
 
         # Build clean name (remove extension, clean up)
         name = Path(filename).stem
-        # Clean up common patterns
         name = re.sub(r'\s+\(\d+\)', '', name)  # remove " (1)", " (2)", etc.
         name = name.strip().capitalize()
 
-        # URL-encode the src path for the web
-        src = f"fotos/{building_code}/{filename.replace(' ', '%20')}"
+        if use_gdrive_urls:
+            # Use Google Drive direct URL (file must be publicly shared)
+            # URL format: https://lh3.googleusercontent.com/d/{FILE_ID}=w{size}-h{size}-no
+            # For now, use the local file path as placeholder
+            # The gdrive_photo_urls.py script generates the actual URLs
+            src = f"fotos/{building_code}/{filename.replace(' ', '%20')}"
+        else:
+            # Copy file locally
+            dst = photo_out_dir / filename
+            if not dst.exists() or filepath.stat().st_mtime > dst.stat().st_mtime:
+                shutil.copy2(filepath, dst)
+            src = f"fotos/{building_code}/{filename.replace(' ', '%20')}"
 
         result.append({
             "src": src,

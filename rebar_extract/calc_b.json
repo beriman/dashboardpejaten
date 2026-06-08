@@ -1,0 +1,26 @@
+{
+  "summary": {
+    "bore_pile_kg": 99053,
+    "pile_cap_kg": 8232,
+    "column_kg": 49433,
+    "beam_kg": 7568,
+    "slab_kg": 10256,
+    "tie_beam_kg": 572,
+    "total_kg": 175114,
+    "total_3pct_waste_kg": 180368,
+    "total_5pct_waste_kg": 183870
+  },
+  "bore_pile": {
+    "count": 120,
+    "length_m": 27.0,
+    "main_bars": "12D19",
+    "spiral": "\u00d810-150",
+    "weight_kg": 99053
+  },
+  "floor_heights": {
+    "Lt1": 4.0,
+    "Lt2": 4.0,
+    "Lt_Atap": 4.0,
+    "Atap_Tangga": 3.0
+  }
+}
