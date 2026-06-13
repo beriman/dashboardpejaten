@@ -559,9 +559,9 @@
     <!-- Built from Google Drive on 05 June 2026 14:52 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
 <meta name="dashboard-build-id" content="20260605145248">
-  <!-- Built from Google Drive on 13 June 2026 13:49 WIB -->
+  <!-- Built from Google Drive on 13 June 2026 16:46 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
-<meta name="dashboard-build-id" content="20260613134930">
+<meta name="dashboard-build-id" content="20260613164624">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
 </head>
 <body class="is-loading">
@@ -18222,7 +18222,7 @@ const pileMonitoringData = {
     const data = dataSets[selectedReportMode];
 
     const available = data.buildings.filter(b => b.cumReal !== null);
-    const avg = arr => arr.reduce((a,b) => a+b,0) / arr.length;
+    const avg = arr => { const v = arr.filter(x => x !== undefined && x !== null && !isNaN(x)); return v.length ? v.reduce((a,b) => a+b,0) / v.length : 0; };
     // Weighted average: sum(realization) / sum(contract) for accurate combined progress
     const avgProgress = available.length
       ? available.reduce((sum, b) => sum + (b.cumReal * (b.contractValue || 1)), 0) /
@@ -18639,7 +18639,7 @@ const pileMonitoringData = {
           }
           const w = 640, h = 320, ml = 52, mr = 16, mt = 20, mb = 48;
           const innerW = w - ml - mr, innerH = h - mt - mb;
-          const maxVal = Math.max(...plan, ...real) * 1.15 || 1;
+          const maxVal = Math.max(...plan.filter(v => v !== undefined), ...real.filter(v => v !== undefined)) * 1.15 || 1;
           const x = i => ml + (innerW * i / (labels.length - 1 || 1));
           const y = v => mt + innerH - (v / maxVal * innerH);
           const tooltipCircles = (labels, plan, real) => {
