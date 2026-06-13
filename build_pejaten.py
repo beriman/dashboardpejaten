@@ -573,7 +573,16 @@ def main():
     print("\n[2.5/4] Copying photo files to public/fotos/...")
     foto_dir = PUBLIC_DIR / "fotos"
     if foto_dir.exists():
-        shutil.rmtree(foto_dir)
+        # Rename instead of rmtree to avoid PermissionError on locked files
+        import time as _time
+        old_dir = PUBLIC_DIR / f"fotos_old_{int(_time.time())}"
+        try:
+            shutil.rmtree(foto_dir)
+        except (PermissionError, OSError):
+            try:
+                foto_dir.rename(old_dir)
+            except OSError:
+                pass  # If rename also fails, just overwrite in-place
     copied = 0
     for month_dir in sorted(DOKUMEN_DIR.iterdir()):
         if not month_dir.is_dir():
@@ -593,7 +602,11 @@ def main():
                 for filename, filepath in photos:
                     dst = out_dir / filename
                     if not dst.exists() or filepath.stat().st_mtime > dst.stat().st_mtime:
-                        shutil.copy2(filepath, dst)
+                        try:
+                            shutil.copy2(filepath, dst)
+                        except (FileNotFoundError, OSError):
+                            print(f"     SKIP: file not found: {filepath.name}")
+                            continue
                         copied += 1
     print(f"  📸 Copied {copied} foto files to public/fotos/")
 
