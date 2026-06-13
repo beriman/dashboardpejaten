@@ -246,6 +246,12 @@
     .chart-box {
       background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.04); border-radius: 14px; padding: 14px;
     }
+    @media (max-width: 760px) {
+      .chart-box svg { height: 260px !important; min-height: 200px !important; }
+      .chart-box { padding: 10px; }
+      .chart-box h3 { font-size: 15px; }
+      .chart-box .sub { font-size: 11px; }
+    }
     .chart-box h3 { margin: 0 0 10px; font-size: 18px; }
     .legend { display: flex; gap: 14px; flex-wrap: wrap; margin: 10px 0 0; font-size: 12px; color: var(--muted); }
     .legend span { display: inline-flex; align-items: center; gap: 6px; }
@@ -18632,7 +18638,7 @@ const pileMonitoringData = {
             <div class="note">Data kurva S belum tersedia.</div>
           </div>`;
       }
-      const w = 640, h = 280, ml = 52, mr = 16, mt = 16, mb = 42;
+      const w = 640, h = 340, ml = 52, mr = 16, mt = 16, mb = 42;
       const innerW = w - ml - mr, innerH = h - mt - mb;
       const maxVal = Math.max(...plan, ...real) * 1.15 || 1;
       const x = i => ml + (innerW * i / (labels.length - 1 || 1));
@@ -18656,7 +18662,7 @@ Realisasi: ${valReal}`;
       };
 
       const linePath = series => series.map((v,i) => `${i===0?'M':'L'} ${x(i).toFixed(2)} ${y(v).toFixed(2)}`).join(' ');
-      const circles = (series, color) => series.map((v,i) => `<circle cx="${x(i)}" cy="${y(v)}" r="4" fill="${color}" />`).join('');
+      const circles = (series, color) => series.map((v,i) => `<circle cx="${x(i)}" cy="${y(v)}" r="5" fill="${color}" stroke="${color === '#f59e0b' ? '#0b1220' : '#0b1220'}" stroke-width="1.5" />`).join('');
       const grid = Array.from({length:5}, (_,i) => {
         const val = +(maxVal * i / 4).toFixed(2);
         const yy = y(val);
@@ -18673,12 +18679,12 @@ Realisasi: ${valReal}`;
           <h3>${title}</h3>
           <div class="sub">${subtitle}</div>
           <div class="chart-wrap">
-            <svg viewBox="0 0 ${w} ${h}" width="100%" height="280" aria-label="${title}">
+            <svg viewBox="0 0 ${w} ${h}" width="100%" height="340" aria-label="${title}" style="min-height:220px;">
               ${grid}
               <line x1="${ml}" y1="${mt}" x2="${ml}" y2="${h-mb}" stroke="rgba(255,255,255,.14)" />
               <line x1="${ml}" y1="${h-mb}" x2="${w-mr}" y2="${h-mb}" stroke="rgba(255,255,255,.14)" />
-              <path d="${linePath(plan)}" fill="none" stroke="#f59e0b" stroke-width="3" />
-              <path d="${linePath(real)}" fill="none" stroke="#22c55e" stroke-width="3" />
+              <path d="${linePath(plan)}" fill="none" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="${linePath(real)}" fill="none" stroke="#22c55e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
               ${circles(plan, '#f59e0b')}
               ${circles(real, '#22c55e')}
               ${xLabels}
