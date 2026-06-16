@@ -559,9 +559,9 @@
     <!-- Built from Google Drive on 05 June 2026 14:52 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
 <meta name="dashboard-build-id" content="20260605145248">
-  <!-- Built from Google Drive on 16 June 2026 05:15 WIB -->
+  <!-- Built from Google Drive on 17 June 2026 05:02 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
-<meta name="dashboard-build-id" content="20260616051551">
+<meta name="dashboard-build-id" content="20260617050207">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
 </head>
 <body class="is-loading">
@@ -19318,5 +19318,85 @@ const pileMonitoringData = {
   });
 })();
 </script>
+
+<!-- Trial Mix Notification Popup -->
+<style>
+  .trial-overlay {
+    display: none;
+    position: fixed; inset: 0; z-index: 10002;
+    background: rgba(2,6,23,.85);
+    backdrop-filter: blur(6px);
+    align-items: center; justify-content: center;
+    padding: 18px;
+  }
+  .trial-overlay.show { display: flex; }
+  .trial-box {
+    background: rgba(15,23,42,.97);
+    border: 1px solid rgba(56,189,248,.35);
+    border-radius: 20px;
+    padding: 28px 26px;
+    max-width: 480px; width: 100%;
+    box-shadow: 0 8px 48px rgba(2,132,199,.35);
+  }
+  .trial-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(245,158,11,.18); color: #fde68a;
+    border: 1px solid rgba(245,158,11,.35);
+    border-radius: 999px; padding: 5px 12px;
+    font-size: 12px; font-weight: 700; margin-bottom: 14px;
+  }
+  .trial-box h2 { margin: 0 0 4px; font-size: 20px; font-weight: 800; color: #f1f5f9; }
+  .trial-box .trial-sub { color: var(--muted); font-size: 13px; margin-bottom: 16px; line-height: 1.5; }
+  .trial-info { display: grid; gap: 8px; margin-bottom: 18px; }
+  .trial-row { display: flex; gap: 10px; align-items: flex-start; }
+  .trial-label { min-width: 52px; font-size: 11px; font-weight: 700; color: #94a3b8; text-transform: uppercase; padding-top: 2px; }
+  .trial-val { font-size: 13px; color: #e2e8f0; line-height: 1.45; }
+  .trial-val strong { color: #38bdf8; }
+  .trial-close {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(56,189,248,.14); border: 1px solid rgba(56,189,248,.3);
+    color: #bae6fd; border-radius: 999px; padding: 9px 18px;
+    font-size: 13px; font-weight: 700; cursor: pointer;
+    transition: background .15s, border-color .15s;
+  }
+  .trial-close:hover { background: rgba(56,189,248,.24); border-color: rgba(56,189,248,.5); }
+</style>
+<div class="trial-overlay" id="trialOverlay">
+  <div class="trial-box">
+    <div class="trial-badge">&#128276; Jadwal Penting</div>
+    <h2>Trial Mix Beton</h2>
+    <div class="trial-sub">Fc'30 &amp; Fc'35 - Struktur Gedung B &amp; D</div>
+    <div class="trial-info">
+      <div class="trial-row">
+        <div class="trial-label">Tgl</div>
+        <div class="trial-val"><strong>Rabu, 17 Juni 2026</strong></div>
+      </div>
+      <div class="trial-row">
+        <div class="trial-label">Waktu</div>
+        <div class="trial-val">13.00 WIB</div>
+      </div>
+      <div class="trial-row">
+        <div class="trial-label">Lokasi</div>
+        <div class="trial-val">PT Pionirbeton Industri, Kw. Industri Pulogadung, Jatinegara, Cakung, Jakarta Timur</div>
+      </div>
+      <div class="trial-row">
+        <div class="trial-label">Mix</div>
+        <div class="trial-val">Fc'30 Slump 12&plusmn;2 &amp; 18, Fc'35 Slump 18 (ACI / ASTM)</div>
+      </div>
+    </div>
+    <button class="trial-close" onclick="document.getElementById('trialOverlay').classList.remove('show')">Mengerti</button>
+  </div>
+</div>
+<script>
+(function(){
+  var deadline = new Date('2026-06-17T23:59:59');
+  var now = new Date();
+  if (now <= deadline) {
+    var el = document.getElementById('trialOverlay');
+    if (el) el.classList.add('show');
+  }
+})();
+</script>
+
 </body>
 </html>
