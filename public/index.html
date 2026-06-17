@@ -559,9 +559,9 @@
     <!-- Built from Google Drive on 05 June 2026 14:52 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
 <meta name="dashboard-build-id" content="20260605145248">
-  <!-- Built from Google Drive on 17 June 2026 12:15 WIB -->
+  <!-- Built from Google Drive on 17 June 2026 13:19 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
-<meta name="dashboard-build-id" content="20260617121502">
+<meta name="dashboard-build-id" content="20260617131937">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
 </head>
 <body class="is-loading">
@@ -19528,8 +19528,7 @@ const pileMonitoringData = {
           <option value="approve">Approve</option>
           <option value="dikembalikan">Dikembalikan</option>
           <option value="ditolak">Ditolak</option>
-          <option value="on-review">On Review</option>
-          <option value="sedang-diajukan">Sedang Diajukan</option>
+          <option value="on-review">On Review / Sedang Diajukan</option>
           <option value="pending">Pending</option>
         </select>
         <input type="text" class="monitoring-search" id="filterSearch" placeholder="Cari judul/nomor gambar..." oninput="renderMonitoringTable()">
@@ -19663,16 +19662,16 @@ const pileMonitoringData = {
           if (kat !== kFilter && katDisplay !== kategoriFilter) continue;
         }
 
-        // Status filter — exact match dengan data asli
+        // Status filter
         var adminStatus = item.admin_status || '';
         var adminStatusLower = adminStatus.toLowerCase();
         if (statusFilter !== 'all') {
           if (statusFilter === 'approve' && adminStatusLower.indexOf('approve') < 0 && adminStatusLower !== 'aprove') continue;
           if (statusFilter === 'dikembalikan' && adminStatusLower.indexOf('kembali') < 0) continue;
           if (statusFilter === 'ditolak' && adminStatusLower.indexOf('tolak') < 0) continue;
-          if (statusFilter === 'on-review' && adminStatusLower.indexOf('review') < 0) continue;
-          if (statusFilter === 'sedang-diajukan' && adminStatusLower.indexOf('sedang') < 0) continue;
-          // Pending = no admin status (null/empty/"None")
+          // On Review = "On Review" atau "Sedang Diajukan"
+          if (statusFilter === 'on-review' && adminStatusLower.indexOf('review') < 0 && adminStatusLower.indexOf('sedang') < 0) continue;
+          // Pending = no admin status (null/empty/"None"/"-")
           if (statusFilter === 'pending') {
             if (adminStatus && adminStatusLower !== 'none' && adminStatus !== '-') continue;
           }
