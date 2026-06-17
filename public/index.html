@@ -559,9 +559,9 @@
     <!-- Built from Google Drive on 05 June 2026 14:52 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
 <meta name="dashboard-build-id" content="20260605145248">
-  <!-- Built from Google Drive on 17 June 2026 05:22 WIB -->
+  <!-- Built from Google Drive on 17 June 2026 11:41 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
-<meta name="dashboard-build-id" content="20260617052221">
+<meta name="dashboard-build-id" content="20260617114121">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
 </head>
 <body class="is-loading">
@@ -18465,9 +18465,18 @@ const pileMonitoringData = {
         shortLabel: 'Bulanan',
         source: dataSets.monthly.sourceDate,
         folder: reportFolders.monthlyRoot,
-        localPath: 'H:\\My Drive\\Work in Progress\\08 Laporan Progress Proyek\\Laporan Bulanan',
+        localPath: 'H:\\\\My Drive\\\\Work in Progress\\\\08 Laporan Progress Proyek\\\\Laporan Bulanan',
         description: 'Cutoff bulanan: seluruh KPI, Kurva S, breakdown gedung, dan detail memakai cutoff bulanan terbaru.',
         note: dataSets.monthly.sourceDate + ' (folder laporan bulanan dicek; jika belum ada file, dashboard memakai agregasi cutoff mingguan terakhir sebagai sementara).'
+      },
+      gambar: {
+        label: 'Monitoring Gambar',
+        shortLabel: 'Monitoring Gambar',
+        source: null,
+        folder: null,
+        localPath: null,
+        description: 'Monitoring shop drawing dan DED: status approval, distribusi, dan tracking pengajuan.',
+        note: 'Data digabung dari monitoring DED dan submittal shop drawing.'
       }
     };
     const countBy = (items, key) => items.reduce((acc, item) => {
@@ -19022,6 +19031,13 @@ const pileMonitoringData = {
     const setReportMode = (modeKey, reloadOnChange = false) => {
       const mode = reportModes[modeKey] || reportModes.daily;
       document.querySelectorAll('[data-report-mode]').forEach(btn => btn.classList.toggle('active', btn.dataset.reportMode === modeKey));
+      if (modeKey === 'gambar') {
+        // Open monitoring gambar popup instead of reloading
+        if (typeof openMonitoringGambar === 'function') {
+          openMonitoringGambar();
+        }
+        return;
+      }
       if (reloadOnChange && modeKey !== selectedReportMode) {
         localStorage.setItem('dashboard-report-mode', modeKey);
         window.location.reload();
@@ -19360,6 +19376,87 @@ const pileMonitoringData = {
     transition: background .15s, border-color .15s;
   }
   .trial-close:hover { background: rgba(56,189,248,.24); border-color: rgba(56,189,248,.5); }
+
+  /* Monitoring Gambar Modal */
+  .monitoring-modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 9999;
+    background: rgba(2,6,23,.88); backdrop-filter: blur(8px);
+    padding: 24px; overflow-y: auto;
+  }
+  .monitoring-modal-overlay.open { display: block; }
+  .monitoring-modal {
+    max-width: 1200px; margin: 0 auto; background: rgba(15,23,42,.98);
+    border: 1px solid rgba(148,163,184,.25); border-radius: 18px;
+    box-shadow: 0 25px 60px rgba(0,0,0,.5);
+  }
+  .monitoring-modal-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px; border-bottom: 1px solid rgba(148,163,184,.18);
+  }
+  .monitoring-modal-title { font-size: 16px; font-weight: 700; color: #f8fafc; }
+  .monitoring-modal-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .monitoring-modal-close {
+    background: rgba(56,189,248,.14); border: 1px solid rgba(56,189,248,.3);
+    color: #bae6fd; border-radius: 10px; padding: 8px 16px;
+    font-size: 13px; font-weight: 700; cursor: pointer;
+  }
+  .monitoring-modal-close:hover { background: rgba(56,189,248,.24); }
+  .monitoring-modal-body { padding: 16px 20px 24px; }
+  .monitoring-filter-row {
+    display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; align-items: center;
+  }
+  .monitoring-filter-row select {
+    background: rgba(15,23,42,.92); border: 1px solid rgba(148,163,184,.22);
+    color: #e2e8f0; border-radius: 8px; padding: 7px 12px; font-size: 13px;
+  }
+  .monitoring-search {
+    flex: 1; min-width: 200px;
+    background: rgba(15,23,42,.92); border: 1px solid rgba(148,163,184,.22);
+    color: #e2e8f0; border-radius: 8px; padding: 7px 12px; font-size: 13px;
+  }
+  .monitoring-search::placeholder { color: var(--muted); }
+  .monitoring-table-wrap { overflow-x: auto; max-height: 70vh; }
+  .monitoring-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .monitoring-table th {
+    position: sticky; top: 0; background: #0f172a; z-index: 2;
+    padding: 8px 10px; text-align: left; font-weight: 700;
+    color: #94a3b8; border-bottom: 1px solid rgba(148,163,184,.2);
+    white-space: nowrap;
+  }
+  .monitoring-table td {
+    padding: 6px 10px; border-bottom: 1px solid rgba(148,163,184,.08);
+    color: #cbd5e1; vertical-align: top;
+  }
+  .monitoring-table tr:hover td { background: rgba(56,189,248,.06); }
+  .monitoring-table .cat-tag {
+    display: inline-block; padding: 2px 8px; border-radius: 6px;
+    font-size: 10px; font-weight: 700; letter-spacing: .04em;
+  }
+  .cat-STR { background: rgba(56,189,248,.15); color: #7dd3fc; }
+  .cat-ARS { background: rgba(168,85,247,.15); color: #c084fc; }
+  .cat-MEP { background: rgba(251,191,36,.15); color: #fbbf24; }
+  .cat-INT { background: rgba(34,197,94,.15); color: #4ade80; }
+  .status-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 6px;
+    font-size: 10px; font-weight: 700; white-space: nowrap;
+  }
+  .status-approve { background: rgba(34,197,94,.15); color: #4ade80; }
+  .status-dikembalikan { background: rgba(251,191,36,.15); color: #fbbf24; }
+  .status-ditolak { background: rgba(239,68,68,.15); color: #f87171; }
+  .status-sedang { background: rgba(56,189,248,.15); color: #7dd3fc; }
+  .status-on-review { background: rgba(168,85,247,.15); color: #c084fc; }
+  .status-none { background: rgba(148,163,184,.1); color: #64748b; }
+  .monitoring-summary-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px; margin-bottom: 16px;
+  }
+  .monitoring-summary-card {
+    background: rgba(15,23,42,.6); border: 1px solid rgba(148,163,184,.15);
+    border-radius: 12px; padding: 12px 14px;
+  }
+  .monitoring-summary-card .label { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .monitoring-summary-card .value { font-size: 20px; font-weight: 800; color: #f8fafc; }
+  .monitoring-summary-card .sub { font-size: 10px; color: var(--muted); margin-top: 2px; }
 </style>
 <div class="trial-overlay" id="trialOverlay">
   <div class="trial-box">
@@ -19394,6 +19491,224 @@ const pileMonitoringData = {
   if (now <= deadline) {
     var el = document.getElementById('trialOverlay');
     if (el) el.classList.add('show');
+  }
+})();
+</script>
+
+<!-- Monitoring Gambar Modal -->
+<div class="monitoring-modal-overlay" id="monitoringGambarOverlay">
+  <div class="monitoring-modal">
+    <div class="monitoring-modal-header">
+      <div>
+        <div class="monitoring-modal-title">Monitoring Shop Drawing & DED</div>
+        <div class="monitoring-modal-sub" id="monitoringLastUpdated">Terakhir update: -</div>
+      </div>
+      <button class="monitoring-modal-close" type="button" onclick="closeMonitoringGambar()">Tutup</button>
+    </div>
+    <div class="monitoring-modal-body">
+      <div class="monitoring-summary-grid" id="monitoringSummary"></div>
+      <div class="monitoring-filter-row">
+        <select id="filterGedung" onchange="renderMonitoringTable()">
+          <option value="all">Semua Gedung</option>
+          <option value="Gedung B">Gedung B</option>
+          <option value="Gedung D">Gedung D</option>
+          <option value="Gedung K">Gedung K</option>
+        </select>
+        <select id="filterKategori" onchange="renderMonitoringTable()">
+          <option value="all">Semua Kategori</option>
+          <option value="STRUKTUR">STRUKTUR</option>
+          <option value="ARSITEKTUR">ARSITEKTUR</option>
+          <option value="MEP">MEP</option>
+          <option value="INTERIOR">INTERIOR</option>
+        </select>
+        <select id="filterStatus" onchange="renderMonitoringTable()">
+          <option value="all">Semua Status</option>
+          <option value="approve">Approve</option>
+          <option value="dikembalikan">Dikembalikan</option>
+          <option value="ditolak">Ditolak</option>
+          <option value="on-review">On Review</option>
+          <option value="pending">Pending</option>
+        </select>
+        <input type="text" class="monitoring-search" id="filterSearch" placeholder="Cari judul/nomor gambar..." oninput="renderMonitoringTable()">
+      </div>
+      <div class="monitoring-table-wrap">
+        <table class="monitoring-table" id="monitoringTable">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Gedung</th>
+              <th>Kategori</th>
+              <th>Judul Gambar</th>
+              <th>No. DED</th>
+              <th>Status DED</th>
+              <th>No. SD</th>
+              <th>Tgl Pengajuan</th>
+              <th>Tgl Approved</th>
+              <th>Status Admin</th>
+              <th>Distribusi</th>
+            </tr>
+          </thead>
+          <tbody id="monitoringTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="data/monitoring_gambar_data.js"></script>
+<script>
+(function() {
+  // Monitoring Gambar Modal Logic
+  var monitoringData = (typeof monitoringGambarData !== 'undefined') ? monitoringGambarData : null;
+
+  window.openMonitoringGambar = function() {
+    var overlay = document.getElementById('monitoringGambarOverlay');
+    if (!overlay) return;
+
+    if (!monitoringData || !monitoringData.gedung) {
+      alert('Data monitoring gambar belum tersedia. Pastikan file data/monitoring_gambar_data.js sudah diisi.');
+      return;
+    }
+
+    // Update last updated
+    var lu = document.getElementById('monitoringLastUpdated');
+    if (lu) lu.textContent = 'Terakhir update: ' + (monitoringData.last_updated || '-');
+
+    // Render summary
+    renderMonitoringSummary();
+    renderMonitoringTable();
+
+    overlay.classList.add('open');
+  };
+
+  window.closeMonitoringGambar = function() {
+    var overlay = document.getElementById('monitoringGambarOverlay');
+    if (overlay) overlay.classList.remove('open');
+  };
+
+  function renderMonitoringSummary() {
+    var container = document.getElementById('monitoringSummary');
+    if (!container || !monitoringData) return;
+
+    var rekap = monitoringData.rekap || {};
+    var html = '';
+
+    for (var gedung in rekap) {
+      var r = rekap[gedung];
+      var ded = r.ded || {};
+      var adminTotal = r.admin_total || 0;
+
+      html += '<div class="monitoring-summary-card">';
+      html += '<div class="label">' + gedung + '</div>';
+      html += '<div class="value">' + adminTotal + '</div>';
+      html += '<div class="sub">Total: ' + (ded.STR||0) + ' STR, ' + (ded.ARS||0) + ' ARS, ' + (ded.MEP||0) + ' MEP';
+
+      var status = r.admin_by_status || {};
+      var statusParts = [];
+      for (var s in status) {
+        statusParts.push(s + ': ' + status[s]);
+      }
+      if (statusParts.length > 0) {
+        html += ' | ' + statusParts.join(', ');
+      }
+      html += '</div></div>';
+    }
+
+    container.innerHTML = html;
+  }
+
+  function getStatusClass(status) {
+    if (!status) return 'status-none';
+    var s = status.toLowerCase();
+    if (s.indexOf('approve') >= 0 || s === 'aprove') return 'status-approve';
+    if (s.indexOf('kembali') >= 0 || s === 'dikembalikan') return 'status-dikembalikan';
+    if (s.indexOf('tolak') >= 0 || s === 'ditolak') return 'status-ditolak';
+    if (s.indexOf('review') >= 0 || s === 'on review') return 'status-on-review';
+    if (s.indexOf('sedang') >= 0 || s === 'sedang diajukan') return 'status-sedang';
+    return 'status-none';
+  }
+
+  function renderMonitoringTable() {
+    var tbody = document.getElementById('monitoringTableBody');
+    if (!tbody || !monitoringData) return;
+
+    var gedungFilter = document.getElementById('filterGedung').value;
+    var kategoriFilter = document.getElementById('filterKategori').value;
+    var statusFilter = document.getElementById('filterStatus').value;
+    var searchFilter = document.getElementById('filterSearch').value.toLowerCase();
+
+    var html = '';
+    var rowNum = 0;
+
+    for (var gedung in monitoringData.gedung) {
+      if (gedungFilter !== 'all' && gedung !== gedungFilter) continue;
+
+      var items = monitoringData.gedung[gedung] || [];
+
+      for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+
+        // Kategori filter
+        var kat = (item.kategori || '').toUpperCase();
+        if (kategoriFilter !== 'all' && kat !== kategoriFilter) continue;
+
+        // Status filter
+        var adminStatus = (item.admin_status || '').toLowerCase();
+        if (statusFilter !== 'all') {
+          if (statusFilter === 'approve' && adminStatus.indexOf('approve') < 0 && adminStatus !== 'aprove') continue;
+          if (statusFilter === 'dikembalikan' && adminStatus.indexOf('kembali') < 0) continue;
+          if (statusFilter === 'ditolak' && adminStatus.indexOf('tolak') < 0) continue;
+          if (statusFilter === 'on-review' && adminStatus.indexOf('review') < 0) continue;
+          if (statusFilter === 'pending' && (adminStatus === '' || adminStatus === 'none' || !adminStatus)) {}
+          else if (statusFilter === 'pending') continue;
+        }
+
+        // Search filter
+        var judul = (item.judul || '').toLowerCase();
+        var noDed = (item.nomor_ded || '').toLowerCase();
+        var noSd = (item.nomor_sd || '').toLowerCase();
+        if (searchFilter && judul.indexOf(searchFilter) < 0 && noDed.indexOf(searchFilter) < 0 && noSd.indexOf(searchFilter) < 0) continue;
+
+        rowNum++;
+
+        var catClass = 'cat-' + (kat.substring(0,3) || '???');
+        var statusClass = getStatusClass(item.admin_status);
+        var statusText = item.admin_status || '-';
+
+        html += '<tr>';
+        html += '<td>' + rowNum + '</td>';
+        html += '<td>' + gedung.replace('GEDUNG ', '') + '</td>';
+        html += '<td><span class="cat-tag ' + catClass + '">' + (kat || '-') + '</span></td>';
+        html += '<td>' + (item.judul || '-') + '</td>';
+        html += '<td>' + (item.nomor_ded || '-') + '</td>';
+        html += '<td>' + (item.status_ded || '-') + '</td>';
+        html += '<td>' + (item.nomor_sd || '-') + '</td>';
+        html += '<td>' + (item.admin_tgl_submit || '-') + '</td>';
+        html += '<td>' + (item.admin_tgl_approved || '-') + '</td>';
+        html += '<td><span class="status-badge ' + statusClass + '">' + statusText + '</span></td>';
+        html += '<td>' + (item.admin_distribusi || '-') + '</td>';
+        html += '</tr>';
+      }
+    }
+
+    if (rowNum === 0) {
+      html = '<tr><td colspan="11" style="text-align:center;padding:30px;color:var(--muted);">Tidak ada data yang cocok dengan filter.</td></tr>';
+    }
+
+    tbody.innerHTML = html;
+  }
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeMonitoringGambar();
+  });
+
+  // Close on overlay click
+  var overlay = document.getElementById('monitoringGambarOverlay');
+  if (overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closeMonitoringGambar();
+    });
   }
 })();
 </script>
