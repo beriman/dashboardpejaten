@@ -559,9 +559,9 @@
     <!-- Built from Google Drive on 05 June 2026 14:52 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
 <meta name="dashboard-build-id" content="20260605145248">
-  <!-- Built from Google Drive on 17 June 2026 11:41 WIB -->
+  <!-- Built from Google Drive on 17 June 2026 12:15 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
-<meta name="dashboard-build-id" content="20260617114121">
+<meta name="dashboard-build-id" content="20260617121502">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
 </head>
 <body class="is-loading">
@@ -19520,6 +19520,8 @@ const pileMonitoringData = {
           <option value="ARSITEKTUR">ARSITEKTUR</option>
           <option value="MEP">MEP</option>
           <option value="INTERIOR">INTERIOR</option>
+          <option value="MEKANIKAL">MEKANIKAL</option>
+          <option value="ELEKTRIKAL">ELEKTRIKAL</option>
         </select>
         <select id="filterStatus" onchange="renderMonitoringTable()">
           <option value="all">Semua Status</option>
@@ -19527,6 +19529,7 @@ const pileMonitoringData = {
           <option value="dikembalikan">Dikembalikan</option>
           <option value="ditolak">Ditolak</option>
           <option value="on-review">On Review</option>
+          <option value="sedang-diajukan">Sedang Diajukan</option>
           <option value="pending">Pending</option>
         </select>
         <input type="text" class="monitoring-search" id="filterSearch" placeholder="Cari judul/nomor gambar..." oninput="renderMonitoringTable()">
@@ -19641,26 +19644,38 @@ const pileMonitoringData = {
     var rowNum = 0;
 
     for (var gedung in monitoringData.gedung) {
-      if (gedungFilter !== 'all' && gedung !== gedungFilter) continue;
+      // Gedung filter — normalize case (GEDUNG B vs Gedung B)
+      if (gedungFilter !== 'all') {
+        var gedungNorm = gedung.replace('GEDUNG ', 'Gedung ').trim();
+        if (gedungNorm !== gedungFilter) continue;
+      }
 
       var items = monitoringData.gedung[gedung] || [];
 
       for (var i = 0; i < items.length; i++) {
         var item = items[i];
 
-        // Kategori filter
-        var kat = (item.kategori || '').toUpperCase();
-        if (kategoriFilter !== 'all' && kat !== kategoriFilter) continue;
+        // Kategori filter — normalize: STRUKTUR/STR, ARSITEKTUR/ARS, MEP, INTERIOR/INT, MEKANIKAL, ELEKTRIKAL
+        var kat = (item.kategori || '').toUpperCase().replace('STRUKTUR', 'STR').replace('ARSITEKTUR', 'ARS').replace('INTERIOR', 'INT');
+        var katDisplay = (item.kategori || '').toUpperCase();
+        if (kategoriFilter !== 'all') {
+          var kFilter = kategoriFilter.replace('STRUKTUR', 'STR').replace('ARSITEKTUR', 'ARS').replace('INTERIOR', 'INT');
+          if (kat !== kFilter && katDisplay !== kategoriFilter) continue;
+        }
 
-        // Status filter
-        var adminStatus = (item.admin_status || '').toLowerCase();
+        // Status filter — exact match dengan data asli
+        var adminStatus = item.admin_status || '';
+        var adminStatusLower = adminStatus.toLowerCase();
         if (statusFilter !== 'all') {
-          if (statusFilter === 'approve' && adminStatus.indexOf('approve') < 0 && adminStatus !== 'aprove') continue;
-          if (statusFilter === 'dikembalikan' && adminStatus.indexOf('kembali') < 0) continue;
-          if (statusFilter === 'ditolak' && adminStatus.indexOf('tolak') < 0) continue;
-          if (statusFilter === 'on-review' && adminStatus.indexOf('review') < 0) continue;
-          if (statusFilter === 'pending' && (adminStatus === '' || adminStatus === 'none' || !adminStatus)) {}
-          else if (statusFilter === 'pending') continue;
+          if (statusFilter === 'approve' && adminStatusLower.indexOf('approve') < 0 && adminStatusLower !== 'aprove') continue;
+          if (statusFilter === 'dikembalikan' && adminStatusLower.indexOf('kembali') < 0) continue;
+          if (statusFilter === 'ditolak' && adminStatusLower.indexOf('tolak') < 0) continue;
+          if (statusFilter === 'on-review' && adminStatusLower.indexOf('review') < 0) continue;
+          if (statusFilter === 'sedang-diajukan' && adminStatusLower.indexOf('sedang') < 0) continue;
+          // Pending = no admin status (null/empty/"None")
+          if (statusFilter === 'pending') {
+            if (adminStatus && adminStatusLower !== 'none' && adminStatus !== '-') continue;
+          }
         }
 
         // Search filter
@@ -19671,14 +19686,14 @@ const pileMonitoringData = {
 
         rowNum++;
 
-        var catClass = 'cat-' + (kat.substring(0,3) || '???');
+        var catClass = 'cat-' + (kat.substring(0, 3) || '???');
         var statusClass = getStatusClass(item.admin_status);
-        var statusText = item.admin_status || '-';
+        var statusText = item.admin_status || 'Pending';
 
         html += '<tr>';
         html += '<td>' + rowNum + '</td>';
         html += '<td>' + gedung.replace('GEDUNG ', '') + '</td>';
-        html += '<td><span class="cat-tag ' + catClass + '">' + (kat || '-') + '</span></td>';
+        html += '<td><span class="cat-tag ' + catClass + '">' + (katDisplay || '-') + '</span></td>';
         html += '<td>' + (item.judul || '-') + '</td>';
         html += '<td>' + (item.nomor_ded || '-') + '</td>';
         html += '<td>' + (item.status_ded || '-') + '</td>';
