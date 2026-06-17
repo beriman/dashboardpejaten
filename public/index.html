@@ -559,9 +559,9 @@
     <!-- Built from Google Drive on 05 June 2026 14:52 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
 <meta name="dashboard-build-id" content="20260605145248">
-  <!-- Built from Google Drive on 17 June 2026 13:19 WIB -->
+  <!-- Built from Google Drive on 17 June 2026 13:26 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
-<meta name="dashboard-build-id" content="20260617131937">
+<meta name="dashboard-build-id" content="20260617132612">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
 </head>
 <body class="is-loading">
@@ -19415,6 +19415,13 @@ const pileMonitoringData = {
     color: #e2e8f0; border-radius: 8px; padding: 7px 12px; font-size: 13px;
   }
   .monitoring-search::placeholder { color: var(--muted); }
+  .monitoring-update-btn {
+    background: rgba(56,189,248,.18); border: 1px solid rgba(56,189,248,.35);
+    color: #7dd3fc; border-radius: 8px; padding: 7px 18px;
+    font-size: 13px; font-weight: 700; cursor: pointer;
+    white-space: nowrap; transition: background .15s;
+  }
+  .monitoring-update-btn:hover { background: rgba(56,189,248,.28); }
   .monitoring-table-wrap { overflow-x: auto; max-height: 70vh; }
   .monitoring-table { width: 100%; border-collapse: collapse; font-size: 12px; }
   .monitoring-table th {
@@ -19508,13 +19515,13 @@ const pileMonitoringData = {
     <div class="monitoring-modal-body">
       <div class="monitoring-summary-grid" id="monitoringSummary"></div>
       <div class="monitoring-filter-row">
-        <select id="filterGedung" onchange="renderMonitoringTable()">
+        <select id="filterGedung">
           <option value="all">Semua Gedung</option>
           <option value="Gedung B">Gedung B</option>
           <option value="Gedung D">Gedung D</option>
           <option value="Gedung K">Gedung K</option>
         </select>
-        <select id="filterKategori" onchange="renderMonitoringTable()">
+        <select id="filterKategori">
           <option value="all">Semua Kategori</option>
           <option value="STRUKTUR">STRUKTUR</option>
           <option value="ARSITEKTUR">ARSITEKTUR</option>
@@ -19523,7 +19530,7 @@ const pileMonitoringData = {
           <option value="MEKANIKAL">MEKANIKAL</option>
           <option value="ELEKTRIKAL">ELEKTRIKAL</option>
         </select>
-        <select id="filterStatus" onchange="renderMonitoringTable()">
+        <select id="filterStatus">
           <option value="all">Semua Status</option>
           <option value="approve">Approve</option>
           <option value="dikembalikan">Dikembalikan</option>
@@ -19531,7 +19538,8 @@ const pileMonitoringData = {
           <option value="on-review">On Review / Sedang Diajukan</option>
           <option value="pending">Pending</option>
         </select>
-        <input type="text" class="monitoring-search" id="filterSearch" placeholder="Cari judul/nomor gambar..." oninput="renderMonitoringTable()">
+        <input type="text" class="monitoring-search" id="filterSearch" placeholder="Cari judul/nomor gambar..." onkeydown="if(event.key==='Enter')renderMonitoringTable()">
+        <button class="monitoring-update-btn" type="button" onclick="renderMonitoringTable()">Update</button>
       </div>
       <div class="monitoring-table-wrap">
         <table class="monitoring-table" id="monitoringTable">
