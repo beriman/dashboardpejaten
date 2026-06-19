@@ -1,5 +1,5 @@
 const monitoringGambarData = {
-  "last_updated": "2026-06-19 06:01",
+  "last_updated": "2026-06-19 12:46",
   "rekap": {
     "Gedung B": {
       "ded": {
