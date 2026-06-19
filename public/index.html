@@ -559,9 +559,9 @@
     <!-- Built from Google Drive on 05 June 2026 14:52 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
 <meta name="dashboard-build-id" content="20260605145248">
-  <!-- Built from Google Drive on 19 June 2026 11:25 WIB -->
+  <!-- Built from Google Drive on 19 June 2026 11:35 WIB -->
 <meta name="dashboard-build" content="Pejaten dashboard static build">
-<meta name="dashboard-build-id" content="20260619112512">
+<meta name="dashboard-build-id" content="20260619113552">
 <script>window.DASHBOARD_WEBCHAT_URL="https://t.me/Pejaten_bot";</script>
 </head>
 <body class="is-loading">
@@ -18721,7 +18721,9 @@ const pileMonitoringData = {
                   return '<text x="' + x(i) + '" y="' + (h-10) + '" font-size="10" fill="#9aa8bc" text-anchor="middle" font-weight="500">' + lab + '</text>';
                 }).join('');
           const lastIdx = labels.length - 1;
+          console.log('DEBUG makeChartSVG:', title, 'labels.length:', labels.length, 'lastIdx:', lastIdx, 'plan[lastIdx]:', plan[lastIdx], 'real[lastIdx]:', real[lastIdx], 'plan:', JSON.stringify(plan.slice(-3)), 'real:', JSON.stringify(real.slice(-3)));
           const devVal = lastIdx >= 0 ? (real[lastIdx] - plan[lastIdx]) : 0;
+          console.log('DEBUG devVal:', devVal, 'isNaN:', isNaN(devVal));
           const devColor = devVal >= 0 ? '#22c55e' : '#ef4444';
           const devSign = devVal >= 0 ? '+' : '';
           return '<div class="chart-box">' +
